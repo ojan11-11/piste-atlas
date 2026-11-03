@@ -22,7 +22,7 @@ function place(p){
  return {country:cc==='US'?'United States':'Canada',region:v.localized?.en?.region||rc,regionCode:rc,city:v.localized?.en?.locality||null,countryCode:cc};
 }
 function km(a,b){const t=Math.PI/180,dy=(a.lat-b.lat)*t,dx=(a.lng-b.lng)*t,h=Math.sin(dy/2)**2+Math.cos(a.lat*t)*Math.cos(b.lat*t)*Math.sin(dx/2)**2;return 12742*Math.asin(Math.min(1,Math.sqrt(h)))}
-const aliases={'whistler-blackcomb':['whistler-blackcomb'],'park-city':['park-city','park-city-mountain'],'big-sky':['big-sky','big-sky-resort'],'vail':['vail','vail-mountain'],'lake-louise':['lake-louise','lake-louise-ski-resort'],'jackson-hole':['jackson-hole','jackson-hole-mountain-resort'],'killington':['killington','killington-resort'],'tremblant':['tremblant','mont-tremblant']};
+const aliases={'whistler-blackcomb':['whistler-blackcomb'],'park-city':['park-city','park-city-mountain','park-city-mountain-resort'],'big-sky':['big-sky','big-sky-resort'],'vail':['vail','vail-mountain'],'lake-louise':['lake-louise','lake-louise-ski-resort','lake-louise-ski-area'],'jackson-hole':['jackson-hole','jackson-hole-mountain-resort'],'killington':['killington','killington-resort'],'tremblant':['tremblant','mont-tremblant','mont-tremblant-resort-station-mont-tremblant']};
 function curatedMatch(r,curated){return curated.some(c=>c.country===r.country&&c.regionCode===r.regionCode&&km(c,r)<35&&(slug(c.name)===slug(r.name)||(aliases[c.id]||[]).includes(slug(r.name))))}
 function feature(f){
  const p=f?.properties;
@@ -56,11 +56,28 @@ export function transform(data,curated=[]){
  return {list,stats:{inputFeatures:data.features.length,eligible,curatedMatches,duplicatesRemoved,imported:list.length,us:list.filter(r=>r.country==='United States').length,canada:list.filter(r=>r.country==='Canada').length}};
 }
 async function readURL(href){const r=await fetch(href,{signal:AbortSignal.timeout(180000)});if(!r.ok)throw Error('HTTP '+r.status+': '+href);return Buffer.from(await r.arrayBuffer())}
+function reconcileExisting(curated){
+ const path='data/resorts.openskidata.js',mp='data/openskidata-meta.json';
+ if(!fs.existsSync(path)||!fs.existsSync(mp))return;
+ const ctx={window:{RESORTS:[]}};
+ vm.runInNewContext(fs.readFileSync(path,'utf8'),ctx);
+ const before=ctx.window.RESORTS;
+ const after=before.filter(r=>!curatedMatch(r,curated));
+ if(after.length===before.length){console.log('Current build already reconciled.');return}
+ const removed=before.length-after.length,metadata=JSON.parse(fs.readFileSync(mp,'utf8'));
+ metadata.imported=after.length;metadata.curatedMatches=(metadata.curatedMatches||0)+removed;
+ metadata.us=after.filter(r=>r.country==='United States').length;
+ metadata.canada=after.filter(r=>r.country==='Canada').length;
+ metadata.snapshotBuiltAt=new Date().toISOString();
+ fs.writeFileSync(path,'// ODbL OpenSkiData snapshot, separate from curated official source data.\n// '+metadata.attribution+'\nwindow.RESORTS = [...(window.RESORTS || []), ...'+JSON.stringify(after)+'];\n');
+ fs.writeFileSync(mp,JSON.stringify(metadata,null,2)+'\n');
+ console.log('Reconciled '+removed+' curated duplicate resort(s) without redownloading the same upstream daily build.');
+}
 async function main(){
  const k=process.argv.indexOf('--input'),local=k<0?null:process.argv[k+1];if(k>=0&&!local)throw Error('Missing --input filename');
  const upstream=local?null:JSON.parse((await readURL(META)).toString());
  const old=fs.existsSync('data/openskidata-meta.json')?JSON.parse(fs.readFileSync('data/openskidata-meta.json','utf8')):null;
- if(!local&&old?.upstreamRunFinishedAt&&old.upstreamRunFinishedAt===upstream?.run?.finishedAt){console.log('Dataset already synced.');return}
+ if(!local&&old?.upstreamRunFinishedAt&&old.upstreamRunFinishedAt===upstream?.run?.finishedAt){const existing={window:{}};vm.runInNewContext(fs.readFileSync('data/resorts.js','utf8'),existing);reconcileExisting(existing.window.RESORTS);return}
  let content=local?fs.readFileSync(local):await readURL(SOURCE);
  if(content[0]===0x1f&&content[1]===0x8b)content=gunzipSync(content);
  const sandbox={window:{}};vm.runInNewContext(fs.readFileSync('data/resorts.js','utf8'),sandbox);
