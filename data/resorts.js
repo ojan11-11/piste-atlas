@@ -1,0 +1,99 @@
+// Piste Atlas initial verified seed — reviewed 2026-11-03.
+// This is a small launch sample, NOT a complete North American directory.
+// Statistics and pass affiliation come from official resorts / pass operators.
+// null = not yet verified; do not fill with made-up values.
+window.RESORTS = [
+  {
+    id:'whistler-blackcomb',name:'Whistler Blackcomb',city:'Whistler',region:'British Columbia',regionCode:'BC',country:'Canada',lat:50.1163,lng:-122.9574,
+    area:'Pacific Northwest',tagline:'Two legendary mountains. One enormous playground.',pass:'Epic',
+    acres:8171,vertical:5280,snowfall:422,lifts:36,trails:200,trailsQualifier:'+',summit:7497,base:2214,
+    terrain:null,terrainNote:'Combined terrain distribution pending verification',
+    highlights:['High alpine','Legendary bowls','Village life'],
+    website:'https://www.whistlerblackcomb.com/',
+    mapUrl:'https://www.whistlerblackcomb.com/the-mountain/about-the-mountain/trail-maps.aspx',
+    ticketUrl:'https://www.whistlerblackcomb.com/plan-your-trip/lift-access/tickets.aspx',
+    sourceUrl:'https://www.whistlerblackcomb.com/the-mountain/about-the-mountain/mountain-info.aspx',
+    notes:'Official Vail Resorts mountain-statistics page reports 8,171 acres, 36 lifts, 422 inches of annual snowfall. Vertical drop uses Whistler destination statistics.',
+    visual:'coast'
+  },
+  {
+    id:'park-city',name:'Park City Mountain',city:'Park City',region:'Utah',regionCode:'UT',country:'United States',lat:40.6514,lng:-111.5079,
+    area:'Rocky Mountains',tagline:'Endless ridgelines above a historic mountain town.',pass:'Epic',
+    acres:7300,vertical:3226,snowfall:355,lifts:41,trails:330,trailsQualifier:'+',summit:10026,base:6800,
+    terrain:{beginner:8,intermediate:42,advanced:50},terrainNote:'Official resort grouping',
+    highlights:['Massive terrain','Ski-to-town','Family escapes'],
+    website:'https://www.parkcitymountain.com/',
+    mapUrl:'https://www.parkcitymountain.com/the-mountain/about-the-mountain/trail-map',
+    ticketUrl:'https://www.parkcitymountain.com/plan-your-trip/lift-access/tickets.aspx',
+    sourceUrl:'https://www.parkcitymountain.com/the-mountain/about-the-mountain/mountain-info.aspx',
+    notes:'Vertical drop is the difference between the reported 10,026-foot summit and 6,800-foot base elevations; it may differ from marketed continuous vertical.',
+    visual:'sand'
+  },
+  {
+    id:'big-sky',name:'Big Sky Resort',city:'Big Sky',region:'Montana',regionCode:'MT',country:'United States',lat:45.2833,lng:-111.4010,
+    area:'Rocky Mountains',tagline:'Big terrain, wide horizons, and Lone Peak lines.',pass:'Ikon',
+    acres:5850,vertical:4350,snowfall:400,lifts:40,trails:320,trailsQualifier:'',summit:11166,base:7400,
+    terrain:{beginner:21,intermediate:29,advanced:50},terrainNote:'Aggregated: intermediate + advanced-intermediate; advanced + expert + extreme',
+    highlights:['Lone Peak tram','Expansive acreage','Expert terrain'],
+    website:'https://www.bigskyresort.com/',mapUrl:'https://www.bigskyresort.com/trail-maps',
+    ticketUrl:'https://www.bigskyresort.com/winter-tickets',sourceUrl:'https://www.bigskyresort.com/mountain-info',
+    notes:'The resort publishes 40 total lifts and a 4,350-foot vertical-drop statistic. Its six-category trail classification has been condensed into three categories for the comparison chart.',
+    visual:'stone'
+  },
+  {
+    id:'vail',name:'Vail Mountain',city:'Vail',region:'Colorado',regionCode:'CO',country:'United States',lat:39.6061,lng:-106.3550,
+    area:'Rocky Mountains',tagline:'Iconic back bowls and classic Colorado cruising.',pass:'Epic',
+    acres:5317,vertical:3450,snowfall:354,lifts:32,trails:278,trailsQualifier:'',summit:11570,base:8120,
+    terrain:{beginner:18,intermediate:29,advanced:53},terrainNote:'Official resort grouping',
+    highlights:['Back Bowls','Blue Sky Basin','Groomed cruisers'],
+    website:'https://www.vail.com/',mapUrl:'https://www.vail.com/the-mountain/about-the-mountain/trail-map.aspx',
+    ticketUrl:'https://www.vail.com/plan-your-trip/lift-access/tickets.aspx',
+    sourceUrl:'https://www.vail.com/the-mountain/about-the-mountain/mountain-info.aspx',
+    notes:'Vertical is calculated as the published summit elevation minus the published base elevation.',
+    visual:'glacier'
+  },
+  {
+    id:'lake-louise',name:'Lake Louise Ski Resort',city:'Lake Louise',region:'Alberta',regionCode:'AB',country:'Canada',lat:51.4419,lng:-116.1620,
+    area:'Canadian Rockies',tagline:'Three mountains, five faces, postcard-worthy views.',pass:'Ikon',
+    acres:4200,vertical:3250,snowfall:null,lifts:13,trails:171,trailsQualifier:'',summit:8650,base:null,
+    terrain:{beginner:25,intermediate:45,advanced:30},terrainNote:'Official resort FAQ; approximate',
+    highlights:['Five mountain faces','Varied abilities','Mountain scenery'],
+    website:'https://www.skilouise.com/',mapUrl:'https://www.skilouise.com/explore-winter/winter-ski-ride/lift-runs-parks-status/',
+    ticketUrl:'https://www.skilouise.com/tickets-passes/',sourceUrl:'https://www.skilouise.com/explore-winter/winter-ski-ride/mountain-stats/',
+    notes:'Annual snowfall withheld until verified against an official, comparable reporting period. Terrain mix comes from the resort FAQ.',
+    visual:'ice'
+  },
+  {
+    id:'jackson-hole',name:'Jackson Hole',city:'Teton Village',region:'Wyoming',regionCode:'WY',country:'United States',lat:43.5874,lng:-110.8279,
+    area:'Rocky Mountains',tagline:'Steep lines and deep snow beneath the Tetons.',pass:'Ikon',
+    acres:2500,vertical:4139,snowfall:458,lifts:13,trails:131,trailsQualifier:'',summit:10450,base:6311,
+    terrain:{beginner:10,intermediate:40,advanced:50},terrainNote:'Official resort grouping; expert = advanced',
+    highlights:['Expert steeps','Aerial tram','Deep snowfall'],
+    website:'https://www.jacksonhole.com/',mapUrl:'https://www.jacksonhole.com/maps/mountain-winter',
+    ticketUrl:'https://www.jacksonhole.com/lift-tickets',sourceUrl:'https://www.jacksonhole.com/mountain-stats',
+    notes:'Uses 2,500 in-bounds acres only, excluding lift-accessed backcountry. Official mountain stats report 458 inches average snowfall.',
+    visual:'peaks'
+  },
+  {
+    id:'killington',name:'Killington Resort',city:'Killington',region:'Vermont',regionCode:'VT',country:'United States',lat:43.6045,lng:-72.8201,
+    area:'Northeast',tagline:'The Beast of the East, across six distinct peaks.',pass:'Ikon',
+    acres:1509,vertical:3050,snowfall:250,lifts:19,trails:155,trailsQualifier:'',summit:4241,base:1165,
+    terrain:{beginner:17,intermediate:40,advanced:43},terrainNote:'Killington only; Pico excluded',
+    highlights:['Long eastern season','Snowmaking','Six peaks'],
+    website:'https://killington.com/',mapUrl:'https://killington.com/winter-trail-map',
+    ticketUrl:'https://killington.com/lift-tickets',sourceUrl:'https://killington.com/mountain-stats',
+    notes:'Only Killington acreage, lifts, and runs are included, not the separately operated Pico Mountain statistics. Reported vertical is resort-provided.',
+    visual:'forest'
+  },
+  {
+    id:'tremblant',name:'Mont Tremblant',city:'Mont-Tremblant',region:'Québec',regionCode:'QC',country:'Canada',lat:46.2129,lng:-74.5848,
+    area:'Eastern Canada',tagline:'Four mountain faces with a colorful slopeside village.',pass:'Ikon',
+    acres:763,vertical:2116,snowfall:null,lifts:14,trails:103,trailsQualifier:'',summit:2871,base:null,
+    terrain:null,terrainNote:'Full-mountain category percentages pending verification',
+    highlights:['Four mountain faces','Village dining','Snowmaking'],
+    website:'https://www.tremblant.ca/',mapUrl:'https://www.tremblant.ca/mountain-village/maps',
+    ticketUrl:'https://www.tremblant.ca/plan/tickets-and-passes',sourceUrl:'https://www.tremblant.ca/mountain-village/mountain-info/tremblant-statistics',
+    notes:'Mountain statistics reference the official resort data; the number of lifts varies depending on whether carpets and the cabriolet are included. Count shown follows the official trail-map key.',
+    visual:'rose'
+  }
+];
