@@ -14,21 +14,21 @@ This batch enriches **15 of 740 OpenSkiData listings** without changing the numb
 
 | Resort | Location | Official mountain source | Day-ticket link | Data reviewed |
 |---|---|---|---|---|
-| Alta Ski Area | US/Canada | [Mountain information](https://www.alta.com/about) | [Official ticket page](https://www.alta.com/tickets-and-passes) | 2026-11-03 |
-| Breckenridge Ski Resort | US/Canada | [Mountain information](https://www.breckenridge.com/the-mountain/about-the-mountain/mountain-info.aspx) | Awaiting verified link | 2026-11-03 |
-| Copper Mountain | US/Canada | [Mountain information](https://www.coppercolorado.com/the-mountain/mountain-safety-stats/winter-mountain-stats/) | [Official ticket page](https://www.coppercolorado.com/tickets-passes/lift-tickets/tickets/) | 2026-11-03 |
-| Deer Valley Resort | US/Canada | [Mountain information](https://www.deervalley.com/media-room/091626-hail-peak-express-event) | [Official ticket page](https://www.deervalley.com/plan-your-trip/tickets-and-passes/lift-tickets) | 2026-11-03 |
-| Revelstoke Mountain Resort | US/Canada | [Mountain information](https://www.revelstokemountainresort.com/mountain/mountain-stats/) | [Official ticket page](https://www.revelstokemountainresort.com/tickets-passes/winter-tickets/) | 2026-11-03 |
-| Sun Peaks Resort | US/Canada | [Mountain information](https://www.sunpeaksresort.com/ski-ride/the-mountain/trail-maps-stats) | [Official ticket page](https://www.sunpeaksresort.com/ski-ride/tickets-passes/day-tickets) | 2026-11-03 |
-| Loon Mountain Resort | US/Canada | [Mountain information](https://www.loonmtn.com/mountain-stats) | [Official ticket page](https://www.loonmtn.com/lift-tickets) | 2026-11-03 |
-| Sugarloaf | US/Canada | [Mountain information](https://www.sugarloaf.com/mountain-info) | [Official ticket page](https://www.sugarloaf.com/lift-tickets) | 2026-11-03 |
-| Jay Peak Resort | US/Canada | [Mountain information](https://jaypeakresort.com/skiing-riding/mountain) | [Official ticket page](https://jaypeakresort.com/skiing-riding/tickets-passes/202627-lift-tickets) | 2026-11-03 |
-| Blue Mountain Resort (Ontario) | US/Canada | [Mountain information](https://www.bluemountain.ca/mountain/mountain-stats) | [Official ticket page](https://www.bluemountain.ca/plan-your-trip/day-tickets/winter-lift-tickets) | 2026-11-03 |
-| Mont-Sainte-Anne | US/Canada | [Mountain information](https://mont-sainte-anne.com/en/mont-sainte-anne-mountain-statistics/) | [Official ticket page](https://mont-sainte-anne.com/en/alpine-skiing-rates-and-schedules/) | 2026-11-03 |
-| Ski Sundown | US/Canada | [Mountain information](https://skisundown.com/plan-your-trip/trail-map-statistics/) | [Official ticket page](https://skisundown.com/the-mountain/tickets-season-passes/lift-tickets/) | 2026-11-03 |
-| Mammoth Mountain | US/Canada | [Mountain information](https://www.mammothmountain.com/on-the-mountain/winter-trail-map) | Awaiting verified link | 2026-11-03 |
-| Crystal Mountain (Washington) | US/Canada | [Mountain information](https://www.crystalmountainresort.com/discover-crystal/about-crystal) | [Official ticket page](https://www.crystalmountainresort.com/plan-your-trip/tickets-and-passes/day-tickets/winter-lift-tickets) | 2026-11-03 |
-| Banff Sunshine Village | US/Canada | [Mountain information](https://www.skibanff.com/the-mountain/mountain-report/historical-snowfall) | [Official ticket page](https://www.skibanff.com/index.php/tickets-passes/lift-tickets/lift-tickets) | 2026-11-03 |
+| Alta Ski Area | Utah, United States | [Mountain information](https://www.alta.com/about) | [Official ticket page](https://www.alta.com/tickets-and-passes) | 2026-11-03 |
+| Breckenridge Ski Resort | Colorado, United States | [Mountain information](https://www.breckenridge.com/the-mountain/about-the-mountain/mountain-info.aspx) | Awaiting verified link | 2026-11-03 |
+| Copper Mountain | Colorado, United States | [Mountain information](https://www.coppercolorado.com/the-mountain/mountain-safety-stats/winter-mountain-stats/) | [Official ticket page](https://www.coppercolorado.com/tickets-passes/lift-tickets/tickets/) | 2026-11-03 |
+| Deer Valley Resort | Utah, United States | [Mountain information](https://www.deervalley.com/media-room/091626-hail-peak-express-event) | [Official ticket page](https://www.deervalley.com/plan-your-trip/tickets-and-passes/lift-tickets) | 2026-11-03 |
+| Revelstoke Mountain Resort | British Columbia, Canada | [Mountain information](https://www.revelstokemountainresort.com/mountain/mountain-stats/) | [Official ticket page](https://www.revelstokemountainresort.com/tickets-passes/winter-tickets/) | 2026-11-03 |
+| Sun Peaks Resort | British Columbia, Canada | [Mountain information](https://www.sunpeaksresort.com/ski-ride/the-mountain/trail-maps-stats) | [Official ticket page](https://www.sunpeaksresort.com/ski-ride/tickets-passes/day-tickets) | 2026-11-03 |
+| Loon Mountain Resort | New Hampshire, United States | [Mountain information](https://www.loonmtn.com/mountain-stats) | [Official ticket page](https://www.loonmtn.com/lift-tickets) | 2026-11-03 |
+| Sugarloaf | Maine, United States | [Mountain information](https://www.sugarloaf.com/mountain-info) | [Official ticket page](https://www.sugarloaf.com/lift-tickets) | 2026-11-03 |
+| Jay Peak Resort | Vermont, United States | [Mountain information](https://jaypeakresort.com/skiing-riding/mountain) | [Official ticket page](https://jaypeakresort.com/skiing-riding/tickets-passes/202627-lift-tickets) | 2026-11-03 |
+| Blue Mountain Resort (Ontario) | Ontario, Canada | [Mountain information](https://www.bluemountain.ca/mountain/mountain-stats) | [Official ticket page](https://www.bluemountain.ca/plan-your-trip/day-tickets/winter-lift-tickets) | 2026-11-03 |
+| Mont-Sainte-Anne | Quebec, Canada | [Mountain information](https://mont-sainte-anne.com/en/mont-sainte-anne-mountain-statistics/) | [Official ticket page](https://mont-sainte-anne.com/en/alpine-skiing-rates-and-schedules/) | 2026-11-03 |
+| Ski Sundown | Connecticut, United States | [Mountain information](https://skisundown.com/plan-your-trip/trail-map-statistics/) | [Official ticket page](https://skisundown.com/the-mountain/tickets-season-passes/lift-tickets/) | 2026-11-03 |
+| Mammoth Mountain | California, United States | [Mountain information](https://www.mammothmountain.com/on-the-mountain/winter-trail-map) | Awaiting verified link | 2026-11-03 |
+| Crystal Mountain (Washington) | Washington, United States | [Mountain information](https://www.crystalmountainresort.com/discover-crystal/about-crystal) | [Official ticket page](https://www.crystalmountainresort.com/plan-your-trip/tickets-and-passes/day-tickets/winter-lift-tickets) | 2026-11-03 |
+| Banff Sunshine Village | Alberta, Canada | [Mountain information](https://www.skibanff.com/the-mountain/mountain-report/historical-snowfall) | [Official ticket page](https://www.skibanff.com/index.php/tickets-passes/lift-tickets/lift-tickets) | 2026-11-03 |
 
 ## Known discrepancies and decisions
 
