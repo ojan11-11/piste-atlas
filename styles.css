@@ -9,3 +9,12 @@
 .load-more-wrap p { color:var(--muted, #597279); font-size:.85rem; margin:.8rem 0 0; }
 .unverified-link { color:#667d82; font-size:.9rem; font-style:italic; }
 .pass-unverified { background:#edf1ef; color:#3c6064; }
+
+/* Operator source review overlays: clearly distinguished from unverified map listings */
+.verified-pill {display:inline-flex;align-items:center;white-space:nowrap;border:1px solid rgba(12,101,88,.24);border-radius:100px;background:#eaf6f2;color:#0b6050;padding:5px 9px;font-size:10px;font-weight:700;letter-spacing:.01em;}
+.verified-sources {margin-top:18px;padding:15px;border-radius:12px;background:#f4f8f7;border:1px solid #dbe6e4;}
+.verified-sources strong {display:block;font-size:12px;color:#174d4c;margin-bottom:9px}
+.verified-sources>div {display:flex;gap:10px 18px;flex-wrap:wrap;align-items:center}
+.verified-sources a {font-size:12px}
+.price-conditions {font-size:12px!important;line-height:1.6;color:#53676a;margin:10px 0 15px}
+@media(max-width:600px){.verified-pill{font-size:9px;padding:4px 7px}.card-top-badges{flex-wrap:wrap;gap:4px}.verified-sources>div{display:grid;gap:6px}}
