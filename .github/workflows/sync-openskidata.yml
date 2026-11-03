@@ -30,7 +30,9 @@ jobs:
       - name: Download and prepare current US/Canada OpenSkiData dataset
         run: node tools/sync-openskidata.mjs
       - name: Validate sourced directory before publishing
-        run: node tools/validate-openskidata.mjs
+        run: |
+          node tools/validate-openskidata.mjs
+          node tools/test-site-directory.mjs
       - name: Commit refreshed snapshot only to development
         if: github.ref == 'refs/heads/development'
         run: |
