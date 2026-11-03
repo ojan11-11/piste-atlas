@@ -350,7 +350,7 @@ const reviews=[
     "id": "osd-wikidata-q7534904",
     "name": "Ski Sundown",
     "city": "New Hartford",
-    "pass": "Independent",
+    "pass": "Unverified",
     "acres": 70,
     "vertical": 625,
     "snowfall": null,
