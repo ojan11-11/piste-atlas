@@ -1,0 +1,15 @@
+{
+  "source": "https://tiles.openskimap.org/geojson/ski_areas.geojson",
+  "upstreamRunFinishedAt": "2026-11-03T01:05:39.972Z",
+  "formatVersion": "16.0.0",
+  "snapshotBuiltAt": "2026-11-03T21:40:53.396Z",
+  "license": "ODbL",
+  "attribution": "Data from OpenSkiData / OpenSkiMap.org, © OpenStreetMap contributors (ODbL), Skimap.org, Who’s On First, © Mapterhorn",
+  "inputFeatures": 12401,
+  "eligible": 748,
+  "curatedMatches": 8,
+  "duplicatesRemoved": 0,
+  "imported": 740,
+  "us": 508,
+  "canada": 232
+}

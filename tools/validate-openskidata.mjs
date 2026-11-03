@@ -1,0 +1,13 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import vm from 'node:vm';
+const ctx={window:{RESORTS:[]}};
+vm.runInNewContext(fs.readFileSync('data/resorts.openskidata.js','utf8'),ctx);
+const rows=ctx.window.RESORTS,meta=JSON.parse(fs.readFileSync('data/openskidata-meta.json','utf8'));
+assert.ok(rows.length>=200&&rows.length<=4000,'Unusual directory size');
+assert.equal(new Set(rows.map(r=>r.id)).size,rows.length,'Duplicate IDs');
+assert.ok(rows.every(r=>['United States','Canada'].includes(r.country)));
+assert.ok(rows.every(r=>r.dataQuality==='open-data'&&r.mappedLiftCount>0));
+assert.ok(rows.every(r=>r.vertical===null&&r.acres===null&&r.snowfall===null&&r.trails===null&&r.lifts===null));
+assert.equal(meta.imported,rows.length);
+console.log('PASS '+rows.length+' open-data listings validated');

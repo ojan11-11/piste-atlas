@@ -1,0 +1,46 @@
+name: Sync OpenSkiData directory
+on:
+  workflow_dispatch:
+  push:
+    branches: [development]
+    paths:
+      - "tools/sync-openskidata.mjs"
+      - "tools/test-openskidata.mjs"
+      - "tools/validate-openskidata.mjs"
+      - "data/resorts.js"
+      - "app.js"
+      - ".github/workflows/sync-openskidata.yml"
+permissions:
+  contents: write
+concurrency:
+  group: openskidata-sync-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Smoke-test the existing website and new parser
+        run: |
+          node --check app.js
+          node test.mjs
+          node tools/test-openskidata.mjs
+      - name: Download and prepare current US/Canada OpenSkiData dataset
+        run: node tools/sync-openskidata.mjs
+      - name: Validate sourced directory before publishing
+        run: |
+          node tools/validate-openskidata.mjs
+          node tools/test-site-directory.mjs
+      - name: Commit refreshed snapshot only to development
+        if: github.ref == 'refs/heads/development'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/resorts.openskidata.js data/openskidata-meta.json
+          if ! git diff --cached --quiet; then
+            git commit -m "data: refresh OpenSkiData ski-area snapshot"
+            git push
+          fi
