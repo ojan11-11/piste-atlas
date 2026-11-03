@@ -8,6 +8,7 @@ on:
       - "tools/test-openskidata.mjs"
       - "tools/validate-openskidata.mjs"
       - "data/resorts.js"
+      - "app.js"
       - ".github/workflows/sync-openskidata.yml"
 permissions:
   contents: write
