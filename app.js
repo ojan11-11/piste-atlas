@@ -5,7 +5,7 @@
   const app = document.querySelector('#app');
   const nf = new Intl.NumberFormat('en-US');
   const state = {
-    query:'', country:'All', pass:'All', terrain:'All', minSnow:0, minAcres:0,
+    query:'', country:'All', quality:'All', pass:'All', terrain:'All', minSnow:0, minAcres:0,
     sort:'acres', showFavorites:false, view:'grid', visibleCount:24, selected:new Set(),
     favorites:readFavorites()
   };
@@ -82,7 +82,7 @@
   function filtered(){
     const q=state.query.trim().toLowerCase();
     let items=resorts.filter(r=>(!q || [r.name,r.city,r.region,r.regionCode,r.area,r.country,r.pass].some(x=>String(x).toLowerCase().includes(q))) &&
-      (state.country==='All'||r.country===state.country) && (state.pass==='All'||r.pass===state.pass) &&
+      (state.country==='All'||r.country===state.country) && (state.quality==='All'||(state.quality==='Reviewed'?r.dataQuality!=='open-data':r.dataQuality==='open-data')) && (state.pass==='All'||r.pass===state.pass) &&
       (!state.showFavorites||state.favorites.has(r.id)) && r.acres >= state.minAcres &&
       (!state.minSnow || r.snowfall!==null && r.snowfall>=state.minSnow) &&
       (state.terrain==='All' || (r.terrain && (
@@ -96,6 +96,7 @@
   function selectOption(value,current){return value===current?'selected':'';}
   function filterPanel(){return `<aside class="filters"><div class="filter-heading"><strong>${icon('filter',18)} Refine your search</strong><button class="reset-btn" data-action="reset">Reset</button></div>
     <div class="filter-block"><label for="filter-country">Country</label><select id="filter-country" data-filter="country"><option ${selectOption('All',state.country)}>All</option><option ${selectOption('United States',state.country)}>United States</option><option ${selectOption('Canada',state.country)}>Canada</option></select></div>
+    <div class="filter-block"><label for="filter-quality">Data verification</label><select id="filter-quality" data-filter="quality"><option value="All" ${selectOption('All',state.quality)}>All listings</option><option value="Reviewed" ${selectOption('Reviewed',state.quality)}>Operator-reviewed</option><option value="Unreviewed" ${selectOption('Unreviewed',state.quality)}>Mapped only</option></select><small class="filter-help">Reviewed means operator-sourced statistics; some fields can still be missing or seasonal.</small></div>
     <div class="filter-block"><label for="filter-pass">Pass access</label><select id="filter-pass" data-filter="pass"><option ${selectOption('All',state.pass)}>All</option><option ${selectOption('Epic',state.pass)}>Epic</option><option ${selectOption('Ikon',state.pass)}>Ikon</option></select></div>
     <div class="filter-block"><label for="filter-terrain">Terrain preference</label><select id="filter-terrain" data-filter="terrain"><option ${selectOption('All',state.terrain)}>All</option><option ${selectOption('Beginner',state.terrain)}>Beginner</option><option ${selectOption('Intermediate',state.terrain)}>Intermediate</option><option ${selectOption('Advanced',state.terrain)}>Advanced</option></select><small class="filter-help">Filters use published trail percentages and simple thresholds, not personalized difficulty ratings.</small></div>
     <div class="filter-block"><label for="min-acres">Minimum skiable area <b id="acresValue">${nf.format(state.minAcres)} acres</b></label><input id="min-acres" data-filter="minAcres" type="range" min="0" max="6000" step="500" value="${state.minAcres}"/><div class="range-ends"><span>Any size</span><span>6,000+ ac</span></div></div>
@@ -191,7 +192,7 @@
     if(focusSearch){const el=document.querySelector('#hero-search');el?.focus();el?.setSelectionRange(el.value.length,el.value.length);}
     if(!preserveScroll) window.scrollTo({top:0,behavior:'instant'});
   }
-  function resetFilters(){state.query='';state.country='All';state.pass='All';state.terrain='All';state.minSnow=0;state.minAcres=0;state.sort='acres';state.showFavorites=false;state.visibleCount=24;render({preserveScroll:true});}
+  function resetFilters(){state.query='';state.country='All';state.quality='All';state.pass='All';state.terrain='All';state.minSnow=0;state.minAcres=0;state.sort='acres';state.showFavorites=false;state.visibleCount=24;render({preserveScroll:true});}
   function updateFilter(el){let value=el.value;const name=el.dataset.filter;if(name==='minSnow'||name==='minAcres')value=Number(value);state[name]=value;state.visibleCount=24;render({preserveScroll:true});}
   function tryCompare(id){if(state.selected.has(id))state.selected.delete(id);else if(state.selected.size<4)state.selected.add(id);else {alert('Compare up to four mountains at a time. Remove one before adding another.');return;}render({preserveScroll:true});}
   document.addEventListener('click',e=>{
