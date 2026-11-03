@@ -74,7 +74,7 @@
       <a href="#resort/${r.id}" class="card-art-link" aria-label="View ${escapeHTML(r.name)}">${art(r.visual,true)}<div class="card-top-badges">${badges(r)}</div></a>
       <button class="heart-btn ${saved?'saved':''}" data-action="save" data-id="${r.id}" aria-label="${saved?'Remove':'Save'} ${escapeHTML(r.name)} ${saved?'from':'to'} favorites">${icon('heart',18)}</button>
       <div class="card-body"><div class="card-location">${icon('pin',13)} ${escapeHTML(r.city)} · ${escapeHTML(r.region)}</div><h3><a href="#resort/${r.id}">${escapeHTML(r.name)}</a></h3><p class="card-tagline">${escapeHTML(r.tagline)}</p>
-      <div class="metric-row"><div><strong>${textNum(r.acres)}</strong><span>Skiable acres</span></div><div><strong>${textNum(r.vertical)}<small> ft</small></strong><span>Vertical drop</span></div><div><strong>${textNum(r.snowfall,r.snowfall!==null?'″':'')}</strong><span>Avg. snowfall</span></div></div>
+      <div class="metric-row">${r.dataQuality==='open-data'?`<div><strong>${textNum(r.mappedLiftCount)}</strong><span>Mapped lifts</span></div><div><strong>${textNum(r.mappedRunSegments)}</strong><span>Mapped segments</span></div><div><strong>${textNum(r.mappedVertical)}<small> ft</small></strong><span>Mapped elev. span</span></div>`:`<div><strong>${textNum(r.acres)}</strong><span>Skiable acres</span></div><div><strong>${textNum(r.vertical)}<small> ft</small></strong><span>Vertical drop</span></div><div><strong>${textNum(r.snowfall,r.snowfall!==null?'″':'')}</strong><span>Avg. snowfall</span></div>`}</div>
       <div class="card-terrain"><span>Terrain mix</span>${terrainBar(r)}</div>
       <div class="card-bottom"><a href="#resort/${r.id}" class="text-link">Explore mountain ${icon('arrow',16)}</a><button data-action="toggle-compare" data-id="${r.id}" class="compare-small ${isSelected?'on':''}" aria-pressed="${isSelected}">${isSelected?icon('check',15):icon('scale',15)} ${isSelected?'Added':'Compare'}</button></div>
       </div></article>`;
@@ -160,6 +160,9 @@
     const rows=[
       ['Skiable area',r=>textNum(r.acres,' acres')],['Vertical drop',r=>textNum(r.vertical,' ft')],['Average annual snowfall',r=>textNum(r.snowfall, r.snowfall===null?'':' in')],
       ['Lifts',r=>textNum(r.lifts)],['Named trails',r=>textNum(r.trails,r.trailsQualifier)],['Summit elevation',r=>textNum(r.summit,' ft')],
+      ['Mapped lifts (OpenSkiData)',r=>r.dataQuality==='open-data'?textNum(r.mappedLiftCount):'Not applicable'],
+      ['Mapped downhill segments (OpenSkiData)',r=>r.dataQuality==='open-data'?textNum(r.mappedRunSegments):'Not applicable'],
+      ['Mapped elevation span (OpenSkiData)',r=>r.dataQuality==='open-data'?textNum(r.mappedVertical,' ft'):'Not applicable'],
       ['Beginner terrain',r=>r.terrain?r.terrain.beginner+'%':'Not verified'],['Intermediate terrain',r=>r.terrain?r.terrain.intermediate+'%':'Not verified'],['Advanced / expert',r=>r.terrain?r.terrain.advanced+'%':'Not verified'],
       ['Pass access',r=>r.pass],['Adult lift-ticket price',r=>'Check live rates']
     ];
