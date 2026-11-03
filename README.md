@@ -80,3 +80,14 @@ See [`docs/PRODUCT_PLAN.md`](docs/PRODUCT_PLAN.md) for the sitemap, visual desig
 ## Smoke tests
 
 Run `node test.mjs` to test core HTML rendering and navigation/compare state without requiring network or dependencies.
+
+
+## OpenSkiData directory integration (v0.3)
+
+Piste Atlas now supports a **separate ODbL geographic discovery layer** generated from [OpenSkiData](https://www.openskidata.org/) while retaining the eight existing resort-sourced profiles in `data/resorts.js`. The OpenSkiData snapshot (`data/resorts.openskidata.js`) contains only US/Canada locations with downhill activity and mapped lifts; explicitly inactive and Nordic-only areas are excluded. These flags **do not guarantee a resort is currently open**.
+
+Mapped lift counts, mapped run segments, and mapped elevation spans are held separately from officially verified mountain statistics. Ticket prices, passes, snowfall, acreage, trails, and trail maps remain unverified for new records. The site shows unknown values as unknown.
+
+The `development` branch runs `tools/sync-openskidata.mjs` through a GitHub Actions workflow. To refresh manually: **Actions → Sync OpenSkiData directory → Run workflow**, choose `development`. The workflow checks the upstream build timestamp and refuses suspiciously small/large imports. Review and merge its PR to publish on `main`.
+
+OpenSkiData is derived from OpenStreetMap and Skimap.org and is licensed under **ODbL**. The generated derivative dataset is distributed separately with attribution: Data from OpenSkiData / OpenSkiMap.org, © OpenStreetMap contributors (ODbL), Skimap.org, Who's On First, © Mapterhorn. See `docs/OPENSKIDATA.md` for refresh and quality limitations. Provider terms permit automated downloads at most once daily.
