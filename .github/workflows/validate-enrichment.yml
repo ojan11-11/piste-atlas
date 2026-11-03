@@ -1,0 +1,37 @@
+name: Validate resort enrichment
+on:
+  push:
+    branches:
+      - 'feature/**'
+      - development
+    paths:
+      - 'app.js'
+      - 'data/resorts.js'
+      - 'data/resorts.openskidata.js'
+      - 'data/resorts.enriched.js'
+      - 'tools/test-reviewed-profiles.mjs'
+      - 'tools/test-site-directory.mjs'
+      - '.github/workflows/validate-enrichment.yml'
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check JavaScript syntax
+        run: |
+          node --check app.js
+          node --check data/resorts.enriched.js
+      - name: Verify official data and original site
+        run: |
+          node test.mjs
+          node tools/test-openskidata.mjs
+          node tools/validate-openskidata.mjs
+          node tools/test-reviewed-profiles.mjs
+          node tools/test-site-directory.mjs
