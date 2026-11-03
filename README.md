@@ -91,3 +91,24 @@ Mapped lift counts, mapped run segments, and mapped elevation spans are held sep
 The `development` branch runs `tools/sync-openskidata.mjs` through a GitHub Actions workflow. To refresh manually: **Actions → Sync OpenSkiData directory → Run workflow**, choose `development`. The workflow checks the upstream build timestamp and refuses suspiciously small/large imports. Review and merge its PR to publish on `main`.
 
 OpenSkiData is derived from OpenStreetMap and Skimap.org and is licensed under **ODbL**. The generated derivative dataset is distributed separately with attribution: Data from OpenSkiData / OpenSkiMap.org, © OpenStreetMap contributors (ODbL), Skimap.org, Who's On First, © Mapterhorn. See `docs/OPENSKIDATA.md` for refresh and quality limitations. Provider terms permit automated downloads at most once daily.
+
+## Official resort enrichment — batch 01 (v0.4)
+
+The site now has **23 operator-source-reviewed mountain profiles**: eight original launch profiles plus 15 reviews loaded from `data/resorts.enriched.js`. The remaining **725** are still OpenSkiData map-only listings, which are **not independently confirmed as operating resorts**. The total remains 748 unique ski-area listings.
+
+The extra review file loads **after** the ODbL geographic dataset and before `app.js`, merging source-checked facts by stable resort ID. This prevents the automated OpenSkiData importer from overwriting our official resort statistics. Profiles include links to the resort's own information pages, reviewed dates, caveats about inconsistent figures and official trail-map or ticket links only where identified.
+
+The directory adds a **Data verification** filter (all / operator-reviewed / mapped only). Conditional examples for 2026–27 Jay Peak and Ski Sundown adult tickets include age, day restrictions and other conditions; they are not live ticket quotes. Other resorts link to operator ticket pages instead of showing fabricated prices.
+
+See [Operator reviews and reconciliation notes](docs/OPERATOR_REVIEWS.md) for all 15 new profiles and their source pages. The full site and review overlay are validated with:
+
+```bash
+node --check app.js
+node test.mjs
+node tools/test-openskidata.mjs
+node tools/validate-openskidata.mjs
+node tools/test-reviewed-profiles.mjs
+node tools/test-site-directory.mjs
+```
+
+**Adding future verified stats:** Update `data/resorts.enriched.js`, not the generated `data/resorts.openskidata.js`. Always record the operator URL, review date, field definitions and unit conversions; mark conflicting or unavailable fields as `null`. Inspect whether a trail map shows downhill winter trails, not summer bike trails. Submit a pull request after the validation workflow succeeds.
