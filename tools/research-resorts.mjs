@@ -17,6 +17,7 @@ const arg=(key,fallback)=>{const i=args.indexOf(key);return i<0?fallback:args[i+
 const limit=Math.max(1,Math.min(250,Number(arg('--limit','50'))||50));
 const out=arg('--out','reports/enrichment-pilot.json');
 const dryRun=args.includes('--dry-run');
+const retryFile=arg('--retry-failed',null);
 const agentURL='https://ojan11-11.github.io/piste-atlas/';
 
 function readCatalog(){
@@ -64,10 +65,23 @@ async function getRobots(url){
  try{
   if(!(await publicHostname(u.hostname)))result={ok:false,why:'nonpublic-host'};
   else{
-   const response=await fetch(origin+'/robots.txt',{headers:{'user-agent':USER_AGENT},redirect:'manual',signal:AbortSignal.timeout(TIMEOUT_MS)});
-   if(response.status===404||response.status===410)result={ok:true,content:''};
-   else if(response.ok&&response.status===200)result={ok:true,content:await readStreamLimited(response,200000)};
-   else result={ok:false,why:'robots-http-'+response.status};
+   let robotsURL=origin+'/robots.txt';
+   for(let i=0;i<3;i++){
+    const response=await fetch(robotsURL,{headers:{'user-agent':USER_AGENT},redirect:'manual',signal:AbortSignal.timeout(TIMEOUT_MS)});
+    if(response.status>=300&&response.status<400){
+     const location=response.headers.get('location');
+     if(!location){result={ok:false,why:'robots-redirect-no-location'};break}
+     const next=new URL(location,robotsURL);
+     if(!sameHost(next.href,origin)||!safeURL(next.href)||next.pathname!=='/robots.txt'||!(await publicHostname(next.hostname))){
+      result={ok:false,why:'robots-untrusted-redirect'};break;
+     }
+     robotsURL=next.href;continue;
+    }
+    if(response.status===404||response.status===410)result={ok:true,content:''};
+    else if(response.ok&&response.status===200)result={ok:true,content:await readStreamLimited(response,200000)};
+    else result={ok:false,why:'robots-http-'+response.status};
+    break;
+   }
   }
  }catch(e){result={ok:false,why:'robots-'+String(e?.message||'network-error').slice(0,90)}}
  robotsCache.set(origin,result);return result;
@@ -167,12 +181,23 @@ async function concurrent(items,threads,run){
 }
 async function main(){
  if(!out.startsWith('reports/')||out.includes('..'))throw Error('--out must be beneath reports/');
- const resorts=readCatalog(),pilot=selectPilot(resorts,limit);
- if(pilot.length<limit)throw Error('Expected '+limit+' candidates, got '+pilot.length);
- const result=dryRun?pilot.map(r=>({...canonicalCandidate(r),status:'planned',readyForPublish:false})):
+ const resorts=readCatalog();
+ let previous=null,pilot;
+ if(retryFile){
+  if(!/^reports\/[a-z0-9-]+\.json$/i.test(retryFile)||!fs.existsSync(retryFile))throw Error('--retry-failed requires a current reports/*.json file');
+  previous=JSON.parse(fs.readFileSync(retryFile,'utf8'));
+  if(!Array.isArray(previous.resorts))throw Error('Invalid previous pilot report');
+  const ids=new Set(previous.resorts.filter(r=>r.status==='unavailable'||r.status==='error').map(r=>r.id));
+  pilot=previous.resorts.map(r=>resorts.find(v=>v.id===r.id)).filter(r=>r&&ids.has(r.id));
+  if(!pilot.length){console.log('No failed sites to retry.');return}
+ }else pilot=selectPilot(resorts,limit);
+ if(!previous&&pilot.length<limit)throw Error('Expected '+limit+' candidates, got '+pilot.length);
+ const fresh=dryRun?pilot.map(r=>({...canonicalCandidate(r),status:'planned',readyForPublish:false})):
    await concurrent(pilot,4,researchOne);
+ const updates=new Map(fresh.map(r=>[r.id,r]));
+ const result=previous?previous.resorts.map(r=>updates.get(r.id)||r):fresh;
  const summary={
-  requested:limit,researched:result.filter(x=>x.status==='researched').length,
+  requested:result.length,retried:retryFile?pilot.length:0,researched:result.filter(x=>x.status==='researched').length,
   unavailable:result.filter(x=>x.status==='unavailable').length,
   statisticCandidates:result.reduce((sum,x)=>sum+(x.statisticCandidates?.length||0),0),
   mapPageCandidates:result.reduce((n,x)=>n+(x.links?.map?.length||0),0),
