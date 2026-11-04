@@ -112,3 +112,20 @@ node tools/test-site-directory.mjs
 ```
 
 **Adding future verified stats:** Update `data/resorts.enriched.js`, not the generated `data/resorts.openskidata.js`. Always record the operator URL, review date, field definitions and unit conversions; mark conflicting or unavailable fields as `null`. Inspect whether a trail map shows downhill winter trails, not summer bike trails. Submit a pull request after the validation workflow succeeds.
+
+
+## v0.5 — automated resort source research (snowfall deferred)
+
+The first production-style research pilot covers **50 unreviewed North American ski areas** without Mountain News or resort submissions. The research collector respects robots.txt, caps requests, stays on mapped site domains, looks for official mountain-statistics, winter trail-map, and lift-ticket pages, and stores short metric excerpts with source links for human review.
+
+Initial results: **43 of 50 reachable sites**, **51 candidate numbers**, **40 winter-map link candidates**, **82 ticket link candidates**, and **13 automated quality warnings**. These are evidence/candidate counts, **not verified facts or a count of distinct maps or ticket pages**. Seven sites could not be crawled; access restrictions and network errors remain visible in the report. Snowfall remains out of scope.
+
+The pipeline writes:
+- reports/enrichment-pilot.json — source URLs, numeric evidence, page-link suggestions, access errors
+- reports/ENRICHMENT_PILOT.md — readable resort-by-resort research summary
+- reports/enrichment-audit.json — flagged conflicts and suspicious contexts
+- reports/ENRICHMENT_AUDIT.md — reviewer-facing flags
+
+**No data from these reports is automatically published to resort pages.** For example, an operator homepage might mention 6,000 acres of total resort property and only 83 acres of skiable slopes. Such claims must be manually reconciled against official source pages before entering the curated resort layer. See docs/ENRICHMENT_ENGINE.md for run instructions, permission considerations, and phase planning.
+
+The engine is a GitHub Action named "Research official resort sources (v0.5)" and runs tests plus a guarded crawler. It can retry only the previously inaccessible sites instead of needlessly recontacting the successful ones. Its outputs are artifacts and commits on the feature branch, not changes to the public GitHub Pages site.

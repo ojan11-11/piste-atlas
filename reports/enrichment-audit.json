@@ -1,0 +1,147 @@
+{
+  "generatedAt": "2026-11-04T00:07:48.453Z",
+  "status": "review-only",
+  "stats": {
+    "resorts": 50,
+    "researched": 43,
+    "failed": 7,
+    "candidateNumbers": 51,
+    "mapLinks": 40,
+    "ticketLinks": 82,
+    "flaggedRisks": 13,
+    "byMetric": {
+      "acres": 37,
+      "lifts": 6,
+      "trails": 7,
+      "vertical": 1
+    },
+    "snowfallDeferred": true,
+    "automaticallyPublished": 0
+  },
+  "risks": [
+    {
+      "resort": "Palisades Tahoe Olympic Valley",
+      "region": "CA",
+      "kind": "conflicting-values-in-sourced-pages",
+      "metric": "acres",
+      "values": [
+        "6000 acres",
+        "3600 acres",
+        "2400 acres"
+      ]
+    },
+    {
+      "resort": "Palisades Tahoe Olympic Valley",
+      "region": "CA",
+      "kind": "conflicting-values-in-sourced-pages",
+      "metric": "lifts",
+      "values": [
+        "26 count",
+        "2 count",
+        "13 count",
+        "1 count",
+        "39 count"
+      ]
+    },
+    {
+      "resort": "Palisades Tahoe Olympic Valley",
+      "region": "CA",
+      "kind": "conflicting-values-in-sourced-pages",
+      "metric": "trails",
+      "values": [
+        "187 count",
+        "109 count",
+        "288 count"
+      ]
+    },
+    {
+      "resort": "Powder Ridge Ski Area",
+      "region": "CT",
+      "kind": "conflicting-values-in-sourced-pages",
+      "metric": "acres",
+      "values": [
+        "255 acres",
+        "80 acres",
+        "40 acres"
+      ]
+    },
+    {
+      "resort": "Sun Valley - Bald Mountain",
+      "region": "ID",
+      "kind": "context-not-necessarily-skiable",
+      "metric": "acres",
+      "sourceUrl": "https://www.sunvalley.com/the-mountain/maps-guides",
+      "example": "maps for the Mountain and Village areas. Covering over 2,500 acres, these maps will guide you through diverse terrains an"
+    },
+    {
+      "resort": "Yellowstone Club",
+      "region": "MT",
+      "kind": "context-not-necessarily-skiable",
+      "metric": "acres",
+      "sourceUrl": "https://yellowstoneclub.com/",
+      "example": "amed peaks in Big Sky, Montana, Yellowstone Club spans 15,200 acres of Private Powder® skiing, golf, and luxury amenities."
+    },
+    {
+      "resort": "Yellowstone Club",
+      "region": "MT",
+      "kind": "public-access-needs-verification",
+      "metric": null
+    },
+    {
+      "resort": "Taos Ski Valley",
+      "region": "NM",
+      "kind": "possible-percent-as-run-count",
+      "metric": "trails",
+      "sourceUrl": "https://www.skitaos.com/mountain",
+      "example": "| | | | | 1,294 acres of skiable terrain | | | | | 110 total trails: 24% beginner, 25% intermediate, 51% expert | | | | | 13 l"
+    },
+    {
+      "resort": "Powder Mountain Ski Resort",
+      "region": "UT",
+      "kind": "conflicting-values-in-sourced-pages",
+      "metric": "acres",
+      "values": [
+        "5000 acres",
+        "1000 acres"
+      ]
+    },
+    {
+      "resort": "Massanutten Resort",
+      "region": "VA",
+      "kind": "conflicting-values-in-sourced-pages",
+      "metric": "acres",
+      "values": [
+        "83 acres",
+        "6000 acres"
+      ]
+    },
+    {
+      "resort": "Okemo Mountain",
+      "region": "VT",
+      "kind": "context-not-necessarily-skiable",
+      "metric": "acres",
+      "sourceUrl": "https://www.okemo.com/the-mountain/about-the-mountain/mountain-info.aspx",
+      "example": "mo State Forest | In 1935, the state of Vermont bought 4,000 acres of land. | | Visit Website , opens in a new window | |"
+    },
+    {
+      "resort": "Okemo Mountain",
+      "region": "VT",
+      "kind": "conflicting-values-in-sourced-pages",
+      "metric": "acres",
+      "values": [
+        "4000 acres",
+        "667 acres"
+      ]
+    },
+    {
+      "resort": "Mount St. Louis Moonstone",
+      "region": "ON",
+      "kind": "conflicting-values-in-sourced-pages",
+      "metric": "acres",
+      "values": [
+        "170 acres",
+        "180 acres"
+      ]
+    }
+  ]
+}

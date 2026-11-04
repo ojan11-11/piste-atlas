@@ -1,0 +1,84 @@
+name: Research official resort sources (v0.5)
+on:
+  push:
+    branches: [feature/enrichment-engine-v05]
+    paths:
+      - tools/lib/resort-research.mjs
+      - tools/research-resorts.mjs
+      - tools/test-research-resorts.mjs
+      - tools/audit-enrichment.mjs
+      - .github/workflows/research-resorts.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: piste-atlas-research-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  unit-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check research scripts
+        run: |
+          node --check tools/lib/resort-research.mjs
+          node --check tools/research-resorts.mjs
+          node --check tools/test-research-resorts.mjs
+          node --check tools/audit-enrichment.mjs
+          node tools/test-research-resorts.mjs
+      - name: Verify data and pilot selection without crawling
+        run: |
+          node tools/test-reviewed-profiles.mjs
+          node tools/research-resorts.mjs --limit 50 --dry-run --out reports/enrichment-plan.json
+  pilot:
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+    needs: unit-test
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Research 50 resort websites or retry failures without recrawling successes
+        run: |
+          if [ -f reports/enrichment-pilot.json ]; then
+            node tools/research-resorts.mjs --retry-failed reports/enrichment-pilot.json --out reports/enrichment-pilot.json
+          else
+            node tools/research-resorts.mjs --limit 50 --out reports/enrichment-pilot.json
+          fi
+      - name: Audit candidate numeric context and contradictions
+        run: node tools/audit-enrichment.mjs reports/enrichment-pilot.json
+      - name: Add pilot findings to GitHub Actions summary
+        if: always()
+        run: |
+          if [ -f reports/ENRICHMENT_PILOT.md ]; then
+            cat reports/ENRICHMENT_PILOT.md >> "$GITHUB_STEP_SUMMARY"
+            if [ -f reports/ENRICHMENT_AUDIT.md ]; then cat reports/ENRICHMENT_AUDIT.md >> "$GITHUB_STEP_SUMMARY"; fi
+          fi
+      - name: Preserve provenance report as workflow artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: resort-enrichment-pilot
+          path: |
+            reports/enrichment-pilot.json
+            reports/ENRICHMENT_PILOT.md
+            reports/enrichment-audit.json
+            reports/ENRICHMENT_AUDIT.md
+          if-no-files-found: warn
+      - name: Commit review queue to feature branch only
+        if: github.ref == 'refs/heads/feature/enrichment-engine-v05'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reports/enrichment-pilot.json reports/ENRICHMENT_PILOT.md reports/enrichment-audit.json reports/ENRICHMENT_AUDIT.md
+          if ! git diff --cached --quiet; then
+            git commit -m "data: record source research and quality audit"
+            git fetch origin "$GITHUB_REF_NAME"
+            git rebase "origin/$GITHUB_REF_NAME"
+            git push origin "HEAD:$GITHUB_REF_NAME"
+          fi
