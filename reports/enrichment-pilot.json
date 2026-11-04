@@ -1,0 +1,4190 @@
+{
+  "version": 1,
+  "type": "review-only",
+  "generatedAt": "2026-11-04T00:04:01.088Z",
+  "bot": "PisteAtlasResearchBot/0.5 (+https://ojan11-11.github.io/piste-atlas/)",
+  "method": "respect robots.txt; homepage + up to three same-host links; exact excerpts; review required",
+  "source": "OpenSkiData resort website candidates",
+  "sourceWebsiteVerified": false,
+  "summary": {
+    "requested": 50,
+    "researched": 36,
+    "unavailable": 14,
+    "statisticCandidates": 46,
+    "mapPageCandidates": 33,
+    "ticketPageCandidates": 72,
+    "automaticallyPublishedFacts": 0,
+    "snowfallProcessed": false
+  },
+  "resorts": [
+    {
+      "id": "osd-openstreetmap-way-934351306",
+      "name": "Alyeska Resort",
+      "region": "Alaska",
+      "regionCode": "AK",
+      "country": "United States",
+      "sourceWebsite": "https://www.alyeskaresort.com/",
+      "websiteProvenance": "OpenSkiData candidate; not independently confirmed as official",
+      "mappedLiftCount": 7,
+      "siteHost": "www.alyeskaresort.com",
+      "status": "unavailable",
+      "pages": [],
+      "links": {
+        "stats": [],
+        "map": [],
+        "tickets": []
+      },
+      "statisticCandidates": [],
+      "errors": [
+        {
+          "url": "https://www.alyeskaresort.com/",
+          "reason": "redirect-no-location"
+        }
+      ],
+      "notes": [],
+      "readyForPublish": false
+    },
+    {
+      "id": "osd-wikidata-q7641115",
+      "name": "Sunrise Park Resort",
+      "region": "Arizona",
+      "regionCode": "AZ",
+      "country": "United States",
+      "sourceWebsite": "https://www.sunriseskiparkaz.com/",
+      "websiteProvenance": "OpenSkiData candidate; not independently confirmed as official",
+      "mappedLiftCount": 7,
+      "siteHost": "www.sunriseskiparkaz.com",
+      "status": "unavailable",
+      "pages": [],
+      "links": {
+        "stats": [],
+        "map": [],
+        "tickets": []
+      },
+      "statisticCandidates": [],
+      "errors": [
+        {
+          "url": "https://www.sunriseskiparkaz.com/",
+          "reason": "robots-fetch failed"
+        }
+      ],
+      "notes": [],
+      "readyForPublish": false
+    },
+    {
+      "id": "osd-wikidata-q2182804",
+      "name": "Palisades Tahoe Olympic Valley",
+      "region": "California",
+      "regionCode": "CA",
+      "country": "United States",
+      "sourceWebsite": "https://www.palisadestahoe.com/",
+      "websiteProvenance": "OpenSkiData candidate; not independently confirmed as official",
+      "mappedLiftCount": 27,
+      "siteHost": "www.palisadestahoe.com",
+      "status": "researched",
+      "pages": [
+        {
+          "url": "https://www.palisadestahoe.com/",
+          "type": "homepage",
+          "status": "fetched"
+        },
+        {
+          "url": "https://www.palisadestahoe.com/footer/mountain-statistics",
+          "type": "stats",
+          "status": "fetched"
+        },
+        {
+          "url": "https://www.palisadestahoe.com/mountain-information/trail-maps",
+          "type": "map",
+          "status": "fetched"
+        },
+        {
+          "url": "https://www.palisadestahoe.com/plan-your-visit/deals-and-packages/lift-ticket-deals",
+          "type": "tickets",
+          "status": "fetched"
+        }
+      ],
+      "links": {
+        "stats": [
+          {
+            "url": "https://www.palisadestahoe.com/footer/mountain-statistics",
+            "label": "Mountain Statistics",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.palisadestahoe.com/"
+          },
+          {
+            "url": "https://www.palisadestahoe.com/mountain-information",
+            "label": "Mountain Information",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.palisadestahoe.com/"
+          },
+          {
+            "url": "https://www.palisadestahoe.com/mountain-information/hours-of-operation",
+            "label": "Hours of Operation",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.palisadestahoe.com/"
+          },
+          {
+            "url": "https://www.palisadestahoe.com/mountain-information/mountain-report",
+            "label": "Mountain Report",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.palisadestahoe.com/"
+          },
+          {
+            "url": "https://www.palisadestahoe.com/mountain-information/mountain-report#lift-and-trail-status",
+            "label": "",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.palisadestahoe.com/mountain-information/trail-maps"
+          },
+          {
+            "url": "https://www.palisadestahoe.com/mountain-information/parking-and-road-conditions",
+            "label": "Parking & Road Conditions",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.palisadestahoe.com/"
+          }
+        ],
+        "map": [
+          {
+            "url": "https://www.palisadestahoe.com/-/media/palisades-tahoe/pdfs/trail-maps/2324-the-village-at-palisades-tahoe-directory.pdf?rev=43506d506d7e49babb8d266fda2de29f",
+            "label": "View Village Directory",
+            "score": 8,
+            "format": "pdf",
+            "discoveredOn": "https://www.palisadestahoe.com/mountain-information/trail-maps"
+          },
+          {
+            "url": "https://www.palisadestahoe.com/-/media/palisades-tahoe/pdfs/trail-maps/alpine-back-side-trail.pdf?rev=605e0041d6af471eb74b96978e3b8b46",
+            "label": "Download Alpine Back Side Trail Map",
+            "score": 8,
+            "format": "pdf",
+            "discoveredOn": "https://www.palisadestahoe.com/mountain-information/trail-maps"
+          },
+          {
+            "url": "https://www.palisadestahoe.com/-/media/palisades-tahoe/pdfs/trail-maps/alpine-front-side-trail.pdf?rev=d16a1e2f47a24af8991e4924d5f4f7d2",
+            "label": "Download Alpine Front Side Trail Map",
+            "score": 8,
+            "format": "pdf",
+            "discoveredOn": "https://www.palisadestahoe.com/mountain-information/trail-maps"
+          },
+          {
+            "url": "https://www.palisadestahoe.com/-/media/palisades-tahoe/pdfs/trail-maps/palisadesmaintrailmap.pdf?rev=4a11b9e6cc8848bc8fa504fd1ff12139",
+            "label": "Download Palisades Trail Map",
+            "score": 8,
+            "format": "pdf",
+            "discoveredOn": "https://www.palisadestahoe.com/mountain-information/trail-maps"
+          },
+          {
+            "url": "https://www.palisadestahoe.com/mountain-information/trail-maps",
+            "label": "Trail Maps",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.palisadestahoe.com/"
+          }
+        ],
+        "tickets": [
+          {
+            "url": "https://www.palisadestahoe.com/plan-your-visit/deals-and-packages/lift-ticket-deals",
+            "label": "Winter Lift Tickets",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.palisadestahoe.com/"
+          },
+          {
+            "url": "https://www.palisadestahoe.com/plan-your-visit/lift-tickets-season-pass",
+            "label": "Tickets & Passes",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.palisadestahoe.com/"
+          }
+        ]
+      },
+      "statisticCandidates": [
+        {
+          "metric": "acres",
+          "value": 6000,
+          "unit": "acres",
+          "sourceUrl": "https://www.palisadestahoe.com/",
+          "evidence": "acks are the smartest way to unlock flexible access to 6,000 acres of legendary terrain. | Get This Deal | | image-with-t",
+          "status": "needs-human-verification",
+          "method": "html-pattern"
+        },
+        {
+          "metric": "acres",
+          "value": 3600,
+          "unit": "acres",
+          "sourceUrl": "https://www.palisadestahoe.com/footer/mountain-statistics",
+          "evidence": "Run Mountain Run, 3.2 miles or 5.15km Mountain Acreage Skiable acres: 3,600 | Trails: 187 | Bowls: 16 | Lift System Total Number o",
+          "status": "needs-human-verification",
+          "method": "html-pattern"
+        },
+        {
+          "metric": "acres",
+          "value": 2400,
+          "unit": "acres",
+          "sourceUrl": "https://www.palisadestahoe.com/footer/mountain-statistics",
+          "evidence": "mediate | 25% Advanced | 10% Expert | Mountain Acreage Skiable Acres: 2,400 | Trails: 109 | Bowls: 7 | Lift Systems Total Number o",
+          "status": "needs-human-verification",
+          "method": "html-pattern"
+        },
+        {
+          "metric": "acres",
+          "value": 3600,
+          "unit": "acres",
+          "sourceUrl": "https://www.palisadestahoe.com/footer/mountain-statistics",
+          "evidence": " 24% Advanced | 9% Expert | Palisades Mountain Acreage Skiable acres: 3,600 | Trails: 187 | Bowls: 16 | Alpine Mountain Acreage Sk",
+          "status": "needs-human-verification",
+          "method": "html-pattern"
+        },
+        {
+          "metric": "acres",
+          "value": 2400,
+          "unit": "acres",
+          "sourceUrl": "https://www.palisadestahoe.com/footer/mountain-statistics",
+          "evidence": "00 | Trails: 187 | Bowls: 16 | Alpine Mountain Acreage Skiable Acres: 2,400 | Trails: 109 | Bowls: 7 | Palisades Tahoe Mountain Ac",
+          "status": "needs-human-verification",
+          "method": "html-pattern"
+        },
+        {
+          "metric": "acres",
+          "value": 6000,
+          "unit": "acres",
+          "sourceUrl": "https://www.palisadestahoe.com/footer/mountain-statistics",
+          "evidence": "ils: 109 | Bowls: 7 | Palisades Tahoe Mountain Acreage Skiable Acres: 6,000 | Trails: 288 | Bowls: 23 | Longest Run: Mountain Run,",
+          "status": "needs-human-verification",
+          "method": "html-pattern"
+        },
+        {
+          "metric": "lifts",
+          "value": 26,
+          "unit": "count",
+          "sourceUrl": "https://www.palisadestahoe.com/footer/mountain-statistics",
+          "evidence": " Trails: 187 | Bowls: 16 | Lift System Total Number of Lifts: 26 | Tram: 1 (110-person tram) | Funitel: 1 (28-person go",
+          "status": "needs-human-verification",
+          "method": "html-pattern"
+        },
+        {
+          "metric": "lifts",
+          "value": 2,
+          "unit": "count",
+          "sourceUrl": "https://www.palisadestahoe.com/footer/mountain-statistics",
+          "evidence": "uad: 1 | Triple Chairs: 9 | Double Chairs: 3 | Surface Lifts: 2 | Uphill Capacity 53,500 people per hour | Terrain Par",
+          "status": "needs-human-verification",
+          "method": "html-pattern"
+        },
+        {
+          "metric": "lifts",
+          "value": 13,
+          "unit": "count",
+          "sourceUrl": "https://www.palisadestahoe.com/footer/mountain-statistics",
+          "evidence": " Trails: 109 | Bowls: 7 | Lift Systems Total Number of Lifts: 13 | Gondola: 1 | High-Speed Six Pack: 1 | Express Quad: ",
+          "status": "needs-human-verification",
+          "method": "html-pattern"
+        },
+        {
+          "metric": "lifts",
+          "value": 1,
+          "unit": "count",
+          "sourceUrl": "https://www.palisadestahoe.com/footer/mountain-statistics",
+          "evidence": "uad: 3 | Triple Chairs: 2 | Double Chairs: 5 | Surface Lifts: 1 | Uphill Capacity 19,400 people per hour | Climate (av",
+          "status": "needs-human-verification",
+          "method": "html-pattern"
+        },
+        {
+          "metric": "lifts",
+          "value": 39,
+          "unit": "count",
+          "sourceUrl": "https://www.palisadestahoe.com/footer/mountain-statistics",
+          "evidence": "Run, 3.2 miles / 5.15 km | Lift System Total Number of Lifts: 39 | Tram: 1 (110-person tram) | Funitel: 1 (28-person go",
+          "status": "needs-human-verification",
+          "method": "html-pattern"
+        },
+        {
+          "metric": "trails",
+          "value": 187,
+          "unit": "count",
+          "sourceUrl": "https://www.palisadestahoe.com/footer/mountain-statistics",
+          "evidence": "iles or 5.15km Mountain Acreage Skiable acres: 3,600 | Trails: 187 | Bowls: 16 | Lift System Total Number of Lifts: 26 | ",
+          "status": "needs-human-verification",
+          "method": "html-pattern"
+        },
+        {
+          "metric": "trails",
+          "value": 109,
+          "unit": "count",
+          "sourceUrl": "https://www.palisadestahoe.com/footer/mountain-statistics",
+          "evidence": "| 10% Expert | Mountain Acreage Skiable Acres: 2,400 | Trails: 109 | Bowls: 7 | Lift Systems Total Number of Lifts: 13 | ",
+          "status": "needs-human-verification",
+          "method": "html-pattern"
+        },
+        {
+          "metric": "trails",
+          "value": 187,
+          "unit": "count",
+          "sourceUrl": "https://www.palisadestahoe.com/footer/mountain-statistics",
+          "evidence": "rt | Palisades Mountain Acreage Skiable acres: 3,600 | Trails: 187 | Bowls: 16 | Alpine Mountain Acreage Skiable Acres: 2",
+          "status": "needs-human-verification",
+          "method": "html-pattern"
+        },
+        {
+          "metric": "trails",
+          "value": 109,
+          "unit": "count",
+          "sourceUrl": "https://www.palisadestahoe.com/footer/mountain-statistics",
+          "evidence": "s: 16 | Alpine Mountain Acreage Skiable Acres: 2,400 | Trails: 109 | Bowls: 7 | Palisades Tahoe Mountain Acreage Skiable ",
+          "status": "needs-human-verification",
+          "method": "html-pattern"
+        },
+        {
+          "metric": "trails",
+          "value": 288,
+          "unit": "count",
+          "sourceUrl": "https://www.palisadestahoe.com/footer/mountain-statistics",
+          "evidence": "alisades Tahoe Mountain Acreage Skiable Acres: 6,000 | Trails: 288 | Bowls: 23 | Longest Run: Mountain Run, 3.2 miles / 5",
+          "status": "needs-human-verification",
+          "method": "html-pattern"
+        }
+      ],
+      "errors": [],
+      "notes": [],
+      "readyForPublish": false
+    },
+    {
+      "id": "osd-openstreetmap-way-460246666",
+      "name": "Winter Park Resort",
+      "region": "Colorado",
+      "regionCode": "CO",
+      "country": "United States",
+      "sourceWebsite": "https://www.winterparkresort.com/",
+      "websiteProvenance": "OpenSkiData candidate; not independently confirmed as official",
+      "mappedLiftCount": 25,
+      "siteHost": "www.winterparkresort.com",
+      "status": "researched",
+      "pages": [
+        {
+          "url": "https://www.winterparkresort.com/",
+          "type": "homepage",
+          "status": "fetched"
+        },
+        {
+          "url": "https://www.winterparkresort.com/the-mountain/mountain-information",
+          "type": "stats",
+          "status": "fetched"
+        },
+        {
+          "url": "https://www.winterparkresort.com/plan-your-trip/lift-tickets-ski-pass",
+          "type": "tickets",
+          "status": "fetched"
+        }
+      ],
+      "links": {
+        "stats": [
+          {
+            "url": "https://www.winterparkresort.com/the-mountain/mountain-information",
+            "label": "Mountain Information & Maps",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.winterparkresort.com/"
+          },
+          {
+            "url": "https://www.winterparkresort.com/the-mountain/mountain-information/history",
+            "label": "",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.winterparkresort.com/the-mountain/mountain-information"
+          },
+          {
+            "url": "https://www.winterparkresort.com/the-mountain/mountain-information/maps",
+            "label": "",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.winterparkresort.com/the-mountain/mountain-information"
+          },
+          {
+            "url": "https://www.winterparkresort.com/the-mountain/mountain-information/mary-jane",
+            "label": "Mary Jane Mountain",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.winterparkresort.com/"
+          },
+          {
+            "url": "https://www.winterparkresort.com/the-mountain/mountain-information/statistics",
+            "label": "",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.winterparkresort.com/the-mountain/mountain-information"
+          },
+          {
+            "url": "https://www.winterparkresort.com/the-mountain/mountain-information/winter-grooming-map",
+            "label": "",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.winterparkresort.com/the-mountain/mountain-information"
+          }
+        ],
+        "map": [],
+        "tickets": [
+          {
+            "url": "https://www.winterparkresort.com/plan-your-trip/lift-tickets-ski-pass",
+            "label": "Winter Tickets & Passes",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.winterparkresort.com/"
+          }
+        ]
+      },
+      "statisticCandidates": [
+        {
+          "metric": "acres",
+          "value": 3095,
+          "unit": "acres",
+          "sourceUrl": "https://www.winterparkresort.com/",
+          "evidence": "tion. As Colorado’s Playground, Winter Park Resort has 3,095 acres of varied terrain and a genuine, come-as-you-are attit",
+          "status": "needs-human-verification",
+          "method": "html-pattern"
+        }
+      ],
+      "errors": [],
+      "notes": [
+        "Winter trail map not discovered from links."
+      ],
+      "readyForPublish": false
+    },
+    {
+      "id": "osd-wikidata-q7235991",
+      "name": "Powder Ridge Ski Area",
+      "region": "Connecticut",
+      "regionCode": "CT",
+      "country": "United States",
+      "sourceWebsite": "https://powderridgepark.com/",
+      "websiteProvenance": "OpenSkiData candidate; not independently confirmed as official",
+      "mappedLiftCount": 8,
+      "siteHost": "powderridgepark.com",
+      "status": "researched",
+      "pages": [
+        {
+          "url": "https://powderridgepark.com/",
+          "type": "homepage",
+          "status": "fetched"
+        },
+        {
+          "url": "https://powderridgepark.com/accommodations/",
+          "type": "stats",
+          "status": "fetched"
+        },
+        {
+          "url": "https://powderridgepark.com/trail-map/",
+          "type": "map",
+          "status": "fetched"
+        }
+      ],
+      "links": {
+        "stats": [
+          {
+            "url": "https://powderridgepark.com/accommodations/",
+            "label": "Mountainside Gazebos",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://powderridgepark.com/"
+          },
+          {
+            "url": "https://powderridgepark.com/event/mountainside-holiday-market-3-3/",
+            "label": "Winter Festival Holiday Market",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://powderridgepark.com/"
+          },
+          {
+            "url": "https://powderridgepark.com/event/mountainside-holiday-market-3/2026-11-28/",
+            "label": "Winter Festival Holiday Market",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://powderridgepark.com/"
+          },
+          {
+            "url": "https://powderridgepark.com/event/mountainside-holiday-market-3/2026-12-05/",
+            "label": "Winter Festival Holiday Market",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://powderridgepark.com/"
+          },
+          {
+            "url": "https://powderridgepark.com/mountain-biking-faqs/",
+            "label": "Mountain Biking FAQs",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://powderridgepark.com/"
+          },
+          {
+            "url": "https://powderridgepark.com/mountainside-markets/",
+            "label": "Mountainside Markets",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://powderridgepark.com/"
+          }
+        ],
+        "map": [
+          {
+            "url": "https://powderridgepark.com/trail-map/",
+            "label": "Winter Trail Map",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://powderridgepark.com/"
+          }
+        ],
+        "tickets": []
+      },
+      "statisticCandidates": [
+        {
+          "metric": "acres",
+          "value": 255,
+          "unit": "acres",
+          "sourceUrl": "https://powderridgepark.com/",
+          "evidence": "g under new ownership in 2014. | The mountain features 255 acres, a 417-foot vertical drop, 19 ski and snowboard trails",
+          "status": "needs-human-verification",
+          "method": "html-pattern"
+        },
+        {
+          "metric": "acres",
+          "value": 80,
+          "unit": "acres",
+          "sourceUrl": "https://powderridgepark.com/",
+          "evidence": "ls (42% beginner, 37% intermediate, 21% advanced), and 80 skiable acres with snowmaking on 68 of them. Night skiing is availab",
+          "status": "needs-human-verification",
+          "method": "html-pattern"
+        },
+        {
+          "metric": "acres",
+          "value": 40,
+          "unit": "acres",
+          "sourceUrl": "https://powderridgepark.com/",
+          "evidence": "snowmaking on 68 of them. Night skiing is available on 40 acres, served by 6 lifts. Powder Ridge is the only resort in",
+          "status": "needs-human-verification",
+          "method": "html-pattern"
+        }
+      ],
+      "errors": [],
+      "notes": [
+        "Lift ticket page not discovered from links."
+      ],
+      "readyForPublish": false
+    },
+    {
+      "id": "osd-openstreetmap-way-834317212",
+      "name": "Sundown Mountain Resort",
+      "region": "Iowa",
+      "regionCode": "IA",
+      "country": "United States",
+      "sourceWebsite": "https://sundownmtn.com/",
+      "websiteProvenance": "OpenSkiData candidate; not independently confirmed as official",
+      "mappedLiftCount": 6,
+      "siteHost": "sundownmtn.com",
+      "status": "researched",
+      "pages": [
+        {
+          "url": "https://sundownmtn.com/",
+          "type": "homepage",
+          "status": "fetched"
+        },
+        {
+          "url": "https://sundownmtn.com/adaptive-skiing-at-sundown-mountain/",
+          "type": "stats",
+          "status": "fetched"
+        },
+        {
+          "url": "https://sundownmtn.com/the-mountain/snow-report-trail-map/",
+          "type": "map",
+          "status": "fetched"
+        },
+        {
+          "url": "https://sundownmtn.com/hours-pricing/",
+          "type": "tickets",
+          "status": "fetched"
+        }
+      ],
+      "links": {
+        "stats": [
+          {
+            "url": "https://sundownmtn.com/adaptive-skiing-at-sundown-mountain/",
+            "label": "Adaptive Lessons",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://sundownmtn.com/"
+          },
+          {
+            "url": "https://sundownmtn.com/live-webcams-at-sundown-mountain-resort/",
+            "label": "Webcams",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://sundownmtn.com/"
+          },
+          {
+            "url": "https://sundownmtn.com/mollys-mountaintop-coffee/",
+            "label": "Molly’s Mountaintop Coffee",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://sundownmtn.com/"
+          },
+          {
+            "url": "https://sundownmtn.com/mountain-center/",
+            "label": "Mountain Center",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://sundownmtn.com/"
+          },
+          {
+            "url": "https://sundownmtn.com/ski-patrol-at-sundown-mountain-resort/",
+            "label": "Sundown Ski Patrol",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://sundownmtn.com/"
+          },
+          {
+            "url": "https://sundownmtn.com/sundown-mountain-junior-race-team/",
+            "label": "Sundown Junior Race Team",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://sundownmtn.com/"
+          }
+        ],
+        "map": [
+          {
+            "url": "https://sundownmtn.com/the-mountain/snow-report-trail-map/",
+            "label": "Snow Report",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://sundownmtn.com/"
+          }
+        ],
+        "tickets": [
+          {
+            "url": "https://sundownmtn.com/hours-pricing/",
+            "label": "Lift Tickets + Rental Rates",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://sundownmtn.com/"
+          }
+        ]
+      },
+      "statisticCandidates": [
+        {
+          "metric": "vertical",
+          "value": 475,
+          "unit": "feet",
+          "sourceUrl": "https://sundownmtn.com/the-mountain/snow-report-trail-map/",
+          "evidence": " | N/A | | Conditions: | N/A | | Submitted By: | | | | Vertical Drop 475 ft | 21 Runs | 2 Terrain Parks | 4 Lifts | 2 Conveyor Car",
+          "status": "needs-human-verification",
+          "method": "html-pattern"
+        }
+      ],
+      "errors": [],
+      "notes": [],
+      "readyForPublish": false
+    },
+    {
+      "id": "osd-openstreetmap-way-1244099443",
+      "name": "Sun Valley - Bald Mountain",
+      "region": "Idaho",
+      "regionCode": "ID",
+      "country": "United States",
+      "sourceWebsite": "https://www.sunvalley.com/",
+      "websiteProvenance": "OpenSkiData candidate; not independently confirmed as official",
+      "mappedLiftCount": 12,
+      "siteHost": "www.sunvalley.com",
+      "status": "researched",
+      "pages": [
+        {
+          "url": "https://www.sunvalley.com/",
+          "type": "homepage",
+          "status": "fetched"
+        },
+        {
+          "url": "https://www.sunvalley.com/dining/carols-dollar-mountain-lodge/",
+          "type": "stats",
+          "status": "fetched"
+        },
+        {
+          "url": "https://www.sunvalley.com/the-mountain/maps-guides",
+          "type": "map",
+          "status": "fetched"
+        },
+        {
+          "url": "https://www.sunvalley.com/Lodging/specials-packages/Book-Early-Offer",
+          "type": "tickets",
+          "status": "fetched"
+        }
+      ],
+      "links": {
+        "stats": [
+          {
+            "url": "https://www.sunvalley.com/Dining/Carols-Dollar-Mountain-Lodge",
+            "label": "Carol&#x2019;s Dollar Mountain Lodge",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.sunvalley.com/dining/carols-dollar-mountain-lodge/"
+          },
+          {
+            "url": "https://www.sunvalley.com/dining/carols-dollar-mountain-lodge/",
+            "label": "Dollar Mountain Lodge",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.sunvalley.com/"
+          },
+          {
+            "url": "https://www.sunvalley.com/Dining/River-Run-Day-Lodge",
+            "label": "| | | River Run Day Lodge | Enjoy a range of hearty favorites and après-ski libations at the base of Bald Mountain. | En",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.sunvalley.com/dining/carols-dollar-mountain-lodge/"
+          },
+          {
+            "url": "https://www.sunvalley.com/Groups-Weddings/Weddings",
+            "label": "| | | Weddings | A lifetime of memories begins right here. With sweeping views of the majestic Sawtooth Mountains and th",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.sunvalley.com/"
+          },
+          {
+            "url": "https://www.sunvalley.com/Lessons",
+            "label": "| | | Lessons | Our talented instructors are committed to providing the best possible on-mountain experience. Advance yo",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.sunvalley.com/"
+          },
+          {
+            "url": "https://www.sunvalley.com/lodging/sun-valley-lodge/?season=winter",
+            "label": "| | | Sun Valley Lodge | Perfect For: Couples & Small Families | History meets mountain modern, full-service luxury. Loc",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.sunvalley.com/Lodging/specials-packages/Book-Early-Offer"
+          }
+        ],
+        "map": [
+          {
+            "url": "https://www.sunvalley.com/the-mountain/maps-guides",
+            "label": "Maps & Guides",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.sunvalley.com/"
+          },
+          {
+            "url": "https://www.sunvalley.com/The-Mountain/Maps-Guides",
+            "label": "Maps & Guides",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.sunvalley.com/the-mountain/maps-guides"
+          }
+        ],
+        "tickets": [
+          {
+            "url": "https://www.sunvalley.com/Lodging/specials-packages/Book-Early-Offer",
+            "label": "| | | Winter Savings | Save 15% On Lodging & Unlock $129 Lift Tickets | Save 15% on winter lodging and unlock $129 adult",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.sunvalley.com/"
+          },
+          {
+            "url": "https://www.sunvalley.com/tickets-passes/?season=winter",
+            "label": "Winter Tickets & Passes",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.sunvalley.com/"
+          },
+          {
+            "url": "https://www.sunvalley.com/tickets-passes/lift-tickets",
+            "label": "Lift Tickets",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.sunvalley.com/"
+          },
+          {
+            "url": "https://www.sunvalley.com/Tickets-Passes/Lift-Tickets",
+            "label": "| | | Lift Tickets | Explore world-renowned Bald Mountain, featuring 3,400 vertical feet of diverse terrain and consiste",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.sunvalley.com/"
+          },
+          {
+            "url": "https://www.sunvalley.com/tickets-passes",
+            "label": "Tickets & Passes",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.sunvalley.com/"
+          },
+          {
+            "url": "https://www.sunvalley.com/tickets-passes/golf-passes",
+            "label": "Season Passes",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.sunvalley.com/"
+          }
+        ]
+      },
+      "statisticCandidates": [
+        {
+          "metric": "acres",
+          "value": 2500,
+          "unit": "acres",
+          "sourceUrl": "https://www.sunvalley.com/the-mountain/maps-guides",
+          "evidence": "maps for the Mountain and Village areas. Covering over 2,500 acres, these maps will guide you through diverse terrains an",
+          "status": "needs-human-verification",
+          "method": "html-pattern"
+        }
+      ],
+      "errors": [],
+      "notes": [],
+      "readyForPublish": false
+    },
+    {
+      "id": "osd-openstreetmap-way-867570853",
+      "name": "Chestnut Mountain Resort",
+      "region": "Illinois",
+      "regionCode": "IL",
+      "country": "United States",
+      "sourceWebsite": "https://www.chestnutmtn.com/",
+      "websiteProvenance": "OpenSkiData candidate; not independently confirmed as official",
+      "mappedLiftCount": 8,
+      "siteHost": "www.chestnutmtn.com",
+      "status": "researched",
+      "pages": [
+        {
+          "url": "https://www.chestnutmtn.com/",
+          "type": "homepage",
+          "status": "fetched"
+        },
+        {
+          "url": "https://www.chestnutmtn.com/mountain-side-outfitters/",
+          "type": "stats",
+          "status": "fetched"
+        }
+      ],
+      "links": {
+        "stats": [
+          {
+            "url": "https://www.chestnutmtn.com/activity/farside-terrain-park/",
+            "label": "| Farside Terrain Park |",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.chestnutmtn.com/mountain-side-outfitters/"
+          },
+          {
+            "url": "https://www.chestnutmtn.com/mountain-side-outfitters/",
+            "label": "Mountainside Outfitters",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.chestnutmtn.com/"
+          }
+        ],
+        "map": [],
+        "tickets": []
+      },
+      "statisticCandidates": [],
+      "errors": [],
+      "notes": [
+        "No safe numeric pattern found; pages may use JavaScript or PDFs.",
+        "Winter trail map not discovered from links.",
+        "Lift ticket page not discovered from links."
+      ],
+      "readyForPublish": false
+    },
+    {
+      "id": "osd-wikidata-q7168022",
+      "name": "Perfect North Slopes",
+      "region": "Indiana",
+      "regionCode": "IN",
+      "country": "United States",
+      "sourceWebsite": "https://www.perfectnorth.com/",
+      "websiteProvenance": "OpenSkiData candidate; not independently confirmed as official",
+      "mappedLiftCount": 14,
+      "siteHost": "www.perfectnorth.com",
+      "status": "unavailable",
+      "pages": [],
+      "links": {
+        "stats": [],
+        "map": [],
+        "tickets": []
+      },
+      "statisticCandidates": [],
+      "errors": [
+        {
+          "url": "https://www.perfectnorth.com/",
+          "reason": "robots-http-301"
+        }
+      ],
+      "notes": [],
+      "readyForPublish": false
+    },
+    {
+      "id": "osd-openstreetmap-way-215697985",
+      "name": "Nashoba Valley Ski Area",
+      "region": "Massachusetts",
+      "regionCode": "MA",
+      "country": "United States",
+      "sourceWebsite": "https://www.skinashoba.com/",
+      "websiteProvenance": "OpenSkiData candidate; not independently confirmed as official",
+      "mappedLiftCount": 12,
+      "siteHost": "www.skinashoba.com",
+      "status": "unavailable",
+      "pages": [],
+      "links": {
+        "stats": [],
+        "map": [],
+        "tickets": []
+      },
+      "statisticCandidates": [],
+      "errors": [
+        {
+          "url": "https://www.skinashoba.com/",
+          "reason": "robots-http-301"
+        }
+      ],
+      "notes": [],
+      "readyForPublish": false
+    },
+    {
+      "id": "osd-openstreetmap-way-980981935",
+      "name": "Wisp Resort",
+      "region": "Maryland",
+      "regionCode": "MD",
+      "country": "United States",
+      "sourceWebsite": "https://www.wispresort.com/",
+      "websiteProvenance": "OpenSkiData candidate; not independently confirmed as official",
+      "mappedLiftCount": 12,
+      "siteHost": "www.wispresort.com",
+      "status": "researched",
+      "pages": [
+        {
+          "url": "https://www.wispresort.com/",
+          "type": "homepage",
+          "status": "fetched"
+        },
+        {
+          "url": "https://www.wispresort.com/activity/mountain-adventures/",
+          "type": "stats",
+          "status": "fetched"
+        },
+        {
+          "url": "https://www.wispresort.com/mountain-report-cams/",
+          "type": "map",
+          "status": "fetched"
+        },
+        {
+          "url": "https://www.wispresort.com/lift-tickets/",
+          "type": "tickets",
+          "status": "fetched"
+        }
+      ],
+      "links": {
+        "stats": [
+          {
+            "url": "https://www.wispresort.com/activity/mountain-adventures/",
+            "label": "Mountain Adventures | |",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.wispresort.com/"
+          },
+          {
+            "url": "https://www.wispresort.com/activity/mountain-adventures/#archery",
+            "label": "Archery",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.wispresort.com/"
+          },
+          {
+            "url": "https://www.wispresort.com/activity/mountain-adventures/#bear-paw-mini-golf",
+            "label": "Bear Paw Mini-Golf",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.wispresort.com/"
+          },
+          {
+            "url": "https://www.wispresort.com/activity/mountain-adventures/#disc-golf",
+            "label": "Disc Golf",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.wispresort.com/"
+          },
+          {
+            "url": "https://www.wispresort.com/activity/mountain-adventures/#gem-mining",
+            "label": "Gem Mining",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.wispresort.com/"
+          },
+          {
+            "url": "https://www.wispresort.com/activity/mountain-adventures/#high-5-pass",
+            "label": "High-5 Pass",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.wispresort.com/"
+          }
+        ],
+        "map": [
+          {
+            "url": "https://www.wispresort.com/mountain-report-cams/#trails",
+            "label": "Trail Maps",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.wispresort.com/"
+          }
+        ],
+        "tickets": [
+          {
+            "url": "https://www.wispresort.com/lift-tickets/",
+            "label": "Lift Tickets",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.wispresort.com/"
+          }
+        ]
+      },
+      "statisticCandidates": [],
+      "errors": [],
+      "notes": [
+        "No safe numeric pattern found; pages may use JavaScript or PDFs."
+      ],
+      "readyForPublish": false
+    },
+    {
+      "id": "osd-openstreetmap-relation-10817722",
+      "name": "Sunday River",
+      "region": "Maine",
+      "regionCode": "ME",
+      "country": "United States",
+      "sourceWebsite": "https://www.sundayriver.com/",
+      "websiteProvenance": "OpenSkiData candidate; not independently confirmed as official",
+      "mappedLiftCount": 20,
+      "siteHost": "www.sundayriver.com",
+      "status": "researched",
+      "pages": [
+        {
+          "url": "https://www.sundayriver.com/",
+          "type": "homepage",
+          "status": "fetched"
+        },
+        {
+          "url": "https://www.sundayriver.com/mountain-report",
+          "type": "stats",
+          "status": "fetched"
+        }
+      ],
+      "links": {
+        "stats": [
+          {
+            "url": "https://www.sundayriver.com/mountain-report",
+            "label": "Mountain Report",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.sundayriver.com/"
+          }
+        ],
+        "map": [
+          {
+            "url": "https://www.sundayriver.com/resort-maps",
+            "label": "Trail Maps",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.sundayriver.com/mountain-report"
+          }
+        ],
+        "tickets": []
+      },
+      "statisticCandidates": [],
+      "errors": [],
+      "notes": [
+        "No safe numeric pattern found; pages may use JavaScript or PDFs.",
+        "Lift ticket page not discovered from links."
+      ],
+      "readyForPublish": false
+    },
+    {
+      "id": "osd-openstreetmap-way-278923089",
+      "name": "Mt. Holly Ski & Snowboard Resort",
+      "region": "Michigan",
+      "regionCode": "MI",
+      "country": "United States",
+      "sourceWebsite": "https://www.skimtholly.com/",
+      "websiteProvenance": "OpenSkiData candidate; not independently confirmed as official",
+      "mappedLiftCount": 15,
+      "siteHost": "www.skimtholly.com",
+      "status": "unavailable",
+      "pages": [],
+      "links": {
+        "stats": [],
+        "map": [],
+        "tickets": []
+      },
+      "statisticCandidates": [],
+      "errors": [
+        {
+          "url": "https://www.skimtholly.com/",
+          "reason": "robots-http-301"
+        }
+      ],
+      "notes": [],
+      "readyForPublish": false
+    },
+    {
+      "id": "osd-openstreetmap-way-543987749",
+      "name": "Afton Alps",
+      "region": "Minnesota",
+      "regionCode": "MN",
+      "country": "United States",
+      "sourceWebsite": "https://www.aftonalps.com/",
+      "websiteProvenance": "OpenSkiData candidate; not independently confirmed as official",
+      "mappedLiftCount": 20,
+      "siteHost": "www.aftonalps.com",
+      "status": "researched",
+      "pages": [
+        {
+          "url": "https://www.aftonalps.com/",
+          "type": "homepage",
+          "status": "fetched"
+        },
+        {
+          "url": "https://www.aftonalps.com/the-mountain/about-the-mountain/trail-map.aspx",
+          "type": "map",
+          "status": "fetched"
+        }
+      ],
+      "links": {
+        "stats": [
+          {
+            "url": "https://www.aftonalps.com/search/search-results.aspx?search=About%20the%20Mountain",
+            "label": "About the Mountain",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.aftonalps.com/"
+          },
+          {
+            "url": "https://www.aftonalps.com/the-mountain/about-the-mountain/%22%3C%=",
+            "label": "\" data-component-element=\"hdrWeatherHeader_MountainCams_Link\" data-track=\"click\" title=\" \">",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.aftonalps.com/the-mountain/about-the-mountain/trail-map.aspx"
+          },
+          {
+            "url": "https://www.aftonalps.com/the-mountain/about-the-mountain/college-nights.aspx",
+            "label": "College Nights",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.aftonalps.com/"
+          },
+          {
+            "url": "https://www.aftonalps.com/the-mountain/about-the-mountain/meadows-beginner-area.aspx",
+            "label": "Meadows Beginner Area",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.aftonalps.com/"
+          },
+          {
+            "url": "https://www.aftonalps.com/the-mountain/about-the-mountain/mountain-info.aspx",
+            "label": "Mountain Information",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.aftonalps.com/"
+          },
+          {
+            "url": "https://www.aftonalps.com/the-mountain/about-the-mountain/mountain-safety.aspx",
+            "label": "Mountain Safety",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.aftonalps.com/"
+          }
+        ],
+        "map": [
+          {
+            "url": "https://www.aftonalps.com/-/aemasset/sitecore/afton-alps/maps/winter-2025-2026/20251122_AA_winter-trail_map_001.pdf",
+            "label": "| Winter Trail Map | Winter Trail Map | |",
+            "score": 12,
+            "format": "pdf",
+            "discoveredOn": "https://www.aftonalps.com/the-mountain/about-the-mountain/trail-map.aspx"
+          },
+          {
+            "url": "https://www.aftonalps.com/the-mountain/about-the-mountain/trail-map.aspx",
+            "label": "Trail Map",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.aftonalps.com/"
+          }
+        ],
+        "tickets": [
+          {
+            "url": "https://www.aftonalps.com/plan-your-trip/lift-access/tickets.aspx",
+            "label": "Winter Lift Tickets",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.aftonalps.com/"
+          },
+          {
+            "url": "https://www.aftonalps.com/the-mountain/about-the-mountain/night-skiing-and-riding.aspx",
+            "label": "Night Ski Lift Tickets",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.aftonalps.com/"
+          },
+          {
+            "url": "https://www.aftonalps.com/plan-your-trip/lift-access/discover-passes.aspx",
+            "label": "Discover Passes",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.aftonalps.com/"
+          }
+        ]
+      },
+      "statisticCandidates": [
+        {
+          "metric": "acres",
+          "value": 300,
+          "unit": "acres",
+          "sourceUrl": "https://www.aftonalps.com/the-mountain/about-the-mountain/trail-map.aspx",
+          "evidence": "Alps | Trail and Resort Maps | You deserve more! Enjoy 300 acres of pure winter fun in the St. Croix River Valley. Pape",
+          "status": "needs-human-verification",
+          "method": "html-pattern"
+        }
+      ],
+      "errors": [
+        {
+          "url": "https://www.aftonalps.com/search/search-results.aspx?search=About%20the%20Mountain",
+          "reason": "robots-disallow"
+        },
+        {
+          "url": "https://www.aftonalps.com/plan-your-trip/lift-access/tickets.aspx",
+          "reason": "cross-site-redirect-not-followed"
+        }
+      ],
+      "notes": [],
+      "readyForPublish": false
+    },
+    {
+      "id": "osd-openstreetmap-way-990531013",
+      "name": "Hidden Valley",
+      "region": "Missouri",
+      "regionCode": "MO",
+      "country": "United States",
+      "sourceWebsite": "https://www.hiddenvalleyski.com/",
+      "websiteProvenance": "OpenSkiData candidate; not independently confirmed as official",
+      "mappedLiftCount": 8,
+      "siteHost": "www.hiddenvalleyski.com",
+      "status": "researched",
+      "pages": [
+        {
+          "url": "https://www.hiddenvalleyski.com/",
+          "type": "homepage",
+          "status": "fetched"
+        },
+        {
+          "url": "https://www.hiddenvalleyski.com/the-mountain/about-the-mountain/trail-maps.aspx",
+          "type": "map",
+          "status": "fetched"
+        }
+      ],
+      "links": {
+        "stats": [
+          {
+            "url": "https://www.hiddenvalleyski.com/search/search-results.aspx?search=About%20the%20Mountain",
+            "label": "About the Mountain",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.hiddenvalleyski.com/"
+          },
+          {
+            "url": "https://www.hiddenvalleyski.com/the-mountain/about-the-mountain/%22%3C%=",
+            "label": "\" data-component-element=\"hdrWeatherHeader_MountainCams_Link\" data-track=\"click\" title=\" \">",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.hiddenvalleyski.com/the-mountain/about-the-mountain/trail-maps.aspx"
+          },
+          {
+            "url": "https://www.hiddenvalleyski.com/the-mountain/about-the-mountain/mountain-info.aspx",
+            "label": "Mountain Info",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.hiddenvalleyski.com/"
+          },
+          {
+            "url": "https://www.hiddenvalleyski.com/the-mountain/about-the-mountain/mountain-safety.aspx",
+            "label": "Mountain Safety",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.hiddenvalleyski.com/"
+          },
+          {
+            "url": "https://www.hiddenvalleyski.com/the-mountain/about-the-mountain/night-skiing-and-riding.aspx",
+            "label": "Dew After Dark Night Ski",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.hiddenvalleyski.com/"
+          },
+          {
+            "url": "https://www.hiddenvalleyski.com/the-mountain/about-the-mountain/ski-the-week.aspx",
+            "label": "Ski the Week",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.hiddenvalleyski.com/"
+          }
+        ],
+        "map": [
+          {
+            "url": "https://www.hiddenvalleyski.com/-/aemasset/sitecore/hidden-valley/maps/winter-2025-2026/20251121_HI_winter-trail_map_001.pdf",
+            "label": "| Winter Trail Map | View Map | |",
+            "score": 12,
+            "format": "pdf",
+            "discoveredOn": "https://www.hiddenvalleyski.com/the-mountain/about-the-mountain/trail-maps.aspx"
+          },
+          {
+            "url": "https://www.hiddenvalleyski.com/the-mountain/about-the-mountain/trail-maps.aspx",
+            "label": "Trail Maps",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.hiddenvalleyski.com/"
+          }
+        ],
+        "tickets": [
+          {
+            "url": "https://www.hiddenvalleyski.com/plan-your-trip/lift-access/tickets.aspx",
+            "label": "Winter Lift Tickets",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.hiddenvalleyski.com/"
+          },
+          {
+            "url": "https://www.hiddenvalleyski.com/the-mountain/about-the-mountain/night-skiing-and-riding.aspx",
+            "label": "Night Ski Lift Tickets",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.hiddenvalleyski.com/"
+          },
+          {
+            "url": "https://www.hiddenvalleyski.com/plan-your-trip/lift-access/discover-passes.aspx",
+            "label": "Discover Passes",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.hiddenvalleyski.com/"
+          }
+        ]
+      },
+      "statisticCandidates": [],
+      "errors": [
+        {
+          "url": "https://www.hiddenvalleyski.com/search/search-results.aspx?search=About%20the%20Mountain",
+          "reason": "robots-disallow"
+        },
+        {
+          "url": "https://www.hiddenvalleyski.com/plan-your-trip/lift-access/tickets.aspx",
+          "reason": "cross-site-redirect-not-followed"
+        }
+      ],
+      "notes": [
+        "No safe numeric pattern found; pages may use JavaScript or PDFs."
+      ],
+      "readyForPublish": false
+    },
+    {
+      "id": "osd-openstreetmap-relation-18653810",
+      "name": "Yellowstone Club",
+      "region": "Montana",
+      "regionCode": "MT",
+      "country": "United States",
+      "sourceWebsite": "https://yellowstoneclub.com/",
+      "websiteProvenance": "OpenSkiData candidate; not independently confirmed as official",
+      "mappedLiftCount": 17,
+      "siteHost": "yellowstoneclub.com",
+      "status": "researched",
+      "pages": [
+        {
+          "url": "https://yellowstoneclub.com/",
+          "type": "homepage",
+          "status": "fetched"
+        }
+      ],
+      "links": {
+        "stats": [],
+        "map": [],
+        "tickets": []
+      },
+      "statisticCandidates": [
+        {
+          "metric": "acres",
+          "value": 15200,
+          "unit": "acres",
+          "sourceUrl": "https://yellowstoneclub.com/",
+          "evidence": "amed peaks in Big Sky, Montana, Yellowstone Club spans 15,200 acres of Private Powder® skiing, golf, and luxury amenities.",
+          "status": "needs-human-verification",
+          "method": "html-pattern"
+        }
+      ],
+      "errors": [],
+      "notes": [
+        "Winter trail map not discovered from links.",
+        "Lift ticket page not discovered from links."
+      ],
+      "readyForPublish": false
+    },
+    {
+      "id": "osd-openstreetmap-relation-5886546",
+      "name": "Beech Mountain Resort",
+      "region": "North Carolina",
+      "regionCode": "NC",
+      "country": "United States",
+      "sourceWebsite": "https://www.beechmountainresort.com/",
+      "websiteProvenance": "OpenSkiData candidate; not independently confirmed as official",
+      "mappedLiftCount": 8,
+      "siteHost": "www.beechmountainresort.com",
+      "status": "researched",
+      "pages": [
+        {
+          "url": "https://www.beechmountainresort.com/",
+          "type": "homepage",
+          "status": "fetched"
+        },
+        {
+          "url": "https://www.beechmountainresort.com/mountain/mountain-stats/",
+          "type": "stats",
+          "status": "fetched"
+        },
+        {
+          "url": "https://www.beechmountainresort.com/mountain/winter-trail-map/",
+          "type": "map",
+          "status": "fetched"
+        }
+      ],
+      "links": {
+        "stats": [
+          {
+            "url": "https://www.beechmountainresort.com/mountain/mountain-stats/",
+            "label": "Mountain Stats",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.beechmountainresort.com/"
+          },
+          {
+            "url": "https://www.beechmountainresort.com/",
+            "label": "",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.beechmountainresort.com/"
+          },
+          {
+            "url": "https://www.beechmountainresort.com/beech-mountain-resort-host-program/",
+            "label": "Volunteer",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.beechmountainresort.com/"
+          },
+          {
+            "url": "https://www.beechmountainresort.com/blog/",
+            "label": "News",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.beechmountainresort.com/"
+          },
+          {
+            "url": "https://www.beechmountainresort.com/brewery/",
+            "label": "",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.beechmountainresort.com/"
+          },
+          {
+            "url": "https://www.beechmountainresort.com/culture/",
+            "label": "Culture",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.beechmountainresort.com/"
+          }
+        ],
+        "map": [
+          {
+            "url": "https://www.beechmountainresort.com/mountain/winter-trail-map/",
+            "label": "Conditions & Maps",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.beechmountainresort.com/"
+          },
+          {
+            "url": "https://www.beechmountainresort.com/wp-content/uploads/2025/10/Beech_winter-25-26-Final.pdf",
+            "label": "View Full Size Trail Map",
+            "score": 8,
+            "format": "pdf",
+            "discoveredOn": "https://www.beechmountainresort.com/mountain/winter-trail-map/"
+          }
+        ],
+        "tickets": []
+      },
+      "statisticCandidates": [
+        {
+          "metric": "acres",
+          "value": 95,
+          "unit": "acres",
+          "sourceUrl": "https://www.beechmountainresort.com/mountain/mountain-stats/",
+          "evidence": "| Total trails | | | | | | | STATISTICS | | Acreage: | 95 skiable acres | | Peak Elevation: | 5,506 feet | | Base Elevation: |",
+          "status": "needs-human-verification",
+          "method": "html-pattern"
+        }
+      ],
+      "errors": [],
+      "notes": [
+        "Lift ticket page not discovered from links."
+      ],
+      "readyForPublish": false
+    },
+    {
+      "id": "osd-skimap-org-280",
+      "name": "Bottineau Winter Park",
+      "region": "North Dakota",
+      "regionCode": "ND",
+      "country": "United States",
+      "sourceWebsite": "https://skibwp.com/",
+      "websiteProvenance": "OpenSkiData candidate; not independently confirmed as official",
+      "mappedLiftCount": 6,
+      "siteHost": "skibwp.com",
+      "status": "researched",
+      "pages": [
+        {
+          "url": "https://skibwp.com/",
+          "type": "homepage",
+          "status": "fetched"
+        },
+        {
+          "url": "https://skibwp.com/trail-maps/",
+          "type": "map",
+          "status": "fetched"
+        }
+      ],
+      "links": {
+        "stats": [],
+        "map": [
+          {
+            "url": "https://skibwp.com/trail-maps/",
+            "label": "Trail Maps",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://skibwp.com/"
+          }
+        ],
+        "tickets": []
+      },
+      "statisticCandidates": [],
+      "errors": [],
+      "notes": [
+        "No safe numeric pattern found; pages may use JavaScript or PDFs.",
+        "Lift ticket page not discovered from links."
+      ],
+      "readyForPublish": false
+    },
+    {
+      "id": "osd-openstreetmap-way-1230199887",
+      "name": "Mount Sunapee",
+      "region": "New Hampshire",
+      "regionCode": "NH",
+      "country": "United States",
+      "sourceWebsite": "https://www.mountsunapee.com/",
+      "websiteProvenance": "OpenSkiData candidate; not independently confirmed as official",
+      "mappedLiftCount": 10,
+      "siteHost": "www.mountsunapee.com",
+      "status": "researched",
+      "pages": [
+        {
+          "url": "https://www.mountsunapee.com/",
+          "type": "homepage",
+          "status": "fetched"
+        },
+        {
+          "url": "https://www.mountsunapee.com/the-mountain/about-the-mountain/trail-maps.aspx",
+          "type": "map",
+          "status": "fetched"
+        }
+      ],
+      "links": {
+        "stats": [
+          {
+            "url": "https://www.mountsunapee.com/search/search-results.aspx?search=About%20the%20Mountain",
+            "label": "About the Mountain",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.mountsunapee.com/"
+          },
+          {
+            "url": "https://www.mountsunapee.com/the-mountain/about-the-mountain/%22%3C%=",
+            "label": "\" data-component-element=\"hdrWeatherHeader_MountainCams_Link\" data-track=\"click\" title=\" \">",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.mountsunapee.com/the-mountain/about-the-mountain/trail-maps.aspx"
+          },
+          {
+            "url": "https://www.mountsunapee.com/the-mountain/about-the-mountain/mountain-info.aspx",
+            "label": "Mountain Info",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.mountsunapee.com/"
+          },
+          {
+            "url": "https://www.mountsunapee.com/the-mountain/about-the-mountain/trail-maps.aspx",
+            "label": "Trail Maps",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.mountsunapee.com/"
+          },
+          {
+            "url": "https://www.mountsunapee.com/%22%3C%=",
+            "label": "\" data-component-element=\"hdrWeatherHeader_MountainCams_Link\" data-track=\"click\" title=\" \">",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.mountsunapee.com/"
+          },
+          {
+            "url": "https://www.mountsunapee.com/plan-your-trip/epic-mountain-rewards.aspx",
+            "label": "Epic Mountain Rewards",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.mountsunapee.com/"
+          }
+        ],
+        "map": [
+          {
+            "url": "https://www.mountsunapee.com/the-mountain/about-the-mountain/trail-maps.aspx",
+            "label": "Trail Maps",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.mountsunapee.com/"
+          }
+        ],
+        "tickets": [
+          {
+            "url": "https://www.mountsunapee.com/plan-your-trip/lift-access/tickets.aspx",
+            "label": "Winter Lift Tickets",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.mountsunapee.com/"
+          },
+          {
+            "url": "https://www.mountsunapee.com/search/search-results.aspx?search=Lift%20Tickets",
+            "label": "Lift Tickets",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.mountsunapee.com/"
+          },
+          {
+            "url": "https://www.mountsunapee.com/plan-your-trip/lift-access/discover-passes.aspx",
+            "label": "Discover Passes",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.mountsunapee.com/"
+          },
+          {
+            "url": "https://www.mountsunapee.com/plan-your-trip/lift-access/passes.aspx",
+            "label": "Buy Now",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.mountsunapee.com/"
+          },
+          {
+            "url": "https://www.mountsunapee.com/plan-your-trip/lift-access/passes/epic-day-pass.aspx?days=4&access=2&restricted=true",
+            "label": "Epic Day Pass",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.mountsunapee.com/"
+          },
+          {
+            "url": "https://www.mountsunapee.com/plan-your-trip/lift-access/passes/epic-local-pass.aspx",
+            "label": "Epic Local Pass",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.mountsunapee.com/"
+          }
+        ]
+      },
+      "statisticCandidates": [],
+      "errors": [
+        {
+          "url": "https://www.mountsunapee.com/search/search-results.aspx?search=About%20the%20Mountain",
+          "reason": "robots-disallow"
+        },
+        {
+          "url": "https://www.mountsunapee.com/plan-your-trip/lift-access/tickets.aspx",
+          "reason": "cross-site-redirect-not-followed"
+        }
+      ],
+      "notes": [
+        "No safe numeric pattern found; pages may use JavaScript or PDFs."
+      ],
+      "readyForPublish": false
+    },
+    {
+      "id": "osd-wikidata-q6924907",
+      "name": "Mountain Creek",
+      "region": "New Jersey",
+      "regionCode": "NJ",
+      "country": "United States",
+      "sourceWebsite": "https://www.mountaincreek.com/",
+      "websiteProvenance": "OpenSkiData candidate; not independently confirmed as official",
+      "mappedLiftCount": 11,
+      "siteHost": "www.mountaincreek.com",
+      "status": "unavailable",
+      "pages": [],
+      "links": {
+        "stats": [],
+        "map": [],
+        "tickets": []
+      },
+      "statisticCandidates": [],
+      "errors": [
+        {
+          "url": "https://www.mountaincreek.com/",
+          "reason": "robots-http-301"
+        }
+      ],
+      "notes": [],
+      "readyForPublish": false
+    },
+    {
+      "id": "osd-openstreetmap-relation-13573224",
+      "name": "Taos Ski Valley",
+      "region": "New Mexico",
+      "regionCode": "NM",
+      "country": "United States",
+      "sourceWebsite": "https://www.skitaos.com/",
+      "websiteProvenance": "OpenSkiData candidate; not independently confirmed as official",
+      "mappedLiftCount": 14,
+      "siteHost": "www.skitaos.com",
+      "status": "researched",
+      "pages": [
+        {
+          "url": "https://www.skitaos.com/",
+          "type": "homepage",
+          "status": "fetched"
+        },
+        {
+          "url": "https://www.skitaos.com/mountain",
+          "type": "stats",
+          "status": "fetched"
+        },
+        {
+          "url": "https://www.skitaos.com/tickets",
+          "type": "tickets",
+          "status": "fetched"
+        }
+      ],
+      "links": {
+        "stats": [
+          {
+            "url": "https://www.skitaos.com/mountain",
+            "label": "Mountain Stats",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.skitaos.com/"
+          },
+          {
+            "url": "https://www.skitaos.com/biking",
+            "label": "Mountain Biking",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.skitaos.com/"
+          }
+        ],
+        "map": [],
+        "tickets": [
+          {
+            "url": "https://www.skitaos.com/tickets",
+            "label": "Lift Tickets",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.skitaos.com/"
+          }
+        ]
+      },
+      "statisticCandidates": [
+        {
+          "metric": "acres",
+          "value": 1294,
+          "unit": "acres",
+          "sourceUrl": "https://www.skitaos.com/mountain",
+          "evidence": "| | More than 300 days of sunshine each year | | | | | 1,294 acres of skiable terrain | | | | | 110 total trails: 24% beg",
+          "status": "needs-human-verification",
+          "method": "html-pattern"
+        },
+        {
+          "metric": "trails",
+          "value": 24,
+          "unit": "count",
+          "sourceUrl": "https://www.skitaos.com/mountain",
+          "evidence": "| | | | | 1,294 acres of skiable terrain | | | | | 110 total trails: 24% beginner, 25% intermediate, 51% expert | | | | | 13 l",
+          "status": "needs-human-verification",
+          "method": "html-pattern"
+        }
+      ],
+      "errors": [],
+      "notes": [
+        "Winter trail map not discovered from links."
+      ],
+      "readyForPublish": false
+    },
+    {
+      "id": "osd-openstreetmap-relation-12152028",
+      "name": "Heavenly Mountain Resort",
+      "region": "Nevada",
+      "regionCode": "NV",
+      "country": "United States",
+      "sourceWebsite": "https://www.skiheavenly.com/",
+      "websiteProvenance": "OpenSkiData candidate; not independently confirmed as official",
+      "mappedLiftCount": 26,
+      "siteHost": "www.skiheavenly.com",
+      "status": "researched",
+      "pages": [
+        {
+          "url": "https://www.skiheavenly.com/",
+          "type": "homepage",
+          "status": "fetched"
+        },
+        {
+          "url": "https://www.skiheavenly.com/the-mountain/about-the-mountain/mountain-info.aspx",
+          "type": "stats",
+          "status": "fetched"
+        },
+        {
+          "url": "https://www.skiheavenly.com/the-mountain/about-the-mountain/trail-map.aspx",
+          "type": "map",
+          "status": "fetched"
+        }
+      ],
+      "links": {
+        "stats": [
+          {
+            "url": "https://www.skiheavenly.com/the-mountain/about-the-mountain/%22%3C%=",
+            "label": "\" data-component-element=\"hdrWeatherHeader_MountainCams_Link\" data-track=\"click\" title=\" \">",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.skiheavenly.com/the-mountain/about-the-mountain/mountain-info.aspx"
+          },
+          {
+            "url": "https://www.skiheavenly.com/the-mountain/about-the-mountain/mountain-info.aspx",
+            "label": "Mountain Info",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.skiheavenly.com/"
+          },
+          {
+            "url": "https://www.skiheavenly.com/the-mountain/about-the-mountain/safety.aspx",
+            "label": "Safety & Experience",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.skiheavenly.com/"
+          },
+          {
+            "url": "https://www.skiheavenly.com/the-mountain/about-the-mountain/safety/terrain-parks.aspx",
+            "label": "Terrain Parks",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.skiheavenly.com/"
+          },
+          {
+            "url": "https://www.skiheavenly.com/the-mountain/about-the-mountain/trail-map.aspx",
+            "label": "Trail Map",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.skiheavenly.com/"
+          },
+          {
+            "url": "https://www.skiheavenly.com/%22%3C%=",
+            "label": "\" data-component-element=\"hdrWeatherHeader_MountainCams_Link\" data-track=\"click\" title=\" \">",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.skiheavenly.com/"
+          }
+        ],
+        "map": [
+          {
+            "url": "https://www.skiheavenly.com/the-mountain/about-the-mountain/trail-map.aspx",
+            "label": "Trail Map",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.skiheavenly.com/"
+          }
+        ],
+        "tickets": [
+          {
+            "url": "https://www.skiheavenly.com/plan-your-trip/lift-access/tickets.aspx",
+            "label": "Winter Lift Tickets",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.skiheavenly.com/"
+          },
+          {
+            "url": "https://www.skiheavenly.com/search/search-results.aspx?search=Lift%20Tickets",
+            "label": "Lift Tickets",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.skiheavenly.com/"
+          },
+          {
+            "url": "https://www.skiheavenly.com/%22https://www.skiheavenly.com/plan-your-trip/lift-access/passes.aspx/%22",
+            "label": "BUY NOW",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.skiheavenly.com/"
+          },
+          {
+            "url": "https://www.skiheavenly.com/plan-your-trip/lift-access/passes.aspx",
+            "label": "BUY NOW",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.skiheavenly.com/"
+          },
+          {
+            "url": "https://www.skiheavenly.com/plan-your-trip/lift-access/passes/epic-day-pass.aspx?days=4&access=0&restricted=true",
+            "label": "Epic Day Pass",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.skiheavenly.com/"
+          },
+          {
+            "url": "https://www.skiheavenly.com/plan-your-trip/lift-access/passes/epic-local-pass.aspx",
+            "label": "Epic Local Pass",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.skiheavenly.com/"
+          }
+        ]
+      },
+      "statisticCandidates": [
+        {
+          "metric": "acres",
+          "value": 4800,
+          "unit": "acres",
+          "sourceUrl": "https://www.skiheavenly.com/the-mountain/about-the-mountain/mountain-info.aspx",
+          "evidence": "e Elevation | 6,657 ft (2,029 m) | | Skiable Terrain | 4,800 Acres | | Lifts | 28 | | Average Snowfall | 251 inches (653 ",
+          "status": "needs-human-verification",
+          "method": "html-pattern"
+        }
+      ],
+      "errors": [
+        {
+          "url": "https://www.skiheavenly.com/plan-your-trip/lift-access/tickets.aspx",
+          "reason": "cross-site-redirect-not-followed"
+        }
+      ],
+      "notes": [],
+      "readyForPublish": false
+    },
+    {
+      "id": "osd-wikidata-q138780039",
+      "name": "Gore Mountain",
+      "region": "New York",
+      "regionCode": "NY",
+      "country": "United States",
+      "sourceWebsite": "https://goremountain.com/",
+      "websiteProvenance": "OpenSkiData candidate; not independently confirmed as official",
+      "mappedLiftCount": 14,
+      "siteHost": "goremountain.com",
+      "status": "unavailable",
+      "pages": [],
+      "links": {
+        "stats": [],
+        "map": [],
+        "tickets": []
+      },
+      "statisticCandidates": [],
+      "errors": [
+        {
+          "url": "https://goremountain.com/",
+          "reason": "robots-http-403"
+        }
+      ],
+      "notes": [],
+      "readyForPublish": false
+    },
+    {
+      "id": "osd-openstreetmap-way-1263732880",
+      "name": "Mad River Mountain",
+      "region": "Ohio",
+      "regionCode": "OH",
+      "country": "United States",
+      "sourceWebsite": "https://www.skimadriver.com/",
+      "websiteProvenance": "OpenSkiData candidate; not independently confirmed as official",
+      "mappedLiftCount": 11,
+      "siteHost": "www.skimadriver.com",
+      "status": "researched",
+      "pages": [
+        {
+          "url": "https://www.skimadriver.com/",
+          "type": "homepage",
+          "status": "fetched"
+        },
+        {
+          "url": "https://www.skimadriver.com/the-mountain/about-the-mountain/trail-maps.aspx",
+          "type": "map",
+          "status": "fetched"
+        }
+      ],
+      "links": {
+        "stats": [
+          {
+            "url": "https://www.skimadriver.com/search/search-results.aspx?search=About%20the%20Mountain",
+            "label": "About the Mountain",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.skimadriver.com/"
+          },
+          {
+            "url": "https://www.skimadriver.com/the-mountain/about-the-mountain/%22%3C%=",
+            "label": "\" data-component-element=\"hdrWeatherHeader_MountainCams_Link\" data-track=\"click\" title=\" \">",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.skimadriver.com/the-mountain/about-the-mountain/trail-maps.aspx"
+          },
+          {
+            "url": "https://www.skimadriver.com/the-mountain/about-the-mountain/mountain-info.aspx",
+            "label": "Mountain Info",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.skimadriver.com/"
+          },
+          {
+            "url": "https://www.skimadriver.com/the-mountain/about-the-mountain/mountain-safety.aspx",
+            "label": "Mountain Safety",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.skimadriver.com/"
+          },
+          {
+            "url": "https://www.skimadriver.com/the-mountain/about-the-mountain/night-skiing-and-riding.aspx",
+            "label": "Dew After Dark Night Ski",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.skimadriver.com/"
+          },
+          {
+            "url": "https://www.skimadriver.com/the-mountain/about-the-mountain/trail-maps.aspx",
+            "label": "Trail Map",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.skimadriver.com/"
+          }
+        ],
+        "map": [
+          {
+            "url": "https://www.skimadriver.com/-/aemasset/sitecore/mad-river/maps/20251113_MA_winter-trail_map_001.pdf",
+            "label": "| Winter Trail Map | View Winter Trail Map | |",
+            "score": 12,
+            "format": "pdf",
+            "discoveredOn": "https://www.skimadriver.com/the-mountain/about-the-mountain/trail-maps.aspx"
+          },
+          {
+            "url": "https://www.skimadriver.com/the-mountain/about-the-mountain/trail-maps.aspx",
+            "label": "Trail Map",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.skimadriver.com/"
+          }
+        ],
+        "tickets": [
+          {
+            "url": "https://www.skimadriver.com/plan-your-trip/lift-access/tickets.aspx",
+            "label": "Winter Lift Tickets",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.skimadriver.com/"
+          },
+          {
+            "url": "https://www.skimadriver.com/the-mountain/about-the-mountain/night-skiing-and-riding.aspx",
+            "label": "Night Ski Lift Tickets",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.skimadriver.com/"
+          },
+          {
+            "url": "https://www.skimadriver.com/plan-your-trip/lift-access/discover-passes.aspx",
+            "label": "Discover Passes",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.skimadriver.com/"
+          }
+        ]
+      },
+      "statisticCandidates": [],
+      "errors": [
+        {
+          "url": "https://www.skimadriver.com/search/search-results.aspx?search=About%20the%20Mountain",
+          "reason": "robots-disallow"
+        },
+        {
+          "url": "https://www.skimadriver.com/plan-your-trip/lift-access/tickets.aspx",
+          "reason": "cross-site-redirect-not-followed"
+        }
+      ],
+      "notes": [
+        "No safe numeric pattern found; pages may use JavaScript or PDFs."
+      ],
+      "readyForPublish": false
+    },
+    {
+      "id": "osd-openstreetmap-way-1306486693",
+      "name": "Mt. Bachelor",
+      "region": "Oregon",
+      "regionCode": "OR",
+      "country": "United States",
+      "sourceWebsite": "https://www.mtbachelor.com/",
+      "websiteProvenance": "OpenSkiData candidate; not independently confirmed as official",
+      "mappedLiftCount": 15,
+      "siteHost": "www.mtbachelor.com",
+      "status": "researched",
+      "pages": [
+        {
+          "url": "https://www.mtbachelor.com/",
+          "type": "homepage",
+          "status": "fetched"
+        },
+        {
+          "url": "https://www.mtbachelor.com/the-mountain/hours-of-operation/",
+          "type": "stats",
+          "status": "fetched"
+        },
+        {
+          "url": "https://www.mtbachelor.com/tickets-passes/lift-tickets/",
+          "type": "tickets",
+          "status": "fetched"
+        }
+      ],
+      "links": {
+        "stats": [
+          {
+            "url": "https://www.mtbachelor.com/amenities-groups/mountain-shopping/mt-bachelor-sports-shop/west-village-pro-shop/",
+            "label": "SEE FALL SHOPPING PERKS",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.mtbachelor.com/the-mountain/hours-of-operation/"
+          },
+          {
+            "url": "https://www.mtbachelor.com/the-mountain/getting-to-around-mt-bachelor/getting-here/",
+            "label": "Getting To & Around Mt. Bachelor",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.mtbachelor.com/the-mountain/hours-of-operation/"
+          },
+          {
+            "url": "https://www.mtbachelor.com/the-mountain/hours-of-operation/",
+            "label": "Hours of Operation |",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.mtbachelor.com/"
+          },
+          {
+            "url": "https://www.mtbachelor.com/the-mountain/lift-trail-report/",
+            "label": "Lift & Trail Status |",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.mtbachelor.com/"
+          },
+          {
+            "url": "https://www.mtbachelor.com/the-mountain/maps/winter-lift-trail-map/",
+            "label": "Winter Maps",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.mtbachelor.com/the-mountain/hours-of-operation/"
+          },
+          {
+            "url": "https://www.mtbachelor.com/the-mountain/mountain-report",
+            "label": "MOUNTAIN REPORT",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.mtbachelor.com/the-mountain/hours-of-operation/"
+          }
+        ],
+        "map": [
+          {
+            "url": "https://www.mtbachelor.com/the-mountain/maps/winter-lift-trail-map/",
+            "label": "Winter Maps",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.mtbachelor.com/the-mountain/hours-of-operation/"
+          }
+        ],
+        "tickets": [
+          {
+            "url": "https://www.mtbachelor.com/tickets-passes/lift-tickets/",
+            "label": "Winter Lift Tickets |",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.mtbachelor.com/"
+          },
+          {
+            "url": "https://www.mtbachelor.com/tickets-passes/lift-tickets/beginner-lift-tickets/",
+            "label": "| | | FREE & DISCOUNTED BEGINNER TICKETS | Mt. Bachelor offers free and discounted tickets to access some of our beginne",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.mtbachelor.com/tickets-passes/lift-tickets/"
+          },
+          {
+            "url": "https://www.mtbachelor.com/tickets-passes/lift-tickets/ikonpass-f-f/",
+            "label": "| | | | IKON PASS FRIENDS & FAMILY TICKETS | Get 50% off your Ikon Friends and Family Tickets when you purchase by Novem",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.mtbachelor.com/tickets-passes/lift-tickets/"
+          },
+          {
+            "url": "https://www.mtbachelor.com/tickets-passes/lift-tickets/ksf-tickets/",
+            "label": "| | | KIDS SKI FREE TICKETS | Kids ages 6-12 ski FREE the same number of days as their parents with the advance online p",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.mtbachelor.com/tickets-passes/lift-tickets/"
+          },
+          {
+            "url": "https://www.mtbachelor.com/tickets-passes/lift-tickets/perk-ticket/",
+            "label": "| | | $99 PASSHOLDER PERK TICKETS | Each Outplay 365 & Full Season Passholder who purchased by September 30, 2026, will ",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.mtbachelor.com/tickets-passes/lift-tickets/"
+          },
+          {
+            "url": "https://www.mtbachelor.com/tickets-passes/lift-tickets/play-forever-thursdays/",
+            "label": "| | | | PLAY FOREVER THURSDAYS TICKETS | Get $99 lift tickets every Thursday in January, February, and March. A portion ",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.mtbachelor.com/tickets-passes/lift-tickets/"
+          }
+        ]
+      },
+      "statisticCandidates": [],
+      "errors": [],
+      "notes": [
+        "No safe numeric pattern found; pages may use JavaScript or PDFs."
+      ],
+      "readyForPublish": false
+    },
+    {
+      "id": "osd-openstreetmap-way-256580493",
+      "name": "Seven Springs Mountain Resort",
+      "region": "Pennsylvania",
+      "regionCode": "PA",
+      "country": "United States",
+      "sourceWebsite": "https://www.7springs.com/",
+      "websiteProvenance": "OpenSkiData candidate; not independently confirmed as official",
+      "mappedLiftCount": 16,
+      "siteHost": "www.7springs.com",
+      "status": "researched",
+      "pages": [
+        {
+          "url": "https://www.7springs.com/",
+          "type": "homepage",
+          "status": "fetched"
+        },
+        {
+          "url": "https://www.7springs.com/the-mountain/about-the-mountain/mountain-info.aspx",
+          "type": "stats",
+          "status": "fetched"
+        },
+        {
+          "url": "https://www.7springs.com/the-mountain/about-the-mountain/trail-map.aspx",
+          "type": "map",
+          "status": "fetched"
+        }
+      ],
+      "links": {
+        "stats": [
+          {
+            "url": "https://www.7springs.com/the-mountain/about-the-mountain/%22%3C%=",
+            "label": "\" data-component-element=\"hdrWeatherHeader_MountainCams_Link\" data-track=\"click\" title=\" \">",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.7springs.com/the-mountain/about-the-mountain/mountain-info.aspx"
+          },
+          {
+            "url": "https://www.7springs.com/the-mountain/about-the-mountain/mountain-info.aspx",
+            "label": "Mountain Information",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.7springs.com/"
+          },
+          {
+            "url": "https://www.7springs.com/the-mountain/about-the-mountain/mountain-safety.aspx",
+            "label": "Mountain Safety",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.7springs.com/"
+          },
+          {
+            "url": "https://www.7springs.com/the-mountain/about-the-mountain/night-skiing-and-riding.aspx",
+            "label": "Night Ski Lift Tickets",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.7springs.com/"
+          },
+          {
+            "url": "https://www.7springs.com/the-mountain/about-the-mountain/sustainability.aspx",
+            "label": "Sustainability",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.7springs.com/"
+          },
+          {
+            "url": "https://www.7springs.com/the-mountain/about-the-mountain/terrain-parks.aspx",
+            "label": "Terrain Parks",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.7springs.com/"
+          }
+        ],
+        "map": [
+          {
+            "url": "https://www.7springs.com/-/aemasset/sitecore/seven-springs/trail-base-maps/winter-2025-2026/20251205_SN_winter-trail_map_001.pdf",
+            "label": "| Winter Trail Map | View Winter Map | |",
+            "score": 12,
+            "format": "pdf",
+            "discoveredOn": "https://www.7springs.com/the-mountain/about-the-mountain/trail-map.aspx"
+          },
+          {
+            "url": "https://www.7springs.com/the-mountain/about-the-mountain/trail-map.aspx",
+            "label": "Trail Maps",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.7springs.com/"
+          }
+        ],
+        "tickets": [
+          {
+            "url": "https://www.7springs.com/plan-your-trip/lift-access/tickets.aspx",
+            "label": "Winter Lift Tickets",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.7springs.com/"
+          },
+          {
+            "url": "https://www.7springs.com/search/search-results.aspx?search=Lift%20Tickets",
+            "label": "Lift Tickets",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.7springs.com/"
+          },
+          {
+            "url": "https://www.7springs.com/the-mountain/about-the-mountain/night-skiing-and-riding.aspx",
+            "label": "Night Ski Lift Tickets",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.7springs.com/"
+          },
+          {
+            "url": "https://www.7springs.com/plan-your-trip/lift-access/discover-passes.aspx",
+            "label": "Discover Passes",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.7springs.com/"
+          },
+          {
+            "url": "https://www.7springs.com/plan-your-trip/lift-access/passes.aspx",
+            "label": "Buy Now",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.7springs.com/"
+          },
+          {
+            "url": "https://www.7springs.com/plan-your-trip/lift-access/passes/epic-day-pass.aspx?days=4&access=2&restricted=true",
+            "label": "Epic Day Pass",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.7springs.com/"
+          }
+        ]
+      },
+      "statisticCandidates": [
+        {
+          "metric": "acres",
+          "value": 285,
+          "unit": "acres",
+          "sourceUrl": "https://www.7springs.com/the-mountain/about-the-mountain/mountain-info.aspx",
+          "evidence": "ase Elevation | 2,240 ft (683 m) | | Skiable Terrain | 285 Acres | | Lifts | 10 | | Average Snowfall | 135 inches (343 ",
+          "status": "needs-human-verification",
+          "method": "html-pattern"
+        }
+      ],
+      "errors": [
+        {
+          "url": "https://www.7springs.com/plan-your-trip/lift-access/tickets.aspx",
+          "reason": "cross-site-redirect-not-followed"
+        }
+      ],
+      "notes": [],
+      "readyForPublish": false
+    },
+    {
+      "id": "osd-wikidata-q8050458",
+      "name": "Yawgoo Valley Ski Area",
+      "region": "Rhode Island",
+      "regionCode": "RI",
+      "country": "United States",
+      "sourceWebsite": "https://yawgoo.com/",
+      "websiteProvenance": "OpenSkiData candidate; not independently confirmed as official",
+      "mappedLiftCount": 4,
+      "siteHost": "yawgoo.com",
+      "status": "unavailable",
+      "pages": [],
+      "links": {
+        "stats": [],
+        "map": [],
+        "tickets": []
+      },
+      "statisticCandidates": [],
+      "errors": [
+        {
+          "url": "https://yawgoo.com/",
+          "reason": "untrusted-host-address"
+        }
+      ],
+      "notes": [],
+      "readyForPublish": false
+    },
+    {
+      "id": "osd-openstreetmap-way-1214147821",
+      "name": "Terry Peak Ski Area",
+      "region": "South Dakota",
+      "regionCode": "SD",
+      "country": "United States",
+      "sourceWebsite": "https://terrypeak.com/",
+      "websiteProvenance": "OpenSkiData candidate; not independently confirmed as official",
+      "mappedLiftCount": 5,
+      "siteHost": "terrypeak.com",
+      "status": "researched",
+      "pages": [
+        {
+          "url": "https://terrypeak.com/",
+          "type": "homepage",
+          "status": "fetched"
+        },
+        {
+          "url": "https://terrypeak.com/the-mountain/",
+          "type": "stats",
+          "status": "fetched"
+        },
+        {
+          "url": "https://terrypeak.com/tickets-rentals/daily-lift-tickets/",
+          "type": "tickets",
+          "status": "fetched"
+        }
+      ],
+      "links": {
+        "stats": [
+          {
+            "url": "https://terrypeak.com/the-mountain/",
+            "label": "The Mountain",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://terrypeak.com/"
+          },
+          {
+            "url": "https://terrypeak.com/the-mountain/black-hills-ski-team/",
+            "label": "Black Hills Ski Team",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://terrypeak.com/"
+          },
+          {
+            "url": "https://terrypeak.com/the-mountain/helpful-tips-mountain-safety/",
+            "label": "Ski & Snowboard Tips",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://terrypeak.com/"
+          },
+          {
+            "url": "https://terrypeak.com/the-mountain/live-web-cams/",
+            "label": "Live Web Cams",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://terrypeak.com/"
+          },
+          {
+            "url": "https://terrypeak.com/the-mountain/mountain-safety-policies/",
+            "label": "Mountain Safety Policies",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://terrypeak.com/"
+          },
+          {
+            "url": "https://terrypeak.com/the-mountain/nevada-gulch-lodge/",
+            "label": "Nevada Gulch Lodge",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://terrypeak.com/"
+          }
+        ],
+        "map": [],
+        "tickets": [
+          {
+            "url": "https://terrypeak.com/tickets-rentals/daily-lift-tickets/",
+            "label": "Daily Lift Tickets",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://terrypeak.com/"
+          }
+        ]
+      },
+      "statisticCandidates": [],
+      "errors": [],
+      "notes": [
+        "No safe numeric pattern found; pages may use JavaScript or PDFs.",
+        "Winter trail map not discovered from links."
+      ],
+      "readyForPublish": false
+    },
+    {
+      "id": "osd-openstreetmap-way-1282431650",
+      "name": "Ober Mountain",
+      "region": "Tennessee",
+      "regionCode": "TN",
+      "country": "United States",
+      "sourceWebsite": "https://obermountain.com/",
+      "websiteProvenance": "OpenSkiData candidate; not independently confirmed as official",
+      "mappedLiftCount": 7,
+      "siteHost": "obermountain.com",
+      "status": "unavailable",
+      "pages": [],
+      "links": {
+        "stats": [],
+        "map": [],
+        "tickets": []
+      },
+      "statisticCandidates": [],
+      "errors": [
+        {
+          "url": "https://obermountain.com/",
+          "reason": "robots-http-308"
+        }
+      ],
+      "notes": [],
+      "readyForPublish": false
+    },
+    {
+      "id": "osd-openstreetmap-way-1124250244",
+      "name": "Powder Mountain Ski Resort",
+      "region": "Utah",
+      "regionCode": "UT",
+      "country": "United States",
+      "sourceWebsite": "https://powdermountain.com/",
+      "websiteProvenance": "OpenSkiData candidate; not independently confirmed as official",
+      "mappedLiftCount": 14,
+      "siteHost": "powdermountain.com",
+      "status": "researched",
+      "pages": [
+        {
+          "url": "https://powdermountain.com/",
+          "type": "homepage",
+          "status": "fetched"
+        },
+        {
+          "url": "https://powdermountain.com/blog",
+          "type": "stats",
+          "status": "fetched"
+        },
+        {
+          "url": "https://powdermountain.com/trail-map",
+          "type": "map",
+          "status": "fetched"
+        },
+        {
+          "url": "https://powdermountain.com/lift-tickets",
+          "type": "tickets",
+          "status": "fetched"
+        }
+      ],
+      "links": {
+        "stats": [
+          {
+            "url": "https://powdermountain.com/",
+            "label": "",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://powdermountain.com/"
+          },
+          {
+            "url": "https://powdermountain.com/blog",
+            "label": "Blog",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://powdermountain.com/"
+          },
+          {
+            "url": "https://powdermountain.com/blog?category=community",
+            "label": "Community 4",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://powdermountain.com/blog"
+          },
+          {
+            "url": "https://powdermountain.com/blog?category=guides",
+            "label": "Guides 6",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://powdermountain.com/blog"
+          },
+          {
+            "url": "https://powdermountain.com/blog?category=operations",
+            "label": "Operations 10",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://powdermountain.com/blog"
+          },
+          {
+            "url": "https://powdermountain.com/blog/advanced-terrain-expansion",
+            "label": "| Advanced Terrain Expansion | Published on March 29, 2024 |",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://powdermountain.com/blog"
+          }
+        ],
+        "map": [
+          {
+            "url": "https://powdermountain.com/trail-map",
+            "label": "Explore the Mountain",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://powdermountain.com/"
+          }
+        ],
+        "tickets": [
+          {
+            "url": "https://powdermountain.com/lift-tickets",
+            "label": "Day Tickets",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://powdermountain.com/"
+          }
+        ]
+      },
+      "statisticCandidates": [
+        {
+          "metric": "acres",
+          "value": 5000,
+          "unit": "acres",
+          "sourceUrl": "https://powdermountain.com/",
+          "evidence": "| More than just a ski area: explore Powder Mountain’s 5,000+ acres of untamed adventure. | | | | | | | Discover Powder | ",
+          "status": "needs-human-verification",
+          "method": "html-pattern"
+        },
+        {
+          "metric": "acres",
+          "value": 5000,
+          "unit": "acres",
+          "sourceUrl": "https://powdermountain.com/",
+          "evidence": "| More than just a ski area: explore Powder Mountain’s 5,000+ acres of untamed adventure. | | Here you&#x27;ll find | Powd",
+          "status": "needs-human-verification",
+          "method": "html-pattern"
+        },
+        {
+          "metric": "acres",
+          "value": 1000,
+          "unit": "acres",
+          "sourceUrl": "https://powdermountain.com/",
+          "evidence": "w Acres of Advanced Terrain | | | The DMI Lift unlocks 1,000+ acres and 2,200 feet of vertical, previously available only ",
+          "status": "needs-human-verification",
+          "method": "html-pattern"
+        },
+        {
+          "metric": "acres",
+          "value": 5000,
+          "unit": "acres",
+          "sourceUrl": "https://powdermountain.com/trail-map",
+          "evidence": "Trail Map | Powder Mountain, Eden UT | 5,000 Acres | Powder Mountain | | Flex Pass: Ski Any Four Days Thi",
+          "status": "needs-human-verification",
+          "method": "html-pattern"
+        },
+        {
+          "metric": "acres",
+          "value": 5000,
+          "unit": "acres",
+          "sourceUrl": "https://powdermountain.com/trail-map",
+          "evidence": "| | | | | | | Trail Map | | | | Powder Mountain offers 5,000 acres of skiable terrain and 3,436 feet in elevation gain. |",
+          "status": "needs-human-verification",
+          "method": "html-pattern"
+        }
+      ],
+      "errors": [],
+      "notes": [],
+      "readyForPublish": false
+    },
+    {
+      "id": "osd-openstreetmap-relation-5881053",
+      "name": "Massanutten Resort",
+      "region": "Virginia",
+      "regionCode": "VA",
+      "country": "United States",
+      "sourceWebsite": "https://www.massresort.com/",
+      "websiteProvenance": "OpenSkiData candidate; not independently confirmed as official",
+      "mappedLiftCount": 9,
+      "siteHost": "www.massresort.com",
+      "status": "researched",
+      "pages": [
+        {
+          "url": "https://www.massresort.com/",
+          "type": "homepage",
+          "status": "fetched"
+        },
+        {
+          "url": "https://www.massresort.com/discover/",
+          "type": "stats",
+          "status": "fetched"
+        },
+        {
+          "url": "https://www.massresort.com/plan-your-visit/tickets-passes/",
+          "type": "tickets",
+          "status": "fetched"
+        }
+      ],
+      "links": {
+        "stats": [
+          {
+            "url": "https://www.massresort.com/discover/",
+            "label": "| First Time Visitor Guide | Six thousand acres of mountain fun is a lot to take in. Not sure where to start? This is th",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.massresort.com/"
+          },
+          {
+            "url": "https://www.massresort.com/mountain-biking/",
+            "label": "View Mountain Biking Hub",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.massresort.com/plan-your-visit/tickets-passes/"
+          }
+        ],
+        "map": [],
+        "tickets": [
+          {
+            "url": "https://www.massresort.com/plan-your-visit/tickets-passes/",
+            "label": "Tickets and Passes",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.massresort.com/"
+          }
+        ]
+      },
+      "statisticCandidates": [
+        {
+          "metric": "acres",
+          "value": 83,
+          "unit": "acres",
+          "sourceUrl": "https://www.massresort.com/",
+          "evidence": "| | Skiing & Snowboarding | Make the most of winter on 83 skiable acres, with 23 runs, 7 lifts, and a summit elevation of 2,92",
+          "status": "needs-human-verification",
+          "method": "html-pattern"
+        },
+        {
+          "metric": "acres",
+          "value": 6000,
+          "unit": "acres",
+          "sourceUrl": "https://www.massresort.com/",
+          "evidence": "| Loading upcoming events… | Retry | | | | | | | | | | 6,000 acres in the heart of Shenandoah Valley. | One of the East C",
+          "status": "needs-human-verification",
+          "method": "html-pattern"
+        },
+        {
+          "metric": "acres",
+          "value": 6000,
+          "unit": "acres",
+          "sourceUrl": "https://www.massresort.com/discover/",
+          "evidence": "ours from Washington, DC and from Richmond, VA. Set on 6,000 acres in the Shenandoah Valley, the resort brings together a",
+          "status": "needs-human-verification",
+          "method": "html-pattern"
+        }
+      ],
+      "errors": [],
+      "notes": [
+        "Winter trail map not discovered from links."
+      ],
+      "readyForPublish": false
+    },
+    {
+      "id": "osd-wikidata-q7081931",
+      "name": "Okemo Mountain",
+      "region": "Vermont",
+      "regionCode": "VT",
+      "country": "United States",
+      "sourceWebsite": "https://www.okemo.com/",
+      "websiteProvenance": "OpenSkiData candidate; not independently confirmed as official",
+      "mappedLiftCount": 21,
+      "siteHost": "www.okemo.com",
+      "status": "researched",
+      "pages": [
+        {
+          "url": "https://www.okemo.com/",
+          "type": "homepage",
+          "status": "fetched"
+        },
+        {
+          "url": "https://www.okemo.com/the-mountain/about-the-mountain/mountain-info.aspx",
+          "type": "stats",
+          "status": "fetched"
+        },
+        {
+          "url": "https://www.okemo.com/the-mountain/about-the-mountain/trail-maps.aspx",
+          "type": "map",
+          "status": "fetched"
+        }
+      ],
+      "links": {
+        "stats": [
+          {
+            "url": "https://www.okemo.com/the-mountain/about-the-mountain/%22%3C%=",
+            "label": "\" data-component-element=\"hdrWeatherHeader_MountainCams_Link\" data-track=\"click\" title=\" \">",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.okemo.com/the-mountain/about-the-mountain/mountain-info.aspx"
+          },
+          {
+            "url": "https://www.okemo.com/the-mountain/about-the-mountain/mountain-info.aspx",
+            "label": "Mountain Info",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.okemo.com/"
+          },
+          {
+            "url": "https://www.okemo.com/the-mountain/about-the-mountain/mountain-safety.aspx",
+            "label": "Mountain Safety",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.okemo.com/"
+          },
+          {
+            "url": "https://www.okemo.com/the-mountain/about-the-mountain/terrain-parks.aspx",
+            "label": "Terrain Parks",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.okemo.com/"
+          },
+          {
+            "url": "https://www.okemo.com/the-mountain/about-the-mountain/trail-maps.aspx",
+            "label": "Trail Maps",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.okemo.com/"
+          },
+          {
+            "url": "https://www.okemo.com/%22%3C%=",
+            "label": "\" data-component-element=\"hdrWeatherHeader_MountainCams_Link\" data-track=\"click\" title=\" \">",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.okemo.com/"
+          }
+        ],
+        "map": [
+          {
+            "url": "https://www.okemo.com/the-mountain/about-the-mountain/trail-maps.aspx",
+            "label": "Trail Maps",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.okemo.com/"
+          }
+        ],
+        "tickets": [
+          {
+            "url": "https://www.okemo.com/plan-your-trip/lift-access/tickets.aspx",
+            "label": "Winter Lift Tickets",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.okemo.com/"
+          },
+          {
+            "url": "https://www.okemo.com/search/search-results.aspx?search=Lift%20Tickets",
+            "label": "Lift Tickets",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.okemo.com/"
+          },
+          {
+            "url": "https://www.okemo.com/plan-your-trip/lift-access/passes.aspx",
+            "label": "Buy Now",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.okemo.com/"
+          },
+          {
+            "url": "https://www.okemo.com/plan-your-trip/lift-access/passes/epic-day-pass.aspx?days=4&access=0&restricted=true",
+            "label": "Epic Day Pass",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.okemo.com/"
+          },
+          {
+            "url": "https://www.okemo.com/plan-your-trip/lift-access/passes/epic-local-pass.aspx",
+            "label": "Epic Local Pass",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.okemo.com/"
+          },
+          {
+            "url": "https://www.okemo.com/plan-your-trip/lift-access/passes/epic-pass.aspx",
+            "label": "Epic Pass",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.okemo.com/"
+          }
+        ]
+      },
+      "statisticCandidates": [
+        {
+          "metric": "acres",
+          "value": 4000,
+          "unit": "acres",
+          "sourceUrl": "https://www.okemo.com/the-mountain/about-the-mountain/mountain-info.aspx",
+          "evidence": "mo State Forest | In 1935, the state of Vermont bought 4,000 acres of land. | | Visit Website , opens in a new window | |",
+          "status": "needs-human-verification",
+          "method": "html-pattern"
+        },
+        {
+          "metric": "acres",
+          "value": 667,
+          "unit": "acres",
+          "sourceUrl": "https://www.okemo.com/the-mountain/about-the-mountain/mountain-info.aspx",
+          "evidence": "ase Elevation | 1,144 ft (348 m) | | Skiable Terrain | 667 Acres | | Lifts | 20 | | Snowmaking Coverage | 98% | | Terra",
+          "status": "needs-human-verification",
+          "method": "html-pattern"
+        }
+      ],
+      "errors": [
+        {
+          "url": "https://www.okemo.com/plan-your-trip/lift-access/tickets.aspx",
+          "reason": "cross-site-redirect-not-followed"
+        }
+      ],
+      "notes": [],
+      "readyForPublish": false
+    },
+    {
+      "id": "osd-openstreetmap-way-1361868120",
+      "name": "Three Summits",
+      "region": "Washington",
+      "regionCode": "WA",
+      "country": "United States",
+      "sourceWebsite": "https://www.summitatsnoqualmie.com/",
+      "websiteProvenance": "OpenSkiData candidate; not independently confirmed as official",
+      "mappedLiftCount": 20,
+      "siteHost": "www.summitatsnoqualmie.com",
+      "status": "researched",
+      "pages": [
+        {
+          "url": "https://www.summitatsnoqualmie.com/",
+          "type": "homepage",
+          "status": "fetched"
+        },
+        {
+          "url": "https://www.summitatsnoqualmie.com/trail-maps",
+          "type": "map",
+          "status": "fetched"
+        }
+      ],
+      "links": {
+        "stats": [
+          {
+            "url": "https://www.summitatsnoqualmie.com/alpental/mountain-report",
+            "label": "Lift & Trail Report",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.summitatsnoqualmie.com/trail-maps"
+          },
+          {
+            "url": "https://www.summitatsnoqualmie.com/mountain-report",
+            "label": "Lift & Trail Report",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.summitatsnoqualmie.com/trail-maps"
+          }
+        ],
+        "map": [
+          {
+            "url": "https://www.summitatsnoqualmie.com/trail-maps",
+            "label": "View Our Maps",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.summitatsnoqualmie.com/"
+          }
+        ],
+        "tickets": []
+      },
+      "statisticCandidates": [
+        {
+          "metric": "acres",
+          "value": 2000,
+          "unit": "acres",
+          "sourceUrl": "https://www.summitatsnoqualmie.com/trail-maps",
+          "evidence": " in the heart of the Cascades. All in, you have nearly 2,000 skiable acres, 25 lifts, and the most night skiing in the U.S. | | |",
+          "status": "needs-human-verification",
+          "method": "html-pattern"
+        }
+      ],
+      "errors": [],
+      "notes": [
+        "Lift ticket page not discovered from links."
+      ],
+      "readyForPublish": false
+    },
+    {
+      "id": "osd-wikidata-q4735527",
+      "name": "Alpine Valley Resort",
+      "region": "Wisconsin",
+      "regionCode": "WI",
+      "country": "United States",
+      "sourceWebsite": "https://www.alpinevalleyresort.com/",
+      "websiteProvenance": "OpenSkiData candidate; not independently confirmed as official",
+      "mappedLiftCount": 15,
+      "siteHost": "www.alpinevalleyresort.com",
+      "status": "researched",
+      "pages": [
+        {
+          "url": "https://www.alpinevalleyresort.com/",
+          "type": "homepage",
+          "status": "fetched"
+        },
+        {
+          "url": "https://www.alpinevalleyresort.com/mountain-information/",
+          "type": "stats",
+          "status": "fetched"
+        },
+        {
+          "url": "https://www.alpinevalleyresort.com/trail-map/",
+          "type": "map",
+          "status": "fetched"
+        },
+        {
+          "url": "https://www.alpinevalleyresort.com/lift-tickets/",
+          "type": "tickets",
+          "status": "fetched"
+        }
+      ],
+      "links": {
+        "stats": [
+          {
+            "url": "https://www.alpinevalleyresort.com/mountain-information/",
+            "label": "MOUNTAIN INFO",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.alpinevalleyresort.com/"
+          },
+          {
+            "url": "https://www.alpinevalleyresort.com/mountain-biking/",
+            "label": "MOUNTAIN BIKING",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.alpinevalleyresort.com/"
+          },
+          {
+            "url": "https://www.alpinevalleyresort.com/terrain-park/",
+            "label": "TERRAIN PARK",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.alpinevalleyresort.com/"
+          }
+        ],
+        "map": [
+          {
+            "url": "https://www.alpinevalleyresort.com/trail-map/",
+            "label": "TRAIL MAP",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.alpinevalleyresort.com/"
+          }
+        ],
+        "tickets": [
+          {
+            "url": "https://www.alpinevalleyresort.com/lift-tickets/",
+            "label": "LIFT TICKETS",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.alpinevalleyresort.com/"
+          }
+        ]
+      },
+      "statisticCandidates": [
+        {
+          "metric": "acres",
+          "value": 100,
+          "unit": "acres",
+          "sourceUrl": "https://www.alpinevalleyresort.com/mountain-information/",
+          "evidence": "el, General Manager for Alpine. | Alpine features over 100 skiable acres with 20 runs that range from beginner to expert and ve",
+          "status": "needs-human-verification",
+          "method": "html-pattern"
+        }
+      ],
+      "errors": [],
+      "notes": [],
+      "readyForPublish": false
+    },
+    {
+      "id": "osd-openstreetmap-relation-5883752",
+      "name": "Snowshoe Mountain",
+      "region": "West Virginia",
+      "regionCode": "WV",
+      "country": "United States",
+      "sourceWebsite": "https://www.snowshoemtn.com/",
+      "websiteProvenance": "OpenSkiData candidate; not independently confirmed as official",
+      "mappedLiftCount": 13,
+      "siteHost": "www.snowshoemtn.com",
+      "status": "researched",
+      "pages": [
+        {
+          "url": "https://www.snowshoemtn.com/",
+          "type": "homepage",
+          "status": "fetched"
+        },
+        {
+          "url": "https://www.snowshoemtn.com/mountain-info",
+          "type": "stats",
+          "status": "fetched"
+        },
+        {
+          "url": "https://www.snowshoemtn.com/plan-your-trip/lift-tickets-season-pass",
+          "type": "tickets",
+          "status": "fetched"
+        }
+      ],
+      "links": {
+        "stats": [
+          {
+            "url": "https://www.snowshoemtn.com/mountain-info",
+            "label": "Mountain Info",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.snowshoemtn.com/"
+          },
+          {
+            "url": "https://www.snowshoemtn.com/mountain-info/hours-of-operation",
+            "label": "Hours of Operation",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.snowshoemtn.com/"
+          },
+          {
+            "url": "https://www.snowshoemtn.com/mountain-info/maps",
+            "label": "Maps",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.snowshoemtn.com/"
+          },
+          {
+            "url": "https://www.snowshoemtn.com/mountain-info/mountain-report",
+            "label": "Mountain Report",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.snowshoemtn.com/"
+          },
+          {
+            "url": "https://www.snowshoemtn.com/mountain-info/mountain-stats",
+            "label": "",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.snowshoemtn.com/mountain-info"
+          },
+          {
+            "url": "https://www.snowshoemtn.com/mountain-info/safety-and-conduct",
+            "label": "Safety & Conduct",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.snowshoemtn.com/"
+          }
+        ],
+        "map": [],
+        "tickets": [
+          {
+            "url": "https://www.snowshoemtn.com/plan-your-trip/lift-tickets-season-pass",
+            "label": "Tickets & Passes",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.snowshoemtn.com/"
+          },
+          {
+            "url": "https://www.snowshoemtn.com/plan-your-trip/tickets-and-passes",
+            "label": "Tickets & Passes",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.snowshoemtn.com/"
+          }
+        ]
+      },
+      "statisticCandidates": [
+        {
+          "metric": "acres",
+          "value": 11000,
+          "unit": "acres",
+          "sourceUrl": "https://www.snowshoemtn.com/mountain-info",
+          "evidence": " responsive-table | | | welcome to snowshoe mountain | 11,000 acres and three distinct areas of adventure, exploration and",
+          "status": "needs-human-verification",
+          "method": "html-pattern"
+        },
+        {
+          "metric": "acres",
+          "value": 11000,
+          "unit": "acres",
+          "sourceUrl": "https://www.snowshoemtn.com/mountain-info",
+          "evidence": "| | | Resort Maps | Skiing, biking, hiking, exploring. 11,000 acres is a lot to cover. Check out the maps to help find you",
+          "status": "needs-human-verification",
+          "method": "html-pattern"
+        }
+      ],
+      "errors": [],
+      "notes": [
+        "Winter trail map not discovered from links."
+      ],
+      "readyForPublish": false
+    },
+    {
+      "id": "osd-wikidata-q7278590",
+      "name": "Rabbit Hill Snow Resort",
+      "region": "Alberta",
+      "regionCode": "AB",
+      "country": "Canada",
+      "sourceWebsite": "https://www.rabbithill.com/",
+      "websiteProvenance": "OpenSkiData candidate; not independently confirmed as official",
+      "mappedLiftCount": 8,
+      "siteHost": "www.rabbithill.com",
+      "status": "researched",
+      "pages": [
+        {
+          "url": "https://www.rabbithill.com/",
+          "type": "homepage",
+          "status": "fetched"
+        },
+        {
+          "url": "https://www.rabbithill.com/terrain-park/",
+          "type": "stats",
+          "status": "fetched"
+        },
+        {
+          "url": "https://www.rabbithill.com/conditions/",
+          "type": "map",
+          "status": "fetched"
+        },
+        {
+          "url": "https://www.rabbithill.com/lift-tickets/",
+          "type": "tickets",
+          "status": "fetched"
+        }
+      ],
+      "links": {
+        "stats": [
+          {
+            "url": "https://www.rabbithill.com/terrain-park/",
+            "label": "Terrain Park",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.rabbithill.com/"
+          }
+        ],
+        "map": [
+          {
+            "url": "https://www.rabbithill.com/conditions/",
+            "label": "Trail Map",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.rabbithill.com/"
+          }
+        ],
+        "tickets": [
+          {
+            "url": "https://www.rabbithill.com/lift-tickets/",
+            "label": "Lift Tickets",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.rabbithill.com/"
+          }
+        ]
+      },
+      "statisticCandidates": [
+        {
+          "metric": "acres",
+          "value": 40,
+          "unit": "acres",
+          "sourceUrl": "https://www.rabbithill.com/",
+          "evidence": "eryday. Edmonton’s largest local resort, we offer over 40 acres of terrain, a BRAND NEW tube park, and one of Western ",
+          "status": "needs-human-verification",
+          "method": "html-pattern"
+        }
+      ],
+      "errors": [],
+      "notes": [],
+      "readyForPublish": false
+    },
+    {
+      "id": "osd-wikidata-q859485",
+      "name": "Big White Ski Resort",
+      "region": "British Columbia",
+      "regionCode": "BC",
+      "country": "Canada",
+      "sourceWebsite": "https://www.bigwhite.com/",
+      "websiteProvenance": "OpenSkiData candidate; not independently confirmed as official",
+      "mappedLiftCount": 16,
+      "siteHost": "www.bigwhite.com",
+      "status": "researched",
+      "pages": [
+        {
+          "url": "https://www.bigwhite.com/geo/ab",
+          "type": "homepage",
+          "status": "fetched"
+        },
+        {
+          "url": "https://www.bigwhite.com/explore-big-white/mountain-info/giving-back",
+          "type": "stats",
+          "status": "fetched"
+        },
+        {
+          "url": "https://www.bigwhite.com/stay/exclusive-lift-tickets",
+          "type": "tickets",
+          "status": "fetched"
+        }
+      ],
+      "links": {
+        "stats": [
+          {
+            "url": "https://www.bigwhite.com/explore-big-white/mountain-info/giving-back",
+            "label": "Giving Back",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.bigwhite.com/geo/ab"
+          },
+          {
+            "url": "https://www.bigwhite.com/explore-big-white/mountain-info/mountain-safety",
+            "label": "SAFETY & RISK AWARENESS",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.bigwhite.com/geo/ab"
+          },
+          {
+            "url": "https://www.bigwhite.com/explore-big-white/mountain-info/real-estate-developments",
+            "label": "Real Estate Developments",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.bigwhite.com/geo/ab"
+          },
+          {
+            "url": "https://www.bigwhite.com/explore/mountain-info",
+            "label": "Mountain Info",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.bigwhite.com/geo/ab"
+          },
+          {
+            "url": "https://www.bigwhite.com/explore/mountain-info/maps",
+            "label": "Maps",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.bigwhite.com/geo/ab"
+          },
+          {
+            "url": "https://www.bigwhite.com/explore/mountain-info/mountain-safety",
+            "label": "Mountain Safety",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.bigwhite.com/geo/ab"
+          }
+        ],
+        "map": [],
+        "tickets": [
+          {
+            "url": "https://www.bigwhite.com/stay/exclusive-lift-tickets",
+            "label": "Exclusive Discounted Lift Tickets",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.bigwhite.com/geo/ab"
+          },
+          {
+            "url": "https://www.bigwhite.com/tickets-passes/lift-tickets",
+            "label": "Lift Tickets",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.bigwhite.com/geo/ab"
+          },
+          {
+            "url": "https://www.bigwhite.com/plan-your-trip/tickets-passes/tubing-skating",
+            "label": "Tubing & Skating",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.bigwhite.com/geo/ab"
+          },
+          {
+            "url": "https://www.bigwhite.com/tickets-passes",
+            "label": "Tickets & Passes",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.bigwhite.com/geo/ab"
+          },
+          {
+            "url": "https://www.bigwhite.com/tickets-passes/gift-cards",
+            "label": "Gift Cards",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.bigwhite.com/geo/ab"
+          },
+          {
+            "url": "https://www.bigwhite.com/tickets-passes/rentals",
+            "label": "Rentals",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.bigwhite.com/geo/ab"
+          }
+        ]
+      },
+      "statisticCandidates": [],
+      "errors": [],
+      "notes": [
+        "No safe numeric pattern found; pages may use JavaScript or PDFs.",
+        "Winter trail map not discovered from links."
+      ],
+      "readyForPublish": false
+    },
+    {
+      "id": "osd-skimap-org-64",
+      "name": "Mystery Mountain",
+      "region": "Manitoba",
+      "regionCode": "MB",
+      "country": "Canada",
+      "sourceWebsite": "https://www.mysterymountain.ca/",
+      "websiteProvenance": "OpenSkiData candidate; not independently confirmed as official",
+      "mappedLiftCount": 5,
+      "siteHost": "www.mysterymountain.ca",
+      "status": "researched",
+      "pages": [
+        {
+          "url": "https://www.mysterymountain.ca/",
+          "type": "homepage",
+          "status": "fetched"
+        },
+        {
+          "url": "https://www.mysterymountain.ca/getting-here",
+          "type": "stats",
+          "status": "fetched"
+        }
+      ],
+      "links": {
+        "stats": [
+          {
+            "url": "https://www.mysterymountain.ca/",
+            "label": "Home",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.mysterymountain.ca/"
+          },
+          {
+            "url": "https://www.mysterymountain.ca/about",
+            "label": "Find Out How",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.mysterymountain.ca/"
+          },
+          {
+            "url": "https://www.mysterymountain.ca/cold-weather-policy",
+            "label": "Cold Weather Policy",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.mysterymountain.ca/"
+          },
+          {
+            "url": "https://www.mysterymountain.ca/getting-here",
+            "label": "Getting Here",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.mysterymountain.ca/"
+          },
+          {
+            "url": "https://www.mysterymountain.ca/news",
+            "label": "News",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.mysterymountain.ca/"
+          },
+          {
+            "url": "https://www.mysterymountain.ca/passrent",
+            "label": "Passes and Rentals",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.mysterymountain.ca/"
+          }
+        ],
+        "map": [],
+        "tickets": []
+      },
+      "statisticCandidates": [],
+      "errors": [],
+      "notes": [
+        "No safe numeric pattern found; pages may use JavaScript or PDFs.",
+        "Winter trail map not discovered from links.",
+        "Lift ticket page not discovered from links."
+      ],
+      "readyForPublish": false
+    },
+    {
+      "id": "osd-openstreetmap-way-400693105",
+      "name": "Poley Mountain Ski Area",
+      "region": "New Brunswick",
+      "regionCode": "NB",
+      "country": "Canada",
+      "sourceWebsite": "https://www.poleymountain.com/",
+      "websiteProvenance": "OpenSkiData candidate; not independently confirmed as official",
+      "mappedLiftCount": 5,
+      "siteHost": "www.poleymountain.com",
+      "status": "researched",
+      "pages": [
+        {
+          "url": "https://www.poleymountain.com/",
+          "type": "homepage",
+          "status": "fetched"
+        },
+        {
+          "url": "https://www.poleymountain.com/",
+          "type": "stats",
+          "status": "fetched"
+        },
+        {
+          "url": "https://www.poleymountain.com/lift-tickets",
+          "type": "tickets",
+          "status": "fetched"
+        }
+      ],
+      "links": {
+        "stats": [
+          {
+            "url": "https://www.poleymountain.com/#Subscribe",
+            "label": "Subscribe",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.poleymountain.com/"
+          },
+          {
+            "url": "https://www.poleymountain.com/access-cards-and-rfid-faqs",
+            "label": "Learn More",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.poleymountain.com/"
+          },
+          {
+            "url": "https://www.poleymountain.com/advertise-at-poley-mountain",
+            "label": "Advertise at Poley Mountain",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.poleymountain.com/"
+          },
+          {
+            "url": "https://www.poleymountain.com/bear-force-one",
+            "label": "Bear Force One",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.poleymountain.com/"
+          },
+          {
+            "url": "https://www.poleymountain.com/bridge-the-gap",
+            "label": "Bridge the Gap",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.poleymountain.com/"
+          },
+          {
+            "url": "https://www.poleymountain.com/Camp",
+            "label": "Camps",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.poleymountain.com/"
+          }
+        ],
+        "map": [],
+        "tickets": [
+          {
+            "url": "https://www.poleymountain.com/lift-tickets",
+            "label": "Day Tickets",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.poleymountain.com/"
+          }
+        ]
+      },
+      "statisticCandidates": [],
+      "errors": [],
+      "notes": [
+        "No safe numeric pattern found; pages may use JavaScript or PDFs.",
+        "Winter trail map not discovered from links."
+      ],
+      "readyForPublish": false
+    },
+    {
+      "id": "osd-openstreetmap-way-1252353163",
+      "name": "Marble Mountain",
+      "region": "Newfoundland and Labrador",
+      "regionCode": "NL",
+      "country": "Canada",
+      "sourceWebsite": "https://www.skimarble.com/",
+      "websiteProvenance": "OpenSkiData candidate; not independently confirmed as official",
+      "mappedLiftCount": 3,
+      "siteHost": "www.skimarble.com",
+      "status": "unavailable",
+      "pages": [],
+      "links": {
+        "stats": [],
+        "map": [],
+        "tickets": []
+      },
+      "statisticCandidates": [],
+      "errors": [
+        {
+          "url": "https://www.skimarble.com/",
+          "reason": "robots-http-301"
+        }
+      ],
+      "notes": [],
+      "readyForPublish": false
+    },
+    {
+      "id": "osd-wikidata-q14875770",
+      "name": "Ski Martock",
+      "region": "Nova Scotia",
+      "regionCode": "NS",
+      "country": "Canada",
+      "sourceWebsite": "https://www.martock.com/",
+      "websiteProvenance": "OpenSkiData candidate; not independently confirmed as official",
+      "mappedLiftCount": 3,
+      "siteHost": "www.martock.com",
+      "status": "researched",
+      "pages": [
+        {
+          "url": "https://www.martock.com/",
+          "type": "homepage",
+          "status": "fetched"
+        },
+        {
+          "url": "https://www.martock.com/beer-fest-weekend/",
+          "type": "stats",
+          "status": "fetched"
+        },
+        {
+          "url": "https://www.martock.com/mountain/trail-map/",
+          "type": "map",
+          "status": "fetched"
+        }
+      ],
+      "links": {
+        "stats": [
+          {
+            "url": "https://www.martock.com/beer-fest-weekend/",
+            "label": "Fall Fest Weekend | Oct 10-11, 2026  ·  10 AM – 4 PM Local beer, cider and wine, a BBQ and a day on the mountain to clos",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.martock.com/"
+          },
+          {
+            "url": "https://www.martock.com/mountain/about/",
+            "label": "About Martock",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.martock.com/"
+          },
+          {
+            "url": "https://www.martock.com/mountain/accommodations/",
+            "label": "Accommodations",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.martock.com/"
+          },
+          {
+            "url": "https://www.martock.com/mountain/activities/",
+            "label": "View All Activities →",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.martock.com/"
+          },
+          {
+            "url": "https://www.martock.com/mountain/conditions/",
+            "label": "sunny -3°C ▾",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.martock.com/"
+          },
+          {
+            "url": "https://www.martock.com/mountain/conditions/#trail-status",
+            "label": "Trail Status Open All trails are open",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.martock.com/"
+          }
+        ],
+        "map": [
+          {
+            "url": "https://www.martock.com/mountain/trail-map/",
+            "label": "Trail Map",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.martock.com/"
+          }
+        ],
+        "tickets": []
+      },
+      "statisticCandidates": [],
+      "errors": [],
+      "notes": [
+        "No safe numeric pattern found; pages may use JavaScript or PDFs.",
+        "Lift ticket page not discovered from links."
+      ],
+      "readyForPublish": false
+    },
+    {
+      "id": "osd-skimap-org-16205",
+      "name": "Bristol Pit",
+      "region": "Northwest Territories",
+      "regionCode": "NT",
+      "country": "Canada",
+      "sourceWebsite": "https://www.nwtsnowboard.ca/clubs/ragged-riders/",
+      "websiteProvenance": "OpenSkiData candidate; not independently confirmed as official",
+      "mappedLiftCount": 1,
+      "siteHost": "www.nwtsnowboard.ca",
+      "status": "researched",
+      "pages": [
+        {
+          "url": "https://www.nwtsnowboard.ca/clubs/ragged-riders/",
+          "type": "homepage",
+          "status": "fetched"
+        }
+      ],
+      "links": {
+        "stats": [],
+        "map": [],
+        "tickets": []
+      },
+      "statisticCandidates": [],
+      "errors": [],
+      "notes": [
+        "No safe numeric pattern found; pages may use JavaScript or PDFs.",
+        "Winter trail map not discovered from links.",
+        "Lift ticket page not discovered from links."
+      ],
+      "readyForPublish": false
+    },
+    {
+      "id": "osd-skimap-org-132",
+      "name": "Mount St. Louis Moonstone",
+      "region": "Ontario",
+      "regionCode": "ON",
+      "country": "Canada",
+      "sourceWebsite": "https://mountstlouis.com/",
+      "websiteProvenance": "OpenSkiData candidate; not independently confirmed as official",
+      "mappedLiftCount": 10,
+      "siteHost": "mountstlouis.com",
+      "status": "unavailable",
+      "pages": [],
+      "links": {
+        "stats": [],
+        "map": [],
+        "tickets": []
+      },
+      "statisticCandidates": [],
+      "errors": [
+        {
+          "url": "https://mountstlouis.com/",
+          "reason": "robots-http-301"
+        }
+      ],
+      "notes": [],
+      "readyForPublish": false
+    },
+    {
+      "id": "osd-openstreetmap-relation-5427289",
+      "name": "Mark Arendz Provincial Ski Park at Brookvale",
+      "region": "Prince Edward Island",
+      "regionCode": "PE",
+      "country": "Canada",
+      "sourceWebsite": "https://www.tourismpei.com/brookvale-activity-park",
+      "websiteProvenance": "OpenSkiData candidate; not independently confirmed as official",
+      "mappedLiftCount": 1,
+      "siteHost": "www.tourismpei.com",
+      "status": "researched",
+      "pages": [
+        {
+          "url": "https://www.tourismpei.com/brookvale-activity-park",
+          "type": "homepage",
+          "status": "fetched"
+        }
+      ],
+      "links": {
+        "stats": [],
+        "map": [],
+        "tickets": []
+      },
+      "statisticCandidates": [],
+      "errors": [],
+      "notes": [
+        "No safe numeric pattern found; pages may use JavaScript or PDFs.",
+        "Winter trail map not discovered from links.",
+        "Lift ticket page not discovered from links."
+      ],
+      "readyForPublish": false
+    },
+    {
+      "id": "osd-openstreetmap-relation-5365963",
+      "name": "Sommet Saint-Sauveur",
+      "region": "Quebec",
+      "regionCode": "QC",
+      "country": "Canada",
+      "sourceWebsite": "https://www.sommets.com/fr/montagne-de-ski/sommet-saint-sauveur/",
+      "websiteProvenance": "OpenSkiData candidate; not independently confirmed as official",
+      "mappedLiftCount": 17,
+      "siteHost": "www.sommets.com",
+      "status": "researched",
+      "pages": [
+        {
+          "url": "https://www.sommets.com/fr/decouvrir-les-sommets/sommet-saint-sauveur-hiver/",
+          "type": "homepage",
+          "status": "fetched"
+        }
+      ],
+      "links": {
+        "stats": [],
+        "map": [],
+        "tickets": []
+      },
+      "statisticCandidates": [],
+      "errors": [],
+      "notes": [
+        "No safe numeric pattern found; pages may use JavaScript or PDFs.",
+        "Winter trail map not discovered from links.",
+        "Lift ticket page not discovered from links."
+      ],
+      "readyForPublish": false
+    },
+    {
+      "id": "osd-openstreetmap-relation-5441713",
+      "name": "Table Mountain Regional Park",
+      "region": "Saskatchewan",
+      "regionCode": "SK",
+      "country": "Canada",
+      "sourceWebsite": "https://www.tablemountainregionalpark.com/",
+      "websiteProvenance": "OpenSkiData candidate; not independently confirmed as official",
+      "mappedLiftCount": 4,
+      "siteHost": "www.tablemountainregionalpark.com",
+      "status": "unavailable",
+      "pages": [],
+      "links": {
+        "stats": [],
+        "map": [],
+        "tickets": []
+      },
+      "statisticCandidates": [],
+      "errors": [
+        {
+          "url": "https://www.tablemountainregionalpark.com/",
+          "reason": "cross-site-redirect-not-followed"
+        }
+      ],
+      "notes": [],
+      "readyForPublish": false
+    },
+    {
+      "id": "osd-openstreetmap-relation-3943525",
+      "name": "Mount Sima",
+      "region": "Yukon",
+      "regionCode": "YT",
+      "country": "Canada",
+      "sourceWebsite": "https://www.mountsima.com/",
+      "websiteProvenance": "OpenSkiData candidate; not independently confirmed as official",
+      "mappedLiftCount": 2,
+      "siteHost": "www.mountsima.com",
+      "status": "unavailable",
+      "pages": [],
+      "links": {
+        "stats": [],
+        "map": [],
+        "tickets": []
+      },
+      "statisticCandidates": [],
+      "errors": [
+        {
+          "url": "https://www.mountsima.com/",
+          "reason": "robots-http-301"
+        }
+      ],
+      "notes": [],
+      "readyForPublish": false
+    },
+    {
+      "id": "osd-openstreetmap-way-766056081",
+      "name": "Castle Mountain Resort",
+      "region": "Alberta",
+      "regionCode": "AB",
+      "country": "Canada",
+      "sourceWebsite": "https://www.skicastle.ca/",
+      "websiteProvenance": "OpenSkiData candidate; not independently confirmed as official",
+      "mappedLiftCount": 7,
+      "siteHost": "www.skicastle.ca",
+      "status": "researched",
+      "pages": [
+        {
+          "url": "https://www.skicastle.ca/",
+          "type": "homepage",
+          "status": "fetched"
+        },
+        {
+          "url": "https://www.skicastle.ca/stats/",
+          "type": "stats",
+          "status": "fetched"
+        },
+        {
+          "url": "https://www.skicastle.ca/wintermaps/",
+          "type": "map",
+          "status": "fetched"
+        },
+        {
+          "url": "https://www.skicastle.ca/tickets/",
+          "type": "tickets",
+          "status": "fetched"
+        }
+      ],
+      "links": {
+        "stats": [
+          {
+            "url": "https://www.skicastle.ca/stats/",
+            "label": "Mountain Stats",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.skicastle.ca/"
+          },
+          {
+            "url": "https://www.skicastle.ca/castle-mountain-resort-appoints-chris-salhany-as-president/",
+            "label": "",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.skicastle.ca/"
+          },
+          {
+            "url": "https://www.skicastle.ca/event/film-festival/",
+            "label": "December 5 CASTLE MOUNTAIN COMMUNITY FILM FESTIVAL",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.skicastle.ca/"
+          },
+          {
+            "url": "https://www.skicastle.ca/mountaintours/",
+            "label": "Mountain Tours",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.skicastle.ca/"
+          },
+          {
+            "url": "https://www.skicastle.ca/stay/castle-ski-lodge/",
+            "label": "Castle Mountain Ski Lodge",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.skicastle.ca/"
+          },
+          {
+            "url": "https://www.skicastle.ca/terrain-park-2/",
+            "label": "Terrain Park",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.skicastle.ca/"
+          }
+        ],
+        "map": [
+          {
+            "url": "https://www.skicastle.ca/wintermaps/",
+            "label": "Winter Trail Maps",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.skicastle.ca/"
+          }
+        ],
+        "tickets": [
+          {
+            "url": "https://www.skicastle.ca/tickets/",
+            "label": "Day Tickets",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.skicastle.ca/"
+          },
+          {
+            "url": "https://www.skicastle.ca/wowpass/",
+            "label": "GET 50% OFF LIFT TICKETS",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.skicastle.ca/"
+          }
+        ]
+      },
+      "statisticCandidates": [
+        {
+          "metric": "acres",
+          "value": 3592,
+          "unit": "acres",
+          "sourceUrl": "https://www.skicastle.ca/stats/",
+          "evidence": "bar | 1 magic carpet | | | | Terrain | 1454 hectares / 3592 acres | 115 + trails | 8 alpine bowls | 2 mountains | | | | ",
+          "status": "needs-human-verification",
+          "method": "html-pattern"
+        },
+        {
+          "metric": "acres",
+          "value": 3592,
+          "unit": "acres",
+          "sourceUrl": "https://www.skicastle.ca/wintermaps/",
+          "evidence": "Trail Maps | Home / Winter Trail Maps | | | | | | WITH 3592 ACRES OF TERRAIN, A MAP MIGHT JUST COME IN HANDY | EXPLORE O",
+          "status": "needs-human-verification",
+          "method": "html-pattern"
+        }
+      ],
+      "errors": [],
+      "notes": [],
+      "readyForPublish": false
+    },
+    {
+      "id": "osd-wikidata-q3960702",
+      "name": "Silver Star Mountain Resort",
+      "region": "British Columbia",
+      "regionCode": "BC",
+      "country": "Canada",
+      "sourceWebsite": "https://www.skisilverstar.com/",
+      "websiteProvenance": "OpenSkiData candidate; not independently confirmed as official",
+      "mappedLiftCount": 11,
+      "siteHost": "www.skisilverstar.com",
+      "status": "researched",
+      "pages": [
+        {
+          "url": "https://www.skisilverstar.com/",
+          "type": "homepage",
+          "status": "fetched"
+        },
+        {
+          "url": "https://www.skisilverstar.com/events-activities/winter-activities/",
+          "type": "stats",
+          "status": "fetched"
+        },
+        {
+          "url": "https://www.skisilverstar.com/the-mountain/mountain-maps/winter-maps/",
+          "type": "map",
+          "status": "fetched"
+        },
+        {
+          "url": "https://www.skisilverstar.com/tickets-passes/winter-tickets/",
+          "type": "tickets",
+          "status": "fetched"
+        }
+      ],
+      "links": {
+        "stats": [
+          {
+            "url": "https://www.skisilverstar.com/events-activities/winter-activities/",
+            "label": "Things To Do | Discover a mountain of unlimited fun | Learn More | |",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.skisilverstar.com/"
+          },
+          {
+            "url": "https://www.skisilverstar.com/mountain-dining-shopping/gift-cards/",
+            "label": "Gift Cards |",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.skisilverstar.com/"
+          },
+          {
+            "url": "https://www.skisilverstar.com/mountain-dining-shopping/grocery-liquor/",
+            "label": "Grocery & Liquor |",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.skisilverstar.com/"
+          },
+          {
+            "url": "https://www.skisilverstar.com/mountain-dining-shopping/restaurants-cafes/",
+            "label": "Restaurants & Cafes |",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.skisilverstar.com/"
+          },
+          {
+            "url": "https://www.skisilverstar.com/the-mountain/hours-of-operation/",
+            "label": "Hours of Operation |",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.skisilverstar.com/"
+          },
+          {
+            "url": "https://www.skisilverstar.com/the-mountain/mountain-maps/winter-maps/",
+            "label": "Discover the Terrain | Mellow frontside... hairy backside | Learn More | |",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.skisilverstar.com/"
+          }
+        ],
+        "map": [
+          {
+            "url": "https://www.skisilverstar.com/the-mountain/mountain-maps/winter-maps/",
+            "label": "Discover the Terrain | Mellow frontside... hairy backside | Learn More | |",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.skisilverstar.com/"
+          }
+        ],
+        "tickets": [
+          {
+            "url": "https://www.skisilverstar.com/tickets-passes/winter-tickets/",
+            "label": "| Tickets & Passes | | |",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.skisilverstar.com/"
+          },
+          {
+            "url": "https://www.skisilverstar.com/tickets-passes/ikon-pass/",
+            "label": "Ikon Pass |",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.skisilverstar.com/"
+          },
+          {
+            "url": "https://www.skisilverstar.com/tickets-passes/star-card-guide/",
+            "label": "Star Card Guide |",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.skisilverstar.com/"
+          },
+          {
+            "url": "https://www.skisilverstar.com/tickets-passes/winter-passes/4Pack/",
+            "label": "",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.skisilverstar.com/"
+          },
+          {
+            "url": "https://www.skisilverstar.com/tickets-passes/winter-passes/alpine/",
+            "label": "",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.skisilverstar.com/"
+          }
+        ]
+      },
+      "statisticCandidates": [],
+      "errors": [],
+      "notes": [
+        "No safe numeric pattern found; pages may use JavaScript or PDFs."
+      ],
+      "readyForPublish": false
+    },
+    {
+      "id": "osd-skimap-org-61",
+      "name": "Asessippi Ski Area and Resort",
+      "region": "Manitoba",
+      "regionCode": "MB",
+      "country": "Canada",
+      "sourceWebsite": "https://www.asessippi.com/",
+      "websiteProvenance": "OpenSkiData candidate; not independently confirmed as official",
+      "mappedLiftCount": 4,
+      "siteHost": "www.asessippi.com",
+      "status": "unavailable",
+      "pages": [],
+      "links": {
+        "stats": [],
+        "map": [],
+        "tickets": []
+      },
+      "statisticCandidates": [],
+      "errors": [
+        {
+          "url": "https://www.asessippi.com/",
+          "reason": "robots-http-511"
+        }
+      ],
+      "notes": [],
+      "readyForPublish": false
+    }
+  ]
+}
