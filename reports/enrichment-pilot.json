@@ -1,18 +1,19 @@
 {
   "version": 1,
   "type": "review-only",
-  "generatedAt": "2026-11-04T00:04:01.088Z",
+  "generatedAt": "2026-11-04T00:06:51.755Z",
   "bot": "PisteAtlasResearchBot/0.5 (+https://ojan11-11.github.io/piste-atlas/)",
   "method": "respect robots.txt; homepage + up to three same-host links; exact excerpts; review required",
   "source": "OpenSkiData resort website candidates",
   "sourceWebsiteVerified": false,
   "summary": {
     "requested": 50,
-    "researched": 36,
-    "unavailable": 14,
-    "statisticCandidates": 46,
-    "mapPageCandidates": 33,
-    "ticketPageCandidates": 72,
+    "retried": 14,
+    "researched": 42,
+    "unavailable": 8,
+    "statisticCandidates": 51,
+    "mapPageCandidates": 40,
+    "ticketPageCandidates": 82,
     "automaticallyPublishedFacts": 0,
     "snowfallProcessed": false
   },
@@ -901,21 +902,70 @@
       "websiteProvenance": "OpenSkiData candidate; not independently confirmed as official",
       "mappedLiftCount": 14,
       "siteHost": "www.perfectnorth.com",
-      "status": "unavailable",
-      "pages": [],
-      "links": {
-        "stats": [],
-        "map": [],
-        "tickets": []
-      },
-      "statisticCandidates": [],
-      "errors": [
+      "status": "researched",
+      "pages": [
         {
-          "url": "https://www.perfectnorth.com/",
-          "reason": "robots-http-301"
+          "url": "https://perfectnorth.com/",
+          "type": "homepage",
+          "status": "fetched"
+        },
+        {
+          "url": "https://perfectnorth.com/terrain-parks/",
+          "type": "stats",
+          "status": "fetched"
+        },
+        {
+          "url": "https://perfectnorth.com/trail-map/",
+          "type": "map",
+          "status": "fetched"
+        },
+        {
+          "url": "https://perfectnorth.com/lift-tickets/",
+          "type": "tickets",
+          "status": "fetched"
         }
       ],
-      "notes": [],
+      "links": {
+        "stats": [
+          {
+            "url": "https://perfectnorth.com/terrain-parks/",
+            "label": "TERRAIN PARKS",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://perfectnorth.com/"
+          }
+        ],
+        "map": [
+          {
+            "url": "https://perfectnorth.com/trail-map/",
+            "label": "TRAIL MAP",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://perfectnorth.com/"
+          }
+        ],
+        "tickets": [
+          {
+            "url": "https://perfectnorth.com/?keyword=SUB_Lift",
+            "label": "BUY LIFT TICKETS",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://perfectnorth.com/lift-tickets/"
+          },
+          {
+            "url": "https://perfectnorth.com/lift-tickets/",
+            "label": "LIFT TICKETS",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://perfectnorth.com/"
+          }
+        ]
+      },
+      "statisticCandidates": [],
+      "errors": [],
+      "notes": [
+        "No safe numeric pattern found; pages may use JavaScript or PDFs."
+      ],
       "readyForPublish": false
     },
     {
@@ -928,20 +978,80 @@
       "websiteProvenance": "OpenSkiData candidate; not independently confirmed as official",
       "mappedLiftCount": 12,
       "siteHost": "www.skinashoba.com",
-      "status": "unavailable",
-      "pages": [],
-      "links": {
-        "stats": [],
-        "map": [],
-        "tickets": []
-      },
-      "statisticCandidates": [],
-      "errors": [
+      "status": "researched",
+      "pages": [
         {
-          "url": "https://www.skinashoba.com/",
-          "reason": "robots-http-301"
+          "url": "https://skinashoba.com/",
+          "type": "homepage",
+          "status": "fetched"
+        },
+        {
+          "url": "https://skinashoba.com/trail-map/",
+          "type": "map",
+          "status": "fetched"
+        },
+        {
+          "url": "https://skinashoba.com/lift-tickets/",
+          "type": "tickets",
+          "status": "fetched"
         }
       ],
+      "links": {
+        "stats": [],
+        "map": [
+          {
+            "url": "https://skinashoba.com/daily/?redirect_to=https%3A%2F%2Fskinashoba.com%2Ftrail-map%2F",
+            "label": "logged in",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://skinashoba.com/trail-map/"
+          },
+          {
+            "url": "https://skinashoba.com/trail-map/",
+            "label": "Trail Map",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://skinashoba.com/"
+          }
+        ],
+        "tickets": [
+          {
+            "url": "https://skinashoba.com/lift-tickets/",
+            "label": "Lift Tickets",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://skinashoba.com/"
+          },
+          {
+            "url": "https://skinashoba.com/tickets-passes/",
+            "label": "Tickets & Passes",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://skinashoba.com/"
+          }
+        ]
+      },
+      "statisticCandidates": [
+        {
+          "metric": "lifts",
+          "value": 3,
+          "unit": "count",
+          "sourceUrl": "https://skinashoba.com/trail-map/",
+          "evidence": "ical Feet: 240 ft. | Longest Run: 1400 ft. (1/2 mi.) | Lifts: 3 triple chairs, 1 double chair, 3 conveyers, 3 rope tow",
+          "status": "needs-human-verification",
+          "method": "html-pattern"
+        },
+        {
+          "metric": "trails",
+          "value": 17,
+          "unit": "count",
+          "sourceUrl": "https://skinashoba.com/trail-map/",
+          "evidence": ": 100% | Operation: 7 Days/7Nights, 100% lit terrain | Trails: 17 | Slope Difficulty: 20% beginner, 50% intermediate, 30",
+          "status": "needs-human-verification",
+          "method": "html-pattern"
+        }
+      ],
+      "errors": [],
       "notes": [],
       "readyForPublish": false
     },
@@ -1122,7 +1232,7 @@
       "errors": [
         {
           "url": "https://www.skimtholly.com/",
-          "reason": "robots-http-301"
+          "reason": "robots-http-202"
         }
       ],
       "notes": [],
@@ -1725,21 +1835,133 @@
       "websiteProvenance": "OpenSkiData candidate; not independently confirmed as official",
       "mappedLiftCount": 11,
       "siteHost": "www.mountaincreek.com",
-      "status": "unavailable",
-      "pages": [],
-      "links": {
-        "stats": [],
-        "map": [],
-        "tickets": []
-      },
-      "statisticCandidates": [],
-      "errors": [
+      "status": "researched",
+      "pages": [
         {
-          "url": "https://www.mountaincreek.com/",
-          "reason": "robots-http-301"
+          "url": "https://mountaincreek.com/",
+          "type": "homepage",
+          "status": "fetched"
+        },
+        {
+          "url": "https://mountaincreek.com/2026/07/21/wedding-expo-fall-2026/",
+          "type": "stats",
+          "status": "fetched"
+        },
+        {
+          "url": "https://mountaincreek.com/skiing-riding/mountain-report/snow-overview/",
+          "type": "map",
+          "status": "fetched"
+        },
+        {
+          "url": "https://mountaincreek.com/",
+          "type": "tickets",
+          "status": "fetched"
         }
       ],
-      "notes": [],
+      "links": {
+        "stats": [
+          {
+            "url": "https://mountaincreek.com/",
+            "label": "",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://mountaincreek.com/"
+          },
+          {
+            "url": "https://mountaincreek.com/2026/07/21/wedding-expo-fall-2026/",
+            "label": "Plan Your Special Day",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://mountaincreek.com/"
+          },
+          {
+            "url": "https://mountaincreek.com/activities-events/",
+            "label": "Activities & Events",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://mountaincreek.com/"
+          },
+          {
+            "url": "https://mountaincreek.com/activities-events/alpine-mountain-coaster/",
+            "label": "Alpine Mountain Coaster",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://mountaincreek.com/"
+          },
+          {
+            "url": "https://mountaincreek.com/activities-events/big-snow/",
+            "label": "Big SNOW",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://mountaincreek.com/"
+          },
+          {
+            "url": "https://mountaincreek.com/activities-events/event-calendar/",
+            "label": "Event Calendar",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://mountaincreek.com/"
+          }
+        ],
+        "map": [
+          {
+            "url": "https://mountaincreek.com/skiing-riding/mountain-report/snow-overview/",
+            "label": "Mountain Report & Trail Map",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://mountaincreek.com/"
+          },
+          {
+            "url": "https://mountaincreek.com/skiing-riding/mountain-report/trail-map/",
+            "label": "Trail Map",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://mountaincreek.com/skiing-riding/mountain-report/snow-overview/"
+          }
+        ],
+        "tickets": [
+          {
+            "url": "https://mountaincreek.com/Tab2",
+            "label": "Lift Tickets",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://mountaincreek.com/"
+          },
+          {
+            "url": "https://mountaincreek.com/skiing-riding/tickets-passes/",
+            "label": "Tickets, Rentals & Passes",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://mountaincreek.com/"
+          },
+          {
+            "url": "https://mountaincreek.com/skiing-riding/tickets-passes/giftcards/",
+            "label": "",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://mountaincreek.com/"
+          },
+          {
+            "url": "https://mountaincreek.com/waterpark/tickets-passes/",
+            "label": "Tickets & Passes",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://mountaincreek.com/"
+          },
+          {
+            "url": "https://mountaincreek.com/waterpark/tickets-passes/cabana-rentals/",
+            "label": "Waterpark Cabana Rentals",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://mountaincreek.com/"
+          }
+        ]
+      },
+      "statisticCandidates": [],
+      "errors": [],
+      "notes": [
+        "No safe numeric pattern found; pages may use JavaScript or PDFs."
+      ],
       "readyForPublish": false
     },
     {
@@ -2550,7 +2772,7 @@
       "errors": [
         {
           "url": "https://obermountain.com/",
-          "reason": "robots-http-308"
+          "reason": "robots-untrusted-redirect"
         }
       ],
       "notes": [],
@@ -3613,21 +3835,95 @@
       "websiteProvenance": "OpenSkiData candidate; not independently confirmed as official",
       "mappedLiftCount": 3,
       "siteHost": "www.skimarble.com",
-      "status": "unavailable",
-      "pages": [],
-      "links": {
-        "stats": [],
-        "map": [],
-        "tickets": []
-      },
-      "statisticCandidates": [],
-      "errors": [
+      "status": "researched",
+      "pages": [
         {
-          "url": "https://www.skimarble.com/",
-          "reason": "robots-http-301"
+          "url": "https://skimarble.com/",
+          "type": "homepage",
+          "status": "fetched"
+        },
+        {
+          "url": "https://skimarble.com/mountain-stats/",
+          "type": "stats",
+          "status": "fetched"
+        },
+        {
+          "url": "https://skimarble.com/trail-map/",
+          "type": "map",
+          "status": "fetched"
         }
       ],
-      "notes": [],
+      "links": {
+        "stats": [
+          {
+            "url": "https://skimarble.com/mountain-stats/",
+            "label": "Mountain Stats",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://skimarble.com/"
+          },
+          {
+            "url": "https://skimarble.com/accommodations#georges",
+            "label": "George's Mountain Village Cabins",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://skimarble.com/"
+          },
+          {
+            "url": "https://skimarble.com/ambassadors/",
+            "label": "Marble Mountain Ambassadors",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://skimarble.com/"
+          },
+          {
+            "url": "https://skimarble.com/corporate-partnership-program/",
+            "label": "Marble Mountain Corporate Partnership Program",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://skimarble.com/"
+          },
+          {
+            "url": "https://skimarble.com/marble-mountains-early-bird-season-passes-on-sale-tomorrow/",
+            "label": "",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://skimarble.com/"
+          },
+          {
+            "url": "https://skimarble.com/terrain-status/",
+            "label": "Terrain Status",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://skimarble.com/"
+          }
+        ],
+        "map": [
+          {
+            "url": "https://skimarble.com/trail-map/",
+            "label": "Trail Map",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://skimarble.com/"
+          }
+        ],
+        "tickets": []
+      },
+      "statisticCandidates": [
+        {
+          "metric": "acres",
+          "value": 230,
+          "unit": "acres",
+          "sourceUrl": "https://skimarble.com/mountain-stats/",
+          "evidence": "6m / 1758 ft | | Runs: | | 43 | | Skiable Terrain: | | 230 acres | | Base Elevation: | | 10m / 33ft | | Average Tempera",
+          "status": "needs-human-verification",
+          "method": "html-pattern"
+        }
+      ],
+      "errors": [],
+      "notes": [
+        "Lift ticket page not discovered from links."
+      ],
       "readyForPublish": false
     },
     {
@@ -3764,21 +4060,64 @@
       "websiteProvenance": "OpenSkiData candidate; not independently confirmed as official",
       "mappedLiftCount": 10,
       "siteHost": "mountstlouis.com",
-      "status": "unavailable",
-      "pages": [],
+      "status": "researched",
+      "pages": [
+        {
+          "url": "https://www.mountstlouis.com/",
+          "type": "homepage",
+          "status": "fetched"
+        },
+        {
+          "url": "https://www.mountstlouis.com/mountain-facts/",
+          "type": "stats",
+          "status": "fetched"
+        }
+      ],
       "links": {
-        "stats": [],
+        "stats": [
+          {
+            "url": "https://www.mountstlouis.com/mountain-facts/",
+            "label": "Our Mountain History",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://www.mountstlouis.com/"
+          },
+          {
+            "url": "https://www.mountstlouis.com/status/",
+            "label": "Mountain Status",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://www.mountstlouis.com/"
+          }
+        ],
         "map": [],
         "tickets": []
       },
-      "statisticCandidates": [],
-      "errors": [
+      "statisticCandidates": [
         {
-          "url": "https://mountstlouis.com/",
-          "reason": "robots-http-301"
+          "metric": "acres",
+          "value": 170,
+          "unit": "acres",
+          "sourceUrl": "https://www.mountstlouis.com/",
+          "evidence": "| Mountain Facts | 35 Total Slopes | 2KM Longest Run | 170 Skiable Acres | | Mountain Status | |   | | | | | | | | | | | mtstlo",
+          "status": "needs-human-verification",
+          "method": "html-pattern"
+        },
+        {
+          "metric": "acres",
+          "value": 180,
+          "unit": "acres",
+          "sourceUrl": "https://www.mountstlouis.com/mountain-facts/",
+          "evidence": "5 runs, 2 T-bars, 1 rope tow to over 36 runs, 8 lifts, 180 acres of ski-able terrain, 4 mountains, (made by moving over",
+          "status": "needs-human-verification",
+          "method": "html-pattern"
         }
       ],
-      "notes": [],
+      "errors": [],
+      "notes": [
+        "Winter trail map not discovered from links.",
+        "Lift ticket page not discovered from links."
+      ],
       "readyForPublish": false
     },
     {
@@ -3882,21 +4221,98 @@
       "websiteProvenance": "OpenSkiData candidate; not independently confirmed as official",
       "mappedLiftCount": 2,
       "siteHost": "www.mountsima.com",
-      "status": "unavailable",
-      "pages": [],
-      "links": {
-        "stats": [],
-        "map": [],
-        "tickets": []
-      },
-      "statisticCandidates": [],
-      "errors": [
+      "status": "researched",
+      "pages": [
         {
-          "url": "https://www.mountsima.com/",
-          "reason": "robots-http-301"
+          "url": "https://mountsima.com/",
+          "type": "homepage",
+          "status": "fetched"
+        },
+        {
+          "url": "https://mountsima.com/about-the-mountain/",
+          "type": "stats",
+          "status": "fetched"
+        },
+        {
+          "url": "https://mountsima.com/about-the-mountain/mountain-maps/",
+          "type": "map",
+          "status": "fetched"
+        },
+        {
+          "url": "https://mountsima.com/lift-tickets/",
+          "type": "tickets",
+          "status": "fetched"
         }
       ],
-      "notes": [],
+      "links": {
+        "stats": [
+          {
+            "url": "https://mountsima.com/about-the-mountain/",
+            "label": "The Mountain",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://mountsima.com/"
+          },
+          {
+            "url": "https://mountsima.com/about-the-mountain/hours-of-operation/",
+            "label": "Hours of Operation",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://mountsima.com/"
+          },
+          {
+            "url": "https://mountsima.com/about-the-mountain/mountain-information/",
+            "label": "Mountain Information",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://mountsima.com/"
+          },
+          {
+            "url": "https://mountsima.com/about-the-mountain/mountain-information/#safety-risk-awareness",
+            "label": "Safety & Risk Awareness",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://mountsima.com/"
+          },
+          {
+            "url": "https://mountsima.com/about-the-mountain/mountain-maps/",
+            "label": "Mountain Maps",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://mountsima.com/"
+          },
+          {
+            "url": "https://mountsima.com/mountain-conditions/",
+            "label": "Mountain Conditions",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://mountsima.com/"
+          }
+        ],
+        "map": [
+          {
+            "url": "https://mountsima.com/about-the-mountain/mountain-maps/",
+            "label": "Mountain Maps",
+            "score": 8,
+            "format": "html",
+            "discoveredOn": "https://mountsima.com/"
+          }
+        ],
+        "tickets": [
+          {
+            "url": "https://mountsima.com/lift-tickets/",
+            "label": "Lift Tickets",
+            "score": 12,
+            "format": "html",
+            "discoveredOn": "https://mountsima.com/"
+          }
+        ]
+      },
+      "statisticCandidates": [],
+      "errors": [],
+      "notes": [
+        "No safe numeric pattern found; pages may use JavaScript or PDFs."
+      ],
       "readyForPublish": false
     },
     {
