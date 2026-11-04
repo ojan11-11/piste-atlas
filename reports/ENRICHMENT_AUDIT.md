@@ -7,8 +7,8 @@ None of the extracted figures or candidate map/ticket links are automatically pu
 | Metric | Count |
 |---|---:|
 | resorts | 50 |
-| researched | 42 |
-| failed | 8 |
+| researched | 43 |
+| failed | 7 |
 | candidateNumbers | 51 |
 | mapLinks | 40 |
 | ticketLinks | 82 |

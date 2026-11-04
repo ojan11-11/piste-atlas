@@ -2,11 +2,11 @@
 
 **Research only — no mountain facts, ticket prices or copyrighted map artwork were automatically published.**
 
-Run: 2026-11-04T00:06:51.755Z
+Run: 2026-11-04T00:07:48.402Z
 
 - Candidate resort sites: 50
-- Successfully visited: 42
-- Unavailable or blocked: 8
+- Successfully visited: 43
+- Unavailable or blocked: 7
 - Numeric evidence candidates: 51
 - Discovered trail-map link candidates: 40
 - Discovered ticket link candidates: 82
@@ -63,7 +63,7 @@ Review reports/enrichment-pilot.json for source URL, evidence snippets, errors a
 | Mount St. Louis Moonstone | ON | researched | 2 | 0 | 0 |
 | Mark Arendz Provincial Ski Park at Brookvale | PE | researched | 0 | 0 | 0 |
 | Sommet Saint-Sauveur | QC | researched | 0 | 0 | 0 |
-| Table Mountain Regional Park | SK | unavailable | 0 | 0 | 0 |
+| Table Mountain Regional Park | SK | researched | 0 | 0 | 0 |
 | Mount Sima | YT | researched | 0 | 1 | 1 |
 | Castle Mountain Resort | AB | researched | 2 | 1 | 2 |
 | Silver Star Mountain Resort | BC | researched | 0 | 1 | 5 |

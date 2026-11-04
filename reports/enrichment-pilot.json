@@ -1,16 +1,16 @@
 {
   "version": 1,
   "type": "review-only",
-  "generatedAt": "2026-11-04T00:06:51.755Z",
+  "generatedAt": "2026-11-04T00:07:48.402Z",
   "bot": "PisteAtlasResearchBot/0.5 (+https://ojan11-11.github.io/piste-atlas/)",
   "method": "respect robots.txt; homepage + up to three same-host links; exact excerpts; review required",
   "source": "OpenSkiData resort website candidates",
   "sourceWebsiteVerified": false,
   "summary": {
     "requested": 50,
-    "retried": 14,
-    "researched": 42,
-    "unavailable": 8,
+    "retried": 8,
+    "researched": 43,
+    "unavailable": 7,
     "statisticCandidates": 51,
     "mapPageCandidates": 40,
     "ticketPageCandidates": 82,
@@ -4194,21 +4194,26 @@
       "websiteProvenance": "OpenSkiData candidate; not independently confirmed as official",
       "mappedLiftCount": 4,
       "siteHost": "www.tablemountainregionalpark.com",
-      "status": "unavailable",
-      "pages": [],
+      "status": "researched",
+      "pages": [
+        {
+          "url": "https://www.tablemountainregionalpark.com/",
+          "type": "homepage",
+          "status": "fetched"
+        }
+      ],
       "links": {
         "stats": [],
         "map": [],
         "tickets": []
       },
       "statisticCandidates": [],
-      "errors": [
-        {
-          "url": "https://www.tablemountainregionalpark.com/",
-          "reason": "cross-site-redirect-not-followed"
-        }
+      "errors": [],
+      "notes": [
+        "No safe numeric pattern found; pages may use JavaScript or PDFs.",
+        "Winter trail map not discovered from links.",
+        "Lift ticket page not discovered from links."
       ],
-      "notes": [],
       "readyForPublish": false
     },
     {
