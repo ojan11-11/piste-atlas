@@ -77,6 +77,8 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add reports/enrichment-pilot.json reports/ENRICHMENT_PILOT.md reports/enrichment-audit.json reports/ENRICHMENT_AUDIT.md
           if ! git diff --cached --quiet; then
-            git commit -m "data: record initial 50-resort source research pilot"
-            git push
+            git commit -m "data: record source research and quality audit"
+            git fetch origin "$GITHUB_REF_NAME"
+            git rebase "origin/$GITHUB_REF_NAME"
+            git push origin "HEAD:$GITHUB_REF_NAME"
           fi
