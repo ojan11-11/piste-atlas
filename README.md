@@ -118,7 +118,7 @@ node tools/test-site-directory.mjs
 
 The first production-style research pilot covers **50 unreviewed North American ski areas** without Mountain News or resort submissions. The research collector respects robots.txt, caps requests, stays on mapped site domains, looks for official mountain-statistics, winter trail-map, and lift-ticket pages, and stores short metric excerpts with source links for human review.
 
-Initial results: **42 of 50 reachable sites**, **51 candidate numbers**, **40 winter-map link candidates**, **82 ticket link candidates**, and **13 automated quality warnings**. These are evidence/candidate counts, **not verified facts or a count of distinct maps or ticket pages**. Eight sites could not be crawled. Snowfall remains out of scope.
+Initial results: **43 of 50 reachable sites**, **51 candidate numbers**, **40 winter-map link candidates**, **82 ticket link candidates**, and **13 automated quality warnings**. These are evidence/candidate counts, **not verified facts or a count of distinct maps or ticket pages**. Seven sites could not be crawled; access restrictions and network errors remain visible in the report. Snowfall remains out of scope.
 
 The pipeline writes:
 - reports/enrichment-pilot.json — source URLs, numeric evidence, page-link suggestions, access errors
