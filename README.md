@@ -129,3 +129,22 @@ The pipeline writes:
 **No data from these reports is automatically published to resort pages.** For example, an operator homepage might mention 6,000 acres of total resort property and only 83 acres of skiable slopes. Such claims must be manually reconciled against official source pages before entering the curated resort layer. See docs/ENRICHMENT_ENGINE.md for run instructions, permission considerations, and phase planning.
 
 The engine is a GitHub Action named "Research official resort sources (v0.5)" and runs tests plus a guarded crawler. It can retry only the previously inaccessible sites instead of needlessly recontacting the successful ones. Its outputs are artifacts and commits on the feature branch, not changes to the public GitHub Pages site.
+
+
+## v0.6 — Published pilot enrichment (official stats, maps and tickets)
+
+The 50-resort source research pilot has now produced **18 additional operator-reviewed ski area profiles** after human source checking. These include Olympic Valley and Alpine Meadows as separately mapped areas of Palisades Tahoe, plus 16 other resorts across the United States and Canada.
+
+The directory retains **748 unique listings**: **8 original source-checked profiles + 33 enriched OpenSkiData entries = 41 reviewed profiles**, with **707 map-only candidates** remaining. No resort location or ID was removed or invented.
+
+The additional records supply resort-reported skiable acreage, vertical where explicitly stated, lift/trail counts, terrain splits, summit/base elevations, winter trail-map pages, ticket pages and documented discrepancy notes **where confirmed**. New snowfall values are deliberately left unknown. No map artwork or online ticket pricing is copied into this repository.
+
+Examples of necessary validation:
+- Powder Ridge lists 255 acres of overall property but only **80 skiable acres**.
+- Okemo mentions 4,000 acres of state forest, but the operator's mountain-stat section reports **667 skiable acres**.
+- Two peaks of Palisades Tahoe each have their own distinct mountain statistics; publishing the same combined 6,000 acres twice would mislead comparisons.
+- Some resort pages report conflicting trail counts, so those fields remain unverified when unresolved.
+
+All reviews contain source URLs, review dates and human-readable notes. See [Operator review batch 02](docs/OPERATOR_REVIEW_BATCH_02.md). The GitHub Actions verification workflow checks resort IDs, 748-entry uniqueness, reviewed counts, source URLs, selective numeric invariants and map rendering.
+
+For the next phase, extend source verification to more candidates, refine stat extraction, and prioritize direct official winter-map and lift-ticket links. Snowfall is a later phase.
