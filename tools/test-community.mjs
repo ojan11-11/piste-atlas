@@ -36,8 +36,10 @@ vm.createContext(ctx);
 for(const path of ['data/resorts.js','data/resorts.openskidata.js','data/resorts.mapped-detail.js',
  'data/resorts.enriched.js','community-config.js','community.js','app.js']){
   vm.runInContext(fs.readFileSync(path,'utf8'),ctx,{filename:path});
+  // Exercise guest-only mode independently of the live Supabase config.
+  if(path==='community-config.js')win.PISTE_COMMUNITY_CONFIG={url:'',publishableKey:''};
 }
-assert.equal(win.PisteCommunity.isConfigured,false,'No keys have been installed');
+assert.equal(win.PisteCommunity.isConfigured,false,'Guest-mode simulation disables external auth');
 assert.equal(win.PisteCommunity.visitCount,0);
 assert.match(app.innerHTML,/Account/);
 function navigate(hash){
