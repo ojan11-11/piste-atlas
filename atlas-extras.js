@@ -85,8 +85,8 @@
     return '<section class="shell pa-feature-page"><span class="mini-eyebrow">WEATHER-BASED DISCOVERY</span>'
       +'<h2>Powder Finder</h2><p>Compare modeled snowfall for up to 24 well-documented ski resorts across the U.S. and Canada. '
       +'These are point forecasts near the resort, not ski-area snow reports or guarantees of open terrain.</p>'
-      +'<div class="pa-forecast-controls"><label>Forecast window <select data-pa-powder-days><option value="3">Next 3 days</option>'
-      +'<option value="7">Next 7 days</option></select></label><button type="button" class="btn outline" data-pa-reload-forecast>Refresh forecast</button></div>'
+      +'<div class="pa-forecast-controls"><label>Forecast window <select data-pa-powder-days><option value="3">Today + 2 days</option>'
+      +'<option value="7">Today + 6 days</option></select></label><button type="button" class="btn outline" data-pa-reload-forecast>Refresh forecast</button></div>'
       +'<div data-pa-powder-results><p>Loading forecast data…</p></div>'
       +'<p class="pa-muted">Forecast: <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo</a> (CC BY 4.0). '
       +'Snowfall is a model estimate, not measured accumulation. Free API use is noncommercial only; '
@@ -124,7 +124,8 @@
     const el=document.querySelector('[data-pa-powder-results]');if(!el)return;
     if(weatherCache.error){el.innerHTML='<p role="status" class="pa-muted">'+esc(weatherCache.error)+'</p>';return;}
     const days=Number(document.querySelector('[data-pa-powder-days]')?.value)||3;
-    const ranked=weatherCache.rows.map(r=>({...r,total:r.snow.slice(0,days).reduce((n,v)=>n+(v||0),0)}))
+    const ranked=weatherCache.rows.filter(r=>r.snow.length>=days&&r.snow.slice(0,days).every(v=>Number.isFinite(v)))
+      .map(r=>({...r,total:r.snow.slice(0,days).reduce((n,v)=>n+v,0)}))
       .sort((a,b)=>b.total-a.total);
     el.innerHTML=ranked.length?'<div class="pa-powder-list">'+ranked.map((r,i)=>
       '<a href="#resort/'+esc(r.id)+'" class="pa-powder-row"><b>'+(i+1)+'</b>'
@@ -151,7 +152,7 @@
       const data=await response.json(),daily=data.daily||{};
       el.innerHTML='<div class="pa-daily-forecast">'+(daily.time||[]).map((day,i)=>
         '<div><strong>'+esc(day.slice(5))+'</strong><span>'+((daily.snowfall_sum?.[i]||0)/2.54).toFixed(1)+' in</span>'
-        +'<small>'+Math.round(daily.temperature_2m_max?.[i]||0)+'°F</small></div>').join('')+'</div>'
+        +'<small>'+(Number.isFinite(daily.temperature_2m_max?.[i])?Math.round(daily.temperature_2m_max[i])+'°F':'Temp unavailable')+'</small></div>').join('')+'</div>'
         +'<small>Open-Meteo model forecast · CC BY 4.0 · Not measured snowfall.</small>';
     }catch{el.textContent='Forecast temporarily unavailable.';}
   }
