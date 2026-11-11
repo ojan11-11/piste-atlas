@@ -111,3 +111,15 @@ a.pa-link-button {text-decoration:underline}
  .pa-visit-item {align-items:flex-start}
  .pa-section>h2 {font-size:28px}
 }
+
+/* v0.11: optional resort-category star ratings */
+.pa-highlights {border:1px solid #dce8e4;border-radius:12px;padding:18px;margin:18px 0;background:#fff;min-width:0}
+.pa-highlights legend {font-weight:750;color:#183f42;padding:0 6px;font-size:15px}
+.pa-highlights>p {color:#577275;margin:2px 0 17px;font-size:13px;line-height:1.5}
+.pa-highlights-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 16px}
+.pa-highlights-grid label {margin-bottom:0;font-size:13px}
+.pa-highlight-list {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 12px;margin:12px 0}
+.pa-highlight-item {display:flex;align-items:center;justify-content:space-between;gap:8px;background:#edf4f1;border-radius:8px;padding:9px 10px;font-size:12px}
+.pa-highlight-item span:first-child {color:#2a5054}
+.pa-highlight-item .pa-stars {font-size:14px}
+@media(max-width:680px){.pa-highlights-grid,.pa-highlight-list{grid-template-columns:1fr}}
