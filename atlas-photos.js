@@ -107,6 +107,7 @@
   const commonsCache=new Map();
   const categoryCache=new Map();
   const activeObservers=new Set();
+  const approvedCoverCache=new Map();
   let inFlight=0;
   const pending=[];
   const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -271,6 +272,31 @@
     if(!cache.has(id))cache.set(id,discover(id,full));
     return cache.get(id);
   }
+  async function approvedCover(id){
+    const client=window.PisteCommunity?.client;
+    if(!client)return null;
+    const cached=approvedCoverCache.get(id);
+    if(cached&&Date.now()-cached.time<300000)return cached.promise;
+    const promise=(async()=>{
+      try{
+        const result=await client.from('piste_photos').select('storage_path,caption,user_id')
+          .eq('resort_id',id).eq('status','approved').eq('is_featured',true).limit(1);
+        if(result.error||!result.data?.length)return null;
+        const photo=result.data[0];
+        const signed=await client.storage.from('piste-community-photos').createSignedUrl(photo.storage_path,1800);
+        if(signed.error||!signed.data?.signedUrl)return null;
+        const src=signed.data.signedUrl;
+        if(!/^https:\/\/[a-z0-9-]+\.supabase\.co\/storage\/v1\/object\/sign\//i.test(src))return null;
+        let author='Piste Atlas community member';
+        const names=await client.from('piste_profiles').select('display_name').eq('user_id',photo.user_id).maybeSingle();
+        if(!names.error&&names.data?.display_name)author=names.data.display_name;
+        return {kind:'community',src,author,license:'Approved contribution',source:null,
+          file:photo.caption||'Community resort photograph'};
+      }catch{return null;}
+    })();
+    approvedCoverCache.set(id,{time:Date.now(),promise});
+    return promise;
+  }
   // The imageinfo URL is a 1440-pixel Commons thumbnail. Smaller WebP/JPEG
   // derivatives use Wikimedia's documented thumb path rather than scaling a
   // full-width image into a mobile card.
@@ -282,6 +308,8 @@
     return entries.join(', ');
   }
   function credit(photo){
+    if(photo.kind==='community')return '<span class="pa-photo-credit">Photo by '+esc(photo.author)
+      +' · Approved community contribution · cropped to fit</span>';
     return '<span class="pa-photo-credit"><a href="'+esc(photo.source)+'" target="_blank" rel="noopener noreferrer">'
       +esc(photo.author)+'</a> · '+(photo.licenseUrl
         ?'<a href="'+esc(photo.licenseUrl)+'" target="_blank" rel="noopener noreferrer">'+esc(photo.license)+'</a>'
@@ -336,9 +364,12 @@
     if(hero)el.insertAdjacentHTML('beforeend','<div class="pa-hero-credit">'+credit(photo)+'</div>');
   }
   async function paintHero(id){
-    const photos=await getPhotos(id,false);
-    if(!photos.length)return;
-    document.querySelectorAll('[data-pa-photo="'+id+'"]').forEach(el=>paintImage(el,id,photos[0]));
+    // An admin-selected, approved contributor photo overrides Commons candidates.
+    // Pending uploads can never be selected by this query.
+    const approved=await approvedCover(id);
+    const cover=approved||(await getPhotos(id,false))[0];
+    if(!cover)return;
+    document.querySelectorAll('[data-pa-photo="'+id+'"]').forEach(el=>paintImage(el,id,cover));
   }
   async function paintGallery(id){
     const target=document.querySelector('[data-pa-gallery="'+id+'"]');
