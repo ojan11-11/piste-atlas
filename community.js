@@ -97,8 +97,9 @@
       +'<div class="pa-actions"><button class="btn dark" type="submit">'+(my?'Update review':'Post review')+'</button>'
       +(my?'<button class="btn outline" type="button" data-pa-action="delete-review" data-resort-id="'+esc(id)+'">Delete review</button>':'')+'</div>'
       +'<small>One review per mountain. Reviews are public; keep personal contact details out of them.</small></form>'
-      :'<div class="pa-signin-prompt"><p>Sign in to rate this mountain and share a written review.</p>'
-      +'<a class="btn outline" href="#account">Sign in or create an account</a></div>';
+      :configured?'<div class="pa-signin-prompt"><p>Sign in to rate this mountain and share a written review.</p>'
+      +'<a class="btn outline" href="#account">Sign in or create an account</a></div>'
+      :'<div class="pa-signin-prompt"><p>Ratings and public reviews will open when community accounts are activated.</p></div>';
     return '<div class="pa-summary"><div>'+summary+'</div><span>'+ (record?'✓ On your visited list':'Add this mountain to your logbook') +'</span></div>'
       +(signed?'': '<p class="pa-guest-label">'+(configured?'Guest visits stay in this browser until you sign in and import them.':'Guest logbook is saved only in this browser. Online accounts need database setup.')+'</p>')
       +visitForm+'<div class="pa-review-area"><div class="pa-review-list"><h3>Mountain reviews</h3>'
@@ -204,7 +205,7 @@
     if(!configured){state.ready=true;return;}
     if(!window.supabase?.createClient){
       const script=document.createElement('script');
-      script.src='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.50.0/dist/umd/supabase.min.js';
+      script.src='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2';
       script.async=true;
       script.onload=()=>startup();
       script.onerror=()=>{state.backendError='Authentication library did not load. Please try again later.';state.ready=true;refreshPanels();};
