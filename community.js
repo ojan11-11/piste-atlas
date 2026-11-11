@@ -19,6 +19,41 @@
   };
   const safeId = id => catalog.has(id) && /^[a-zA-Z0-9._-]{3,160}$/.test(id);
   const defaultName = 'Skier';
+  // Every highlight is optional, and each supplied value must be a whole 1–5 star rating.
+  const highlightCategories=[
+    ['food','Food on the mountain'],
+    ['lifts','Lifts'],
+    ['expert_terrain','Expert terrain'],
+    ['beginner_terrain','Beginner terrain'],
+    ['intermediate_terrain','Intermediate terrain'],
+    ['terrain_parks','Terrain parks'],
+    ['rentals','Equipment rentals'],
+    ['housing','Housing'],
+    ['hotels','Hotels'],
+    ['town','Surrounding town'],
+    ['restaurants','Restaurants'],
+    ['grooming','Grooming'],
+    ['apres_ski','Après-ski'],
+    ['value','Value']
+  ];
+  const highlightLabel=new Map(highlightCategories);
+  const validateHighlights=(input={})=>{
+    if(!input||typeof input!=='object'||Array.isArray(input))throw Error('Invalid highlights.');
+    const values={};
+    for(const [key,rating] of Object.entries(input)){
+      if(!highlightLabel.has(key)||!Number.isInteger(Number(rating))||Number(rating)<1||Number(rating)>5)
+        throw Error('Highlight ratings must be between 1 and 5 stars.');
+      values[key]=Number(rating);
+    }
+    return values;
+  };
+  const highlightHTML = input => {
+    const values=input&&typeof input==='object'&&!Array.isArray(input)?input:{};
+    const chosen=highlightCategories.filter(([key])=>Number.isInteger(values[key])&&values[key]>=1&&values[key]<=5);
+    return chosen.length?'<div class="pa-highlight-list">'+chosen.map(([key,label])=>
+      '<div class="pa-highlight-item"><span>'+esc(label)+'</span><span class="pa-stars" aria-label="'+values[key]+' out of 5 stars">'+stars(values[key])+'</span></div>'
+    ).join('')+'</div>':'';
+  };
   const state = {ready:!configured, user:null, profile:null, visits:new Map(), myReviews:new Map(),
     guest:new Map(), publicReviews:new Map(), loading:new Set(), pendingLoads:new Map(), note:'', noteType:'info', busy:false,
     backendError:'', client:null};
@@ -77,7 +112,8 @@
       return '<article class="pa-review"><div class="pa-review-top"><strong>'+esc(display)+'</strong>'
         +'<span class="pa-stars" aria-label="'+esc(r.rating)+' out of 5 stars">'+stars(r.rating)+'</span>'
         +'<small>'+esc(fmtDate(r.created_at))+'</small></div>'
-        +'<h4>'+esc(r.title)+'</h4><p>'+esc(r.body)+'</p>'
+        +(r.title?'<h4>'+esc(r.title)+'</h4>':'')+(r.body?'<p>'+esc(r.body)+'</p>':'')
+        +highlightHTML(r.highlights)
         +(signed&&r.user_id!==state.user.id?'<div class="pa-report"><label>Report review <select data-pa-report-reason="'+esc(r.id)+'"><option value="spam">Spam</option><option value="harassment">Harassment</option><option value="misinformation">Incorrect information</option><option value="other">Other</option></select></label> <button class="pa-link-button" type="button" data-pa-action="report" data-review-id="'+esc(r.id)+'">Report</button></div>':'')
         +'</article>';
     }).join(''):'<p class="pa-empty">No public reviews yet. Be the first to share your experience.</p>';
@@ -92,12 +128,17 @@
       +'<h3>'+(my?'Edit your review':'Write a review')+'</h3>'
       +'<div class="pa-form-grid"><label>Overall rating<select name="rating" required>'
       +[1,2,3,4,5].map(n=>'<option value="'+n+'" '+((my?.rating||5)===n?'selected':'')+'>'+n+' '+(n===1?'star':'stars')+'</option>').join('')
-      +'</select></label><label>Review title<input name="title" type="text" minlength="3" maxlength="100" required value="'+esc(my?.title||'')+'" placeholder="A memorable mountain"></label></div>'
-      +'<label>Your experience<textarea name="body" minlength="20" maxlength="2000" rows="4" required placeholder="What stood out about the terrain, lifts, experience, and value?">'+esc(my?.body||'')+'</textarea></label>'
+      +'</select></label><label>Review title (optional)<input name="title" type="text" maxlength="100" value="'+esc(my?.title||'')+'" placeholder="A memorable mountain"></label></div>'
+      +'<label>Your experience (optional)<textarea name="body" maxlength="2000" rows="4" placeholder="What stood out about the terrain, lifts, experience, and value?">'+esc(my?.body||'')+'</textarea></label>'
+      +'<fieldset class="pa-highlights"><legend>Optional highlight ratings</legend><p>Rate only the parts of the mountain you know. Leave everything else blank.</p>'
+      +'<div class="pa-highlights-grid">'+highlightCategories.map(([key,label])=>
+        '<label>'+esc(label)+'<select name="highlight_'+key+'"><option value="">Not rated</option>'
+        +[1,2,3,4,5].map(n=>'<option value="'+n+'" '+(Number(my?.highlights?.[key])===n?'selected':'')+'>'+n+' '+(n===1?'star':'stars')+'</option>').join('')
+        +'</select></label>').join('')+'</div></fieldset>'
       +'<div class="pa-actions"><button class="btn dark" type="submit">'+(my?'Update review':'Post review')+'</button>'
       +(my?'<button class="btn outline" type="button" data-pa-action="delete-review" data-resort-id="'+esc(id)+'">Delete review</button>':'')+'</div>'
-      +'<small>One review per mountain. Reviews are public; keep personal contact details out of them.</small></form>'
-      :configured?'<div class="pa-signin-prompt"><p>Sign in to rate this mountain and share a written review.</p>'
+      +'<small>Only the overall rating is required. You can add or skip a title, comments, and highlight ratings. Your review is public.</small></form>'
+      :configured?'<div class="pa-signin-prompt"><p>Sign in to rate this mountain. Comments and highlight ratings are optional.</p>'
       +'<a class="btn outline" href="#account">Sign in or create an account</a></div>'
       :'<div class="pa-signin-prompt"><p>Ratings and public reviews will open when community accounts are activated.</p></div>';
     return '<div class="pa-summary"><div>'+summary+'</div><span>'+ (record?'✓ On your visited list':'Add this mountain to your logbook') +'</span></div>'
@@ -120,7 +161,7 @@
     const ownReviews=reviews.length?'<div class="pa-visit-list">'+reviews.map(r=>{
       const mountain=catalog.get(r.resort_id);
       return '<article class="pa-visit-item"><div><strong><a href="#resort/'+esc(r.resort_id)+'">'+esc(mountain?.name||r.resort_id)+'</a></strong>'
-        +'<small class="pa-stars">'+stars(r.rating)+'</small><p>'+esc(r.title)+'</p></div>'
+        +'<small class="pa-stars">'+stars(r.rating)+'</small>'+(r.title?'<p>'+esc(r.title)+'</p>':'')+highlightHTML(r.highlights)+'</div>'
         +'<a class="pa-link-button" href="#resort/'+esc(r.resort_id)+'">Edit</a></article>';
     }).join('')+'</div>':'<p class="pa-empty">Your reviews will appear here once you publish them.</p>';
     const auth=signedInHTML();
@@ -155,7 +196,7 @@
     const work=(async()=>{
       try{
         const [reviewsRes,summaryRes]=await Promise.all([
-          state.client.from('piste_reviews').select('id,user_id,rating,title,body,created_at')
+          state.client.from('piste_reviews').select('id,user_id,rating,title,body,highlights,created_at')
             .eq('resort_id',id).eq('status','published').order('created_at',{ascending:false}).limit(20),
           state.client.from('piste_resort_rating_summaries')
             .select('review_count,average_rating').eq('resort_id',id).maybeSingle()
@@ -187,7 +228,7 @@
     const uid=state.user.id;
     const [vis,rev,prof]=await Promise.all([
       state.client.from('piste_visits').select('resort_id,visited_on,note').eq('user_id',uid),
-      state.client.from('piste_reviews').select('id,resort_id,rating,title,body,status,created_at').eq('user_id',uid),
+      state.client.from('piste_reviews').select('id,resort_id,rating,title,body,highlights,status,created_at').eq('user_id',uid),
       state.client.from('piste_profiles').select('display_name').eq('user_id',uid).maybeSingle()
     ]);
     if(vis.error||rev.error||prof.error){state.backendError='Could not load account data. Check that the database tables and RLS policies are installed.';}
@@ -254,17 +295,19 @@
     if(error)throw error;
     state.visits.delete(id);refreshApp();
   }
-  async function saveReview(id,rating,title,body){
+  async function saveReview(id,rating,title,body,highlights={}){
     if(!safeId(id)||!hasAccount())throw Error('Sign in to post a review.');
-    if(!Number.isInteger(rating)||rating<1||rating>5||title.length<3||title.length>100||body.length<20||body.length>2000)
-      throw Error('Enter 1–5 stars, a title (3–100 characters) and a review (20–2,000 characters).');
+    if(!Number.isInteger(rating)||rating<1||rating>5||title.length>100||body.length>2000)
+      throw Error('Enter an overall rating of 1–5 stars. Optional titles must be at most 100 characters and comments at most 2,000 characters.');
+    const detail=validateHighlights(highlights);
+    const payload={rating,title:title||null,body:body||null,highlights:detail};
     const existing=state.myReviews.get(id);
     const res=existing?
-      await state.client.from('piste_reviews').update({rating,title,body}).eq('id',existing.id).eq('user_id',state.user.id):
-      await state.client.from('piste_reviews').insert({user_id:state.user.id,resort_id:id,rating,title,body});
+      await state.client.from('piste_reviews').update(payload).eq('id',existing.id).eq('user_id',state.user.id):
+      await state.client.from('piste_reviews').insert({...payload,user_id:state.user.id,resort_id:id});
     if(res.error)throw res.error;
     state.publicReviews.delete(id);await loadMine();await loadResort(id);
-    setNote('Review published. You can edit it from your account.','success');
+    setNote('Rating published. You can edit it from your account.','success');
   }
   async function deleteReview(id){
     const my=state.myReviews.get(id);
@@ -317,8 +360,13 @@
         if(note.length>300)throw Error('Visit notes must be under 300 characters.');
         await updateVisit(id,date,note);
       }else if(kind==='review'){
+        const highlights={};
+        for(const [key] of highlightCategories){
+          const ratingValue=String(data.get('highlight_'+key)||'');
+          if(ratingValue!=='')highlights[key]=Number(ratingValue);
+        }
         await saveReview(form.dataset.resortId,Number(data.get('rating')),String(data.get('title')||'').trim(),
-          String(data.get('body')||'').trim());
+          String(data.get('body')||'').trim(),highlights);
       }else if(kind==='profile'){
         if(!hasAccount())throw Error('Sign in first.');
         const display_name=String(data.get('display_name')||'').trim();
@@ -359,7 +407,7 @@
     get isConfigured(){return configured;},
     get isSignedIn(){return hasAccount();},
     get visitCount(){return currentVisits().size;},
-    _test:{esc,stars,safeId,fmtDate}
+    _test:{esc,stars,safeId,fmtDate,validateHighlights,highlightCategories,highlightHTML}
   };
   startup();
 })();

@@ -70,3 +70,14 @@ The available Supabase integration does not support changing hosted Auth redirec
 Those settings control where email sign-in links return users. Without them, the email link may redirect to a default localhost address instead of Piste Atlas. Verify that **Authentication → Providers → Email** is enabled.
 
 After changing the URLs, use the website's Account page to send a magic link to your own email and test sign-in, a saved visit, and a posted review. For public rollout, test a second account, email delivery limits, and moderation.
+
+
+## Review form v0.11 — flexible star ratings
+
+The overall 1–5 star rating is required. **The review title and written comment are optional**, and can be omitted or added later. A star-only review is valid.
+
+Users can optionally rate individual categories from 1–5 stars: food on the mountain, lifts, expert terrain, beginner terrain, intermediate terrain, terrain parks, equipment rentals, housing, hotels, surrounding town, restaurants, grooming, après-ski, and value. An unrated category is omitted and is not treated as zero.
+
+The migration optional_review_fields_and_highlight_ratings makes title and body nullable and introduces the validated JSONB piste_reviews.highlights field. Existing reviews remain valid. Each category value is restricted to an integer 1–5 both in the website and PostgreSQL. Review edit and visibility rules are unchanged.
+
+The overall resort rating remains independent of optional highlight ratings. Users do not need to rate categories they haven't experienced.
