@@ -334,6 +334,6 @@
       form.insertAdjacentHTML('afterbegin','<p role="alert" class="pa-notice">'+esc(error.message||'Upload failed')+'</p>');
     }finally{button.disabled=false;}
   });
-  window.PisteAtlasExtras={passportHTML,rankingsPage,powderPage,forecastPanel,terrainPanel,mount,
+  window.PisteAtlasExtras={passportHTML,rankingsPage,powderPage,forecastPanel,terrainPanel,loadLeaflet,mount,
     _test:{forecastCandidates,categories,passportHTML}};
 })();
