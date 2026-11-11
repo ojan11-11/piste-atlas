@@ -51,7 +51,7 @@ assert.match(account.innerHTML,/0<\/strong><span>Mountains visited/);
 navigate('#resort/big-sky');
 assert.match(app.innerHTML,/Visits, ratings & reviews/);
 assert.match(panel.innerHTML,/Mark as visited/);
-assert.match(panel.innerHTML,/Sign in to rate this mountain/);
+assert.match(panel.innerHTML,/Ratings and public reviews will open/);
 const visitHandler=callbacks.submit.find(fn=>typeof fn==='function');
 const form={dataset:{paForm:'visit',resortId:'big-sky'},fields:{visited_on:'2026-01-25',note:'Loved the views <script>alert(1)</script>'}};
 await visitHandler({target:form,preventDefault(){}});
