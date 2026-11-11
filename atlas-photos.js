@@ -248,6 +248,33 @@
       &&r.name.trim().split(/\s+/).length>=3)return r.name;
     return null;
   }
+  function normalized(value){
+    return String(value||'').normalize('NFKD').replace(/[\u0300-\u036f]/g,'')
+      .toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();
+  }
+  function exactResortFilename(r,file){
+    const title=normalized(file.replace(/\.(?:jpe?g|webp)$/i,''));
+    const name=normalized(r.name);
+    if(name.length>=7&&title.includes(name))return true;
+    const core=name.split(' ').filter(x=>x.length>=3&&!/^(ski|resort|area|mountain|hill|park|snow|center|centre|club|the|and|of)$/.test(x));
+    if(core.length>=2)return core.every(x=>title.split(' ').includes(x));
+    // Short/generic names require both an exact distinctive token and evidence
+    // that the photograph concerns skiing, preventing a random place-name match.
+    return core.length===1&&core[0].length>=6&&title.split(' ').includes(core[0])
+      &&/(?:ski|snow|lift|trail|mountain|winter|resort|slope)/.test(title);
+  }
+  async function searchResortFiles(r){
+    if(normalized(r.name).length<6)return [];
+    const name=r.name.replace(/["'|<>]/g,'').slice(0,80);
+    try{
+      const data=await api('commons.wikimedia.org',{
+        generator:'search',gsrsearch:'"'+name+'" ski',gsrnamespace:'6',gsrlimit:'20',
+        prop:'imageinfo',iiprop:'url|size|extmetadata',iiurlwidth:'1440'
+      });
+      return getPages(data).map(normalizePhoto).filter(Boolean)
+        .filter(photo=>exactResortFilename(r,photo.file));
+    }catch{return [];}
+  }
   async function discover(id,withGallery=false){
     const r=byId.get(id);if(!r)return [];
     const curated=featured[id]?.files||[];
@@ -261,6 +288,11 @@
     const wd=await getWikidata(id);
     const category=categoryFor(r,wd);
     if(category)collected.push(...await getCategoryFiles(category));
+    // A strict filename search is the last resort for locations without a
+    // specific Commons category. Never use generic regional imagery.
+    if(!collected.length || (withGallery&&collected.length<3)){
+      collected.push(...await searchResortFiles(r));
+    }
     if(wd?.photo&&photosOnly(wd.photo)){
       const extras=await fetchFiles([wd.photo]);
       for(const photo of extras)collected.push(photo);
@@ -408,6 +440,6 @@
   }
   window.PisteAtlasPhotos={
     media,heroPhoto,gallery,mount,featured,
-    _test:{license,normalizePhoto,winterScore,ranked,categoryFor,srcset}
+    _test:{license,normalizePhoto,winterScore,ranked,categoryFor,srcset,exactResortFilename,normalized}
   };
 })();
