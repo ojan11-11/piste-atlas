@@ -18,3 +18,26 @@
 .verified-sources a {font-size:12px}
 .price-conditions {font-size:12px!important;line-height:1.6;color:#53676a;margin:10px 0 15px}
 @media(max-width:600px){.verified-pill{font-size:9px;padding:4px 7px}.card-top-badges{flex-wrap:wrap;gap:4px}.verified-sources>div{display:grid;gap:6px}}
+
+/* v0.7: OpenSkiData run/lift detail and all-resort overview */
+.mapped-network>p { color:#536c70;line-height:1.65;font-size:14px;max-width:720px; }
+.mapped-network h3 {font-size:17px;letter-spacing:-.02em;margin:25px 0 12px}
+.mapped-kpis {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:20px 0}
+.mapped-kpis>div {background:#ecf3f0;border:1px solid #d5e4dd;border-radius:13px;padding:16px 13px}
+.mapped-kpis strong {display:block;font-size:21px;color:#173f42;line-height:1.2;font-variant-numeric:tabular-nums}
+.mapped-kpis small {display:block;font-size:12px;color:#58736e;margin-top:7px}
+.mapped-breakdown {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 12px}
+.mapped-breakdown>div {display:flex;gap:9px;align-items:center;justify-content:space-between;background:#f5f8f7;padding:11px 13px;border-radius:10px;font-size:13px}
+.mapped-breakdown span {text-transform:capitalize;color:#264c52}
+.mapped-breakdown strong {margin-left:auto;font-weight:700;color:#163e43;white-space:nowrap}
+.mapped-breakdown small {color:#607b7c;white-space:nowrap}
+.map-summary {font-size:13px;color:#557274;padding:15px 20px;margin:0;background:#f3f8f7;border-bottom:1px solid #dce9e6}
+.map-marker.map-mapped .pin-core {fill:#3e8993;stroke:#fff;stroke-width:1.25;opacity:.68}
+.map-marker.map-reviewed .pin-core {fill:#f48b42;stroke:#fff;stroke-width:2}
+.map-marker.map-mapped:hover .pin-core,.map-marker.map-mapped:focus .pin-core {fill:#ed873d;opacity:1;stroke-width:2}
+.map-marker {cursor:pointer}
+@media(max-width:680px){
+ .mapped-kpis {grid-template-columns:1fr 1fr}
+ .mapped-breakdown {grid-template-columns:1fr}
+ .mapped-kpis strong {font-size:18px}
+}
