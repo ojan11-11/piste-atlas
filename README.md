@@ -16,7 +16,7 @@ No installation or build is required:
 - Search by resort, town, state/province, country, or ski pass.
 - Country, Epic/Ikon, terrain-percentage, skiable-acres, and annual-snowfall filters.
 - Sort by size, snowfall, vertical drop, or name.
-- Working overview with approximate geographically positioned resort pins (schematic backdrop).
+- Interactive North American resort map with real geographic basemap, accurately positioned coordinates, zoom-level clustering, and a miles/feet scale.
 - Eight mountain profiles with statistics, terrain distributions where verified, official trail map links, ticket links, and source notes.
 - Compare up to four resorts side by side, including missing-data disclosure.
 - Save favorite resorts in **this browser only** (localStorage; no cloud account).
@@ -41,7 +41,7 @@ Routes use hash navigation, so they work on GitHub Pages without server-side con
 - For vertical drop, the source is either a reported resort figure or the difference between reported summit and base (recorded in the resort's `notes`).
 - `ticketUrl` is a link to the resort ticket page; it is **not a verified daily price** and its path should be checked before publication as resort sites can change.
 - Trail maps link to official pages; no copyrighted resort map artwork is embedded in the prototype.
-- The map backdrop is an **illustrative schematic**, not a navigable or exact cartographic boundary map. Marker positioning is calculated from approximate resort coordinates. Production should use properly licensed GIS geometry and an interactive map renderer.
+- The directory map now uses **Leaflet geographic coordinates over OpenStreetMap** instead of a schematic backdrop. Pin coordinates come from the resort listings and may represent an area center rather than the base lodge. Web Mercator distorts scale toward high latitudes, so use the map's local distance scale; this is not a navigational trail map.
 - Mountain illustrations remain as fallbacks; licensed Commons photography is displayed only when file metadata and attribution are available. Official trail-map artwork is not copied.
 - This app currently has no scraper, reservation system, weather or live lift-condition feeds.
 
@@ -64,7 +64,7 @@ Routes use hash navigation, so they work on GitHub Pages without server-side con
 
 1. **Exhaustive resort directory:** Import OpenSkiData ski-area metadata, filter operating and lift-served downhill facilities for US/CA, deduplicate combined resorts/independent bases, and manually reconcile status. Avoid counting Nordic-only centers as downhill resorts.
 2. **Production database:** Move curated fields into PostgreSQL/Supabase using `sql/schema.sql`. Add source-level provenance and review tooling.
-3. **Interactive map:** Replace illustrative overview with OSM/MapLibre geographic vector tiles under a compliant license and tile-hosting plan. Do not hotlink OpenSkiMap tiles (their direct tile usage is disallowed).
+3. **Production map hosting:** The geographic map is now live in the codebase, but upgrade to a properly licensed scalable tile provider when traffic justifies it. Do not hotlink OpenSkiMap tiles (their direct tile usage is disallowed).
 4. **Ticket price collection:** Build compliant official APIs/partnerships/structured data capture, with price observations for visit date, purchase date, age, ticket type, and USD/CAD currency. If reliable live pricing is unavailable, retain official outbound links.
 5. **Snow/weather:** Historical snowfall series separate from annual resort claims, plus forecast source and freshness metadata.
 6. **Publishing:** Build a content review/admin panel, automation with source checks, SEO metadata, public corrections workflow, and performance monitoring.
@@ -180,3 +180,10 @@ Nine requested upgrades are included in this release: **licensed resort photogra
 See [Photography, forecast, maps and moderation implementation notes](docs/PHOTOS_PASSPORT_WEATHER.md) and the additive [Supabase migration](supabase/003_photos_rankings.sql). The connected Supabase project has received the migration, while the repository retains it for future setups.
 
 Release checks: run `node --check atlas-photos.js`, `node --check atlas-extras.js`, `node --check app.js`, `node --check community.js`, and `node test.mjs`, plus existing directory/community tests. External APIs, image availability, uploads and browser-specific map behavior still require live end-to-end verification.
+
+
+## v1.1 — Geographically accurate resort directory map
+
+The main `#map` resort directory now uses a real **Leaflet + OpenStreetMap geographic basemap** rather than the old illustrated SVG outline. All source-listed mountains with valid coordinates appear at their **recorded latitude and longitude**, without invented region offsets or moving Alaska to an inaccurate inset. The filtered map fits the selected mountains and shows a local scale in miles/feet. Nearby mountains cluster at broad zoom levels, with individual pins at close zoom. Click a cluster to zoom toward its member resorts; select a pin to open a profile.
+
+The map coordinates describe recorded ski-area locations, not necessarily a ticket office or base-lodge position. Web Mercator has latitude-related distortion; the map's scale control shows local ground distances. OSM map tiles and attribution load only when a user opens the map, without bulk tile downloads. OSM community tile servers may restrict usage: plan commercial tile hosting before significant public traffic. See [Geographic directory map](docs/GEOGRAPHIC_DIRECTORY_MAP.md) for implementation, accuracy, user experience and tile-hosting details.

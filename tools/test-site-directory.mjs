@@ -2,7 +2,7 @@ import vm from 'node:vm';
 import fs from 'node:fs';
 import assert from 'node:assert/strict';
 const callbacks={},app={innerHTML:''},doc={
- title:'',querySelector:q=>q==='#app'?app:null,
+ title:'',querySelector:q=>q==='#app'?app:null,querySelectorAll:()=>[],createElement:()=>({textContent:''}),
  addEventListener:(event,fn)=>{callbacks[event]=fn},
  getElementById:()=>({value:'big sky'})
 };
@@ -20,6 +20,7 @@ assert.ok(all.filter(r=>r.mappedDownhillKm>0).length>=500,'Most map-only resorts
 assert.ok(all.some(r=>r.mappedLiftNetworkKm>0),'Lift network lengths available');
 assert.equal(new Set(all.map(x=>x.id)).size,all.length,'IDs remain unique after merging official and mapped data');
 assert.ok(all.length>=8);
+vm.runInContext(fs.readFileSync('atlas-directory-map.js','utf8'),ctx);
 vm.runInContext(fs.readFileSync('app.js','utf8'),ctx);
 assert.match(app.innerHTML,/Every mountain/);
 assert.equal((app.innerHTML.match(/class="resort-card"/g)||[]).length,Math.min(all.length,24),'cards paginated');
@@ -42,9 +43,13 @@ if(all.length>24){
 win.location.hash='#resort/big-sky';callbacks['window-hashchange']();
 assert.match(app.innerHTML,/5,850/);
 win.location.hash='#map';callbacks['window-hashchange']();
-assert.match(app.innerHTML,/North American overview/);
+assert.match(app.innerHTML,/Geographic resort map/);
+assert.match(app.innerHTML,/data-pa-directory-map/);
+assert.match(app.innerHTML,/Fit all results/);
 assert.match(app.innerHTML,/data-map-resort="big-sky"/);
-assert.equal((app.innerHTML.match(/data-map-resort="/g)||[]).length,748,'all mapped resorts are plotted');
+assert.equal(win.PisteAtlasMap.currentCount,748,'all 748 coordinate points are passed to interactive map');
+assert.equal((app.innerHTML.match(/data-map-resort="/g)||[]).length,90,'fallback map resort list is capped for performance');
+assert.ok(all.every(win.PisteAtlasMap._test.validCoordinate),'all resort coordinates are plausible');
 win.location.hash='#resort/osd-wikidata-q14711914';callbacks['window-hashchange']();
 assert.match(app.innerHTML,/Official references checked/);
 assert.match(app.innerHTML,/2026–27/);
