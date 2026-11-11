@@ -165,7 +165,7 @@
         +'<a class="pa-link-button" href="#resort/'+esc(r.resort_id)+'">Edit</a></article>';
     }).join('')+'</div>':'<p class="pa-empty">Your reviews will appear here once you publish them.</p>';
     const auth=signedInHTML();
-    return intro+auth+'<div class="pa-account-stats"><div><strong>'+list.length+'</strong><span>Mountains visited</span></div>'
+    return intro+auth+(window.PisteAtlasExtras?.passportHTML(list)||'')+'<div class="pa-account-stats"><div><strong>'+list.length+'</strong><span>Mountains visited</span></div>'
       +'<div><strong>'+reviews.length+'</strong><span>Reviews written</span></div></div>'
       +'<section class="pa-account-section"><h3>Visited mountains</h3>'+journal+'</section>'
       +(hasAccount()?'<section class="pa-account-section"><h3>My reviews</h3>'+ownReviews+'</section>':'')
@@ -406,6 +406,8 @@
   window.PisteCommunity={panel,accountPanel,navLabel,cardBadge,mount,
     get isConfigured(){return configured;},
     get isSignedIn(){return hasAccount();},
+    get client(){return state.client;},
+    get currentUser(){return state.user;},
     get visitCount(){return currentVisits().size;},
     _test:{esc,stars,safeId,fmtDate,validateHighlights,highlightCategories,highlightHTML}
   };
