@@ -41,3 +41,73 @@
  .mapped-breakdown {grid-template-columns:1fr}
  .mapped-kpis strong {font-size:18px}
 }
+
+/* v0.9 — Community logbook, accounts and resort reviews */
+.pa-account-page {padding-top:44px;padding-bottom:100px;max-width:1020px}
+.pa-account-header h2,.pa-section>h2 {font-size:clamp(27px,3vw,40px);letter-spacing:-.035em;margin:8px 0 12px}
+.pa-account-header p,.pa-section>p {max-width:690px;color:#527077;line-height:1.65}
+.pa-account-stats {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:26px 0}
+.pa-account-stats>div {padding:24px;background:#e9f2ed;border:1px solid #cfdfd6;border-radius:14px}
+.pa-account-stats strong {display:block;color:#143e42;font-size:36px;font-variant-numeric:tabular-nums}
+.pa-account-stats span {color:#547173;font-size:13px}
+.pa-account-section {margin-top:38px}
+.pa-account-section h3,.pa-review-list>h3,.pa-review-editor h3 {font-size:22px;letter-spacing:-.025em;margin:0 0 15px}
+.pa-auth-card {border:1px solid #d9e5e1;border-radius:16px;padding:24px;margin-top:25px;background:#f5f9f6}
+.pa-auth-card h3 {font-size:22px;margin:0 0 10px}
+.pa-auth-card>p {color:#526e73;line-height:1.65;margin-bottom:16px}
+.pa-auth-card form {display:grid;gap:14px;max-width:550px}
+.pa-auth-card small,.pa-review-editor small {color:#597074;line-height:1.5}
+.pa-form-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.pa-auth-card label,.pa-profile-content label {display:grid;gap:7px;font-size:13px;font-weight:700;color:#244e51;margin-bottom:13px}
+.pa-auth-card input,.pa-profile-content input,.pa-profile-content textarea,.pa-profile-content select {
+ background:#fff;color:#143f46;border:1px solid #cbd9d5;border-radius:9px;font:inherit;
+ padding:12px;min-width:0;width:100%;box-sizing:border-box
+}
+.pa-profile-content textarea {resize:vertical}
+.pa-auth-card input:focus-visible,.pa-profile-content input:focus-visible,.pa-profile-content textarea:focus-visible,.pa-profile-content select:focus-visible {
+ outline:3px solid #bde8dd;outline-offset:1px
+}
+.pa-section {border-top:1px solid #d5e4df;padding-top:26px}
+.pa-profile-content {padding-top:9px}
+.pa-summary {display:flex;gap:12px;align-items:center;justify-content:space-between;
+ padding:17px 18px;background:#ecf5f1;border-radius:13px;margin-bottom:20px;flex-wrap:wrap}
+.pa-summary strong {color:#173e41;font-size:19px}
+.pa-summary small,.pa-summary>span {font-size:12px;color:#546e70}
+.pa-stars {color:#b76a18;font-weight:800;letter-spacing:1.2px;white-space:nowrap}
+.pa-guest-label {font-size:12px;color:#607979;margin:8px 0 20px}
+.pa-actions {display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.pa-visited-pill {font-size:11px;font-weight:700;color:#0a6255;background:#dff4e7;border-radius:99px;padding:6px 9px;white-space:nowrap}
+.pa-review-area {display:grid;grid-template-columns:1fr 1fr;gap:25px;margin-top:35px;align-items:start}
+.pa-review-list,.pa-review-editor {min-width:0}
+.pa-review-editor {background:#f5f8f7;padding:21px;border-radius:14px}
+.pa-review {padding:17px 0;border-bottom:1px solid #dae6e0}
+.pa-review-top {display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.pa-review-top strong {color:#203e43}
+.pa-review-top small {margin-left:auto;font-size:11px;color:#687b7c}
+.pa-review h4 {margin:11px 0 6px;font-size:15px;color:#153e44}
+.pa-review p {font-size:13px;color:#445f62;line-height:1.6;white-space:pre-wrap;overflow-wrap:anywhere}
+.pa-report {display:flex;align-items:center;gap:8px;margin-top:7px;flex-wrap:wrap}
+.pa-report label {display:flex;align-items:center;gap:8px;font-size:11px;font-weight:400;margin:0}
+.pa-report select {max-width:170px;padding:6px}
+.pa-link-button {border:none;background:none;color:#0c7064;font-weight:700;cursor:pointer;font-size:12px;text-decoration:underline;text-underline-offset:3px}
+a.pa-link-button {text-decoration:underline}
+.pa-visit-list {display:grid;gap:10px}
+.pa-visit-item {display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 20px;background:#f6f9f7;border:1px solid #dce7e2;border-radius:11px}
+.pa-visit-item strong a {color:#163c41;text-decoration:none}
+.pa-visit-item strong a:hover {text-decoration:underline}
+.pa-visit-item small {display:block;color:#567477;font-size:12px;margin:4px 0}
+.pa-visit-item p {margin:6px 0 0;font-size:13px;color:#466365;overflow-wrap:anywhere}
+.pa-empty,.pa-signin-prompt {color:#5b7278;line-height:1.55;font-size:14px;padding:14px 0}
+.pa-signin-prompt .btn {margin-top:8px}
+.pa-notice {padding:11px 14px;border-radius:9px;margin:14px 0;font-size:13px;line-height:1.5;background:#eff4f6;color:#214a53}
+.pa-notice-success {background:#e3f4e9;color:#0a5b48}
+.pa-notice-error {background:#fff0ec;color:#903a30}
+@media(max-width:760px){
+ .pa-review-area,.pa-form-grid {grid-template-columns:1fr}
+ .pa-account-stats {gap:9px}
+ .pa-account-stats>div {padding:17px}
+ .pa-account-stats strong {font-size:28px}
+ .pa-auth-card,.pa-review-editor {padding:16px}
+ .pa-visit-item {align-items:flex-start}
+ .pa-section>h2 {font-size:28px}
+}
