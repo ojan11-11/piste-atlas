@@ -100,3 +100,7 @@
 
 .pa-contribution .pa-rights{grid-column:1/-1;display:flex;align-items:flex-start;gap:10px;font-size:12px;font-weight:500;line-height:1.55;color:#536f6c}
 .pa-contribution .pa-rights input[type="checkbox"]{flex:none;width:18px;min-width:18px;height:18px;margin:0}
+
+.pa-card-credit:not([hidden]){position:absolute;z-index:4;top:183px;left:5px;right:5px;padding:3px 7px;border-radius:6px;background:rgba(7,29,37,.83);color:#fff;font-size:9px;line-height:1.35;max-height:26px;overflow:hidden}
+.pa-card-credit .pa-photo-credit,.pa-card-credit a{color:#fff;font-size:9px}
+.pa-card-credit .pa-photo-credit a:focus-visible{outline-color:#fff}
