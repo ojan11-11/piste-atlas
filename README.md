@@ -187,3 +187,12 @@ Release checks: run `node --check atlas-photos.js`, `node --check atlas-extras.j
 The main `#map` resort directory now uses a real **Leaflet + OpenStreetMap geographic basemap** rather than the old illustrated SVG outline. All source-listed mountains with valid coordinates appear at their **recorded latitude and longitude**, without invented region offsets or moving Alaska to an inaccurate inset. The filtered map fits the selected mountains and shows a local scale in miles/feet. Nearby mountains cluster at broad zoom levels, with individual pins at close zoom. Click a cluster to zoom toward its member resorts; select a pin to open a profile.
 
 The map coordinates describe recorded ski-area locations, not necessarily a ticket office or base-lodge position. Web Mercator has latitude-related distortion; the map's scale control shows local ground distances. OSM map tiles and attribution load only when a user opens the map, without bulk tile downloads. OSM community tile servers may restrict usage: plan commercial tile hosting before significant public traffic. See [Geographic directory map](docs/GEOGRAPHIC_DIRECTORY_MAP.md) for implementation, accuracy, user experience and tile-hosting details.
+
+
+## v1.2 — Resort photography quality and coverage
+
+The photo system now selects resort-specific photographs from carefully matched Wikimedia Commons sources and approved community uploads. Fifteen priority resort profiles have curated winter galleries; other listings use resort-linked Wikidata image categories, exact Commons ski-resort categories, and strictly matched Commons filenames. Images are checked for licensing, size and relevance, and their creator/license details are displayed. Automatic seasonal scoring rejects obvious summer shots, logos and unrelated content. Responsive thumbnail sizes help mobile browsing.
+
+Every resort supports photographic cards, hero banners and galleries, but **not every ski area has a suitable reusable photo yet**. Unmatched resorts keep the original illustration rather than an inaccurate random mountain image. Administrators can feature one approved community upload per resort. The SQL to support this has been applied to the existing Supabase project and is recorded in supabase/004_featured_photos.sql.
+
+Run the photo quality tests with node tools/test-resort-photography.mjs. Run node tools/audit-photo-coverage.mjs for counts of potential photo lookup methods. See docs/PHOTOS_PASSPORT_WEATHER.md for matching rules, licensing constraints, and administrator cover-selection instructions.

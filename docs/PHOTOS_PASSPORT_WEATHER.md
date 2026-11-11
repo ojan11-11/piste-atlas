@@ -4,7 +4,7 @@ This release extends the GitHub Pages app with three progressive-enhancement fil
 
 ## Licensed editorial photographs
 
-Eight original seed resort profiles use hand-picked, resort-specific candidate images on Wikimedia Commons. Other resorts may use a Wikidata P18 image when available. Every image must pass a Commons imageinfo license check before being displayed; accepted licenses include CC BY, CC BY-SA, CC0 and public-domain. The site displays the creator, original file link and license link. It does not scrape random resort websites or copy third-party photos to its repo. Resorts without a suitable photo retain the original mountain illustration.
+Fifteen priority resorts now have curated, resort-specific Commons categories and winter-photo candidates. The wider directory uses Wikidata images/categories, exact resort-specific Commons categories, and conservative filename search. Every image must pass a Commons imageinfo license check, quality checks and image-size checks before being displayed; accepted licenses include CC BY, CC BY-SA, CC0 and public-domain. The site displays the creator, original file link and license link. It does not scrape random resort websites or copy third-party photos to its repo. Resorts without a suitable photo retain the original mountain illustration.
 
 Discovery-card images lazy-load near the viewport; profile heroes load eagerly. Gallery images load lazily. Imagery and the remote source may become unavailable. Wikimedia Commons creators and license terms must always be respected, including applicable share-alike rules for image adaptations.
 
@@ -52,3 +52,31 @@ Run:
 Also keep all existing OpenSkiData, directory and account test scripts in the CI suite. Browser-verify external image metadata, map tiles and Overpass, weather provider availability, login, uploads, pending privacy, approval, and public image display.
 
 For a large audience, use a curated photo-admin panel, a permitted commercial forecast service, scalable map tiles and cached mountain trail geometry.
+
+
+## v1.2 — Better resort photos and expanding coverage
+
+The frontend now creates photo slots for every resort, replacing the previous eight-resort-only approach. Photo lookup runs as cards approach the viewport or when a resort profile opens, with up to four concurrent Wikimedia requests and page-session caching. Resort galleries may show up to nine individually checked Commons images. Responsive thumbnail source sizes save mobile bandwidth.
+
+Matching hierarchy: manually curated Commons category and cover; entity-linked Wikidata Commons category or P18 image; exact self-descriptive Commons category; then conservative Commons filename matching. Never label a random snowy landscape as a specific resort. The ranker favors winter landscapes, powder, mountains, slopes and ski lifts while rejecting summer photos, logos, indoor scenes, promotional art and low resolution. Attribution and individual license links stay attached to photographs.
+
+The November 11, 2026 offline source-opportunity audit covers 748 resort listings:
+- 15 curated editorial resort sets
+- 123 additional Wikidata-related image opportunities
+- 173 additional exact Commons category opportunities
+- 437 listings whose remaining method is strict resort-name filename search
+
+These are potential discovery paths, NOT confirmed photographic coverage. Some mountains will still have illustrations because no correctly matched, reusable image was found. For truly comprehensive coverage, we will need ongoing manual curation, rights-cleared resort contributions, and community photographs. Run node tools/audit-photo-coverage.mjs to regenerate counts.
+
+### Moderated community covers
+
+An administrator can select one already approved photo per resort to be its cover. The private storage bucket remains private; signed image URLs expire after 30 minutes. Photographer display names are included. A unique index ensures only one featured image per mountain. The additional schema is in supabase/004_featured_photos.sql, already applied to the linked project.
+
+Admin-only example after verifying rights, contents and matching resort:
+
+    UPDATE public.piste_photos SET is_featured = false WHERE resort_id = '<RESORT_ID>';
+    UPDATE public.piste_photos SET is_featured = true WHERE id = '<APPROVED_PHOTO_UUID>' AND status = 'approved';
+
+Community members cannot flag their own images as featured. Keep all photos pending until reviewed. Do not run the example with placeholder IDs.
+
+Tests: node tools/test-resort-photography.mjs and node tools/audit-photo-coverage.mjs, plus all existing site, directory and community tests. External API responses, image quality, signed URLs and live display still require browser-based checks.

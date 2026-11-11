@@ -6,6 +6,9 @@ on:
       - development
     paths:
       - 'app.js'
+      - 'atlas-photos.js'
+      - 'tools/test-resort-photography.mjs'
+      - 'supabase/004_featured_photos.sql'
       - 'community.js'
       - 'community-config.js'
       - 'supabase/001_community.sql'
@@ -32,11 +35,13 @@ jobs:
       - name: Check JavaScript syntax
         run: |
           node --check app.js
+          node --check atlas-photos.js
           node --check community.js
           node --check data/resorts.enriched.js
       - name: Verify official data and original site
         run: |
           node test.mjs
+          node tools/test-resort-photography.mjs
           node tools/test-openskidata.mjs
           node tools/validate-openskidata.mjs
           node tools/test-reviewed-profiles.mjs
