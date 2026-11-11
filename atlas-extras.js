@@ -237,6 +237,7 @@
       +(communitySignedIn()?'<form data-pa-photo-form="'+esc(id)+'"><label>Photo (JPEG, PNG, or WebP; max 5 MB)'
         +'<input type="file" accept="image/jpeg,image/png,image/webp" name="photo" required></label>'
         +'<label>Caption (optional)<input name="caption" maxlength="160" placeholder="Trail, lift, view, or season"></label>'
+        +'<label class="pa-rights"><input type="checkbox" name="rights" value="yes" required> I own this photo or have permission to share it, and authorize Piste Atlas to display it if approved.</label>'
         +'<button class="btn dark" type="submit">Submit for review</button></form>'
         :'<p>Sign in to submit a mountain photo. New photos are reviewed before they appear publicly. '
           +'<a href="#account">Sign in</a></p>')
@@ -256,17 +257,23 @@
     }
     try{
       const {data,error}=await client.from('piste_photos')
-        .select('id,caption,storage_path,status,created_at').eq('resort_id',id)
+        .select('id,user_id,caption,storage_path,status,created_at').eq('resort_id',id)
         .order('created_at',{ascending:false}).limit(24);
       if(error)throw error;
       const entries=(data||[]).filter(p=>p.status==='approved'||(communitySignedIn()&&p.status==='pending'));
+      const memberIds=[...new Set(entries.map(p=>p.user_id))];
+      let memberNames={};
+      if(memberIds.length){
+        const names=await client.from('piste_profiles').select('user_id,display_name').in('user_id',memberIds);
+        if(!names.error)memberNames=Object.fromEntries((names.data||[]).map(p=>[p.user_id,p.display_name]));
+      }
       const urls=await Promise.all(entries.map(async p=>{
         const response=await client.storage.from('piste-community-photos').createSignedUrl(p.storage_path,3600);
         return response.error?null:{...p,url:response.data?.signedUrl};
       }));
       const html=urls.filter(p=>p?.url).length?'<div class="pa-upload-grid">'
         +urls.filter(p=>p?.url).map(p=>'<figure><img loading="lazy" decoding="async" src="'+esc(p.url)+'" alt="'+esc(p.caption||'Community resort photo')+'">'
-          +'<figcaption>'+esc(p.caption||'Community contribution')+' · '+(p.status==='pending'?'Pending approval':'Shared by a Piste Atlas member')+'</figcaption></figure>').join('')
+          +'<figcaption>'+esc(p.caption||'Community contribution')+' · Photo by '+esc(memberNames[p.user_id]||'Piste Atlas member')+(p.status==='pending'?' · Pending approval':'')+'</figcaption></figure>').join('')
         +'</div>':'<p class="pa-muted">No approved community photos yet. Share the first one.</p>';
       result.innerHTML=html;
       photoCache.set(id,{time:Date.now(),html});
@@ -276,6 +283,7 @@
     const id=form.dataset.paPhotoForm,client=communityClient(),user=window.PisteCommunity?.currentUser;
     if(!validId(id)||!client||!user)throw Error('Please sign in before submitting.');
     const data=new FormData(form),file=data.get('photo'),caption=String(data.get('caption')||'').trim();
+    if(data.get('rights')!=='yes')throw Error('Please confirm you have permission to share this photo.');
     if(!(file instanceof File)||!file.size)throw Error('Choose a photo.');
     const allowed={'image/jpeg':'jpg','image/png':'png','image/webp':'webp'};
     if(!allowed[file.type])throw Error('Only JPEG, PNG, and WebP photos are accepted.');
