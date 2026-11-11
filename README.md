@@ -42,7 +42,7 @@ Routes use hash navigation, so they work on GitHub Pages without server-side con
 - `ticketUrl` is a link to the resort ticket page; it is **not a verified daily price** and its path should be checked before publication as resort sites can change.
 - Trail maps link to official pages; no copyrighted resort map artwork is embedded in the prototype.
 - The map backdrop is an **illustrative schematic**, not a navigable or exact cartographic boundary map. Marker positioning is calculated from approximate resort coordinates. Production should use properly licensed GIS geometry and an interactive map renderer.
-- Mountain art is locally rendered SVG/CSS illustration, not photography or trail-map imagery.
+- Mountain illustrations remain as fallbacks; licensed Commons photography is displayed only when file metadata and attribution are available. Official trail-map artwork is not copied.
 - This app currently has no scraper, reservation system, weather or live lift-condition feeds.
 
 ## Initial mountain source references (reviewed 2026-11-03)
@@ -165,3 +165,18 @@ GitHub Pages continues to host the static site. The Piste Atlas Supabase project
 Read **docs/COMMUNITY_SETUP.md** for deployment, privacy and moderation. The CI suite runs the guest interface and mocked signed-in interactions with **tools/test-community.mjs** and **tools/test-community-auth.mjs**.
 
 Only a Supabase **publishable key** may be included in the public site. Never publish a Supabase secret or service-role key. Apply rate limits, account privacy and moderation policies and test real RLS permissions before broad public onboarding.
+
+
+## v1.0 — Photos, mountain passport, rankings, terrain maps and Powder Finder
+
+Nine requested upgrades are included in this release: **licensed resort photographs on cards, full-width photo heroes, multi-photo galleries, mobile lazy image loading, a skiing passport and milestones, community category rankings, interactive trail/lift overlays, Powder Finder plus resort forecasts, and moderated user photo submissions.**
+
+- Editorial imagery begins with eight curated resort image sets, expanding opportunistically to licensed Wikimedia Commons images connected via resort Wikidata IDs. Images without a suitable licensed match keep the original illustration.
+- Rankings require at least three published category ratings per resort, so many categories will initially be empty.
+- Powder Finder uses estimated Open-Meteo snowfall at up to 24 operator-reviewed resort coordinates; the noncommercial free API is a **pilot only**, not a licensed solution for a monetized site.
+- Individual mountain maps are loaded on request using OpenStreetMap tiles and an optional Overpass downhill-trail/lift overlay. This is not an official or safety-certified ski map.
+- Photo uploads are capped at 5 MB in a **private Supabase bucket**. A user grants photo display permission and uploads into **pending** review. Only administrators can approve photographs for public display; no member-uploaded photo is automatically published.
+
+See [Photography, forecast, maps and moderation implementation notes](docs/PHOTOS_PASSPORT_WEATHER.md) and the additive [Supabase migration](supabase/003_photos_rankings.sql). The connected Supabase project has received the migration, while the repository retains it for future setups.
+
+Release checks: run `node --check atlas-photos.js`, `node --check atlas-extras.js`, `node --check app.js`, `node --check community.js`, and `node test.mjs`, plus existing directory/community tests. External APIs, image availability, uploads and browser-specific map behavior still require live end-to-end verification.
