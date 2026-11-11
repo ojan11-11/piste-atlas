@@ -34,8 +34,8 @@ if(all.length>24){
  assert.match(app.innerHTML,/No direct winter map link yet/);
  assert.match(app.innerHTML,/Mapped trail and lift network/);
  assert.match(app.innerHTML,/Mapped segments by difficulty/);
- assert.match(app.innerHTML,/\\d[\\d,.]* mi\\b/,'Mapped distance should be expressed in miles');
- assert.doesNotMatch(app.innerHTML,/\\d[\\d,.]*\\s*km\\b/,'No metric distances in rendered profile');
+ assert.match(app.innerHTML,/\d[\d,.]* mi\b/,'Mapped distance should be expressed in miles');
+ assert.doesNotMatch(app.innerHTML,/\d[\d,.]*\s*km\b/,'No metric distances in rendered profile');
  assert.match(app.innerHTML,/No direct ticket link/);
  assert.ok(!app.innerHTML.includes('href="null"'));
 }
@@ -56,6 +56,6 @@ callbacks.click({target:{closest:q=>q==='[data-map-resort]'?null:{dataset:{actio
 win.location.hash='#compare';callbacks['window-hashchange']();
 assert.match(app.innerHTML,/Mapped downhill distance/);
 assert.match(app.innerHTML,/Mapped lift network distance/);
-assert.match(app.innerHTML,/\\d[\\d,.]* mi\\b/,'Comparison should display miles');
-assert.doesNotMatch(app.innerHTML,/\\d[\\d,.]*\\s*km\\b/,'No kilometer values in comparisons');
+assert.match(app.innerHTML,/\d[\d,.]* mi\b/,'Comparison should display miles');
+assert.doesNotMatch(app.innerHTML,/\d[\d,.]*\s*km\b/,'No kilometer values in comparisons');
 console.log('PASS site integration for '+all.length+' curated and mapped listings, profile mapped distances, difficulty, full coordinate map');
