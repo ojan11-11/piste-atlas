@@ -14,6 +14,7 @@
     'tremblant': ['Mont-Tremblant, Quebec.jpg','Mont-Tremblant-1.jpg']
   };
   const cache = new Map();
+  const candidateCache = new Map();
   const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const pageURL = filename => 'https://commons.wikimedia.org/wiki/File:' + encodeURIComponent(filename.replace(/ /g,'_'));
   function stripHTML(value) {
@@ -55,12 +56,33 @@
     cache.set(filename,task);
     return task;
   }
+  async function filenames(id) {
+    if(manifest[id])return manifest[id];
+    if(candidateCache.has(id))return candidateCache.get(id);
+    const resort=(window.RESORTS||[]).find(r=>r.id===id);
+    if(!/^Q[0-9]+$/.test(resort?.wikidataID||''))return [];
+    const work=(async()=>{
+      try{
+        const url='https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&origin=*'
+          +'&props=claims&ids='+encodeURIComponent(resort.wikidataID);
+        const response=await fetch(url,{mode:'cors'});
+        if(!response.ok)return [];
+        const data=await response.json();
+        const claims=data.entities?.[resort.wikidataID]?.claims?.P18||[];
+        const name=claims.map(c=>c.mainsnak?.datavalue?.value).find(x=>typeof x==='string'&&/\.jpe?g$/i.test(x));
+        return name?[name]:[];
+      }catch{return [];}
+    })();
+    candidateCache.set(id,work);
+    return work;
+  }
+  function eligible(r){return !!manifest[r.id] || /^Q[0-9]+$/.test(r.wikidataID||'');}
   function media(r, fallback,kind) {
-    if(!manifest[r.id])return fallback;
+    if(!eligible(r))return fallback;
     return '<div class="pa-media pa-media-'+esc(kind)+'" data-pa-photo="'+esc(r.id)+'">'
       +fallback+'<span class="pa-media-loading" aria-hidden="true"></span></div>';
   }
-  function heroPhoto(r){return manifest[r.id]?'<div class="pa-hero-photo" data-pa-photo="'+esc(r.id)+'"></div>':'';}
+  function heroPhoto(r){return eligible(r)?'<div class="pa-hero-photo" data-pa-photo="'+esc(r.id)+'"></div>':'';}
   function gallery(r) {
     return '<section class="panel-section pa-gallery-section"><span class="mini-eyebrow">MOUNTAIN PHOTOGRAPHY</span>'
       +'<h2>Mountain photo gallery</h2><p>Licensed resort imagery and approved community contributions. '
@@ -78,12 +100,12 @@
       +'<figcaption>'+credit(photo)+'</figcaption></figure>';
   }
   async function paintPhotos(id){
-    const names=manifest[id]||[];
+    const names=await filenames(id);
     const current=document.querySelectorAll('[data-pa-photo="'+id+'"],[data-pa-gallery="'+id+'"]');
     if(!current.length)return;
     const photos=(await Promise.all(names.map(lookup))).filter(Boolean);
     document.querySelectorAll('[data-pa-photo="'+id+'"]').forEach(el=>{
-      if(!photos.length)return;
+      if(!photos.length||el.querySelector('.pa-resort-image'))return;
       const isHero=el.classList.contains('pa-hero-photo');
       const img=document.createElement('img');
       img.src=photos[0].src;
@@ -103,9 +125,21 @@
       :'<p class="pa-muted">No licensed editorial images are available yet. The mountain illustration remains in place.</p>';
   }
   function mount(){
-    const ids=new Set();
-    document.querySelectorAll('[data-pa-photo],[data-pa-gallery]').forEach(el=>ids.add(el.dataset.paPhoto||el.dataset.paGallery));
-    ids.forEach(id=>paintPhotos(id));
+    const immediate=new Set();
+    document.querySelectorAll('[data-pa-gallery],.pa-hero-photo').forEach(el=>
+      immediate.add(el.dataset.paGallery||el.dataset.paPhoto));
+    immediate.forEach(id=>paintPhotos(id));
+    const cards=document.querySelectorAll('.pa-media-card[data-pa-photo]');
+    if('IntersectionObserver' in window){
+      const observer=new window.IntersectionObserver(entries=>{
+        entries.forEach(entry=>{
+          if(!entry.isIntersecting)return;
+          observer.unobserve(entry.target);
+          paintPhotos(entry.target.dataset.paPhoto);
+        });
+      },{rootMargin:'250px'});
+      cards.forEach(el=>observer.observe(el));
+    }else cards.forEach(el=>paintPhotos(el.dataset.paPhoto));
   }
   window.PisteAtlasPhotos={media,heroPhoto,gallery,mount,manifest,_test:{licensed,stripHTML}};
 })();
