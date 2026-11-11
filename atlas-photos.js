@@ -27,7 +27,7 @@
     const m=info && info.extmetadata || {};
     const name=String(m.LicenseShortName?.value||'');
     const url=String(m.LicenseUrl?.value||'');
-    return (/^CC (?:BY(?:-SA)?(?:-[0-9.]+)?|0)/i.test(name) || /public domain/i.test(name)) &&
+    return (/^CC (?:BY(?:-SA)?(?:[ -][0-9.]+)?|0)/i.test(name) || /public domain/i.test(name)) &&
       (!url || /^https:\/\/creativecommons\.org\//i.test(url));
   }
   async function lookup(filename) {
