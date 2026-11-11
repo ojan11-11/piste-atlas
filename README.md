@@ -148,3 +148,20 @@ Examples of necessary validation:
 All reviews contain source URLs, review dates and human-readable notes. See [Operator review batch 02](docs/OPERATOR_REVIEW_BATCH_02.md). The GitHub Actions verification workflow checks resort IDs, 748-entry uniqueness, reviewed counts, source URLs, selective numeric invariants and map rendering.
 
 For the next phase, extend source verification to more candidates, refine stat extraction, and prioritize direct official winter-map and lift-ticket links. Snowfall is a later phase.
+
+
+## v0.9 — Mountain logbook, user accounts and resort reviews
+
+Piste Atlas now includes a community interface integrated into its 748 mountain profiles:
+
+- A **My mountains** dashboard with visited-resort count, optional visit dates and notes.
+- A **Mark as visited** form on every resort page. Without a connected backend, visit history is saved only in that browser.
+- A Supabase email magic-link login implementation for cross-device private visits, with an optional guest-visit import.
+- **1–5 star ratings, public written reviews, editing and deleting your review**, public resort averages and recent review feeds, plus a review-reporting feature.
+- An editable public display name. Account email addresses and visited lists are private.
+
+GitHub Pages continues to host the static site. Online accounts require a Supabase project and the SQL schema in **supabase/001_community.sql**. The empty **community-config.js** placeholder deliberately contains no project credentials. Until Supabase is connected, public ratings and sign-in stay disabled, while the guest logbook works immediately.
+
+Read **docs/COMMUNITY_SETUP.md** for deployment, privacy and moderation. The CI suite runs the guest interface and mocked signed-in interactions with **tools/test-community.mjs** and **tools/test-community-auth.mjs**.
+
+Only a Supabase **publishable key** may be included in the public site. Never publish a Supabase secret or service-role key. Apply rate limits, account privacy and moderation policies and test real RLS permissions before broad public onboarding.
