@@ -207,7 +207,13 @@
       const script=document.createElement('script');
       script.src='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2';
       script.async=true;
-      script.onload=()=>startup();
+      script.onload=()=>{
+        if(!window.supabase?.createClient){
+          state.backendError='Authentication library could not initialize.';
+          state.ready=true;refreshPanels();return;
+        }
+        startup();
+      };
       script.onerror=()=>{state.backendError='Authentication library did not load. Please try again later.';state.ready=true;refreshPanels();};
       document.head.appendChild(script);
       return;
