@@ -29,7 +29,7 @@
     const name=String(m.LicenseShortName?.value||'');
     const url=String(m.LicenseUrl?.value||'');
     return (/^CC (?:BY(?:-SA)?(?:[ -][0-9.]+)?|0)/i.test(name) || /public domain/i.test(name)) &&
-      (!url || /^https:\/\/creativecommons\.org\//i.test(url));
+      (!url || /^https?:\/\/creativecommons\.org\//i.test(url));
   }
   async function lookup(filename) {
     if(cache.has(filename))return cache.get(filename);
@@ -50,7 +50,7 @@
         return {src,source:pageURL(filename),file:filename,
           author:stripHTML(meta.Artist?.value)||'Wikimedia Commons contributor',
           license:String(meta.LicenseShortName?.value||'Creative Commons').slice(0,35),
-          licenseUrl:/^https:\/\/creativecommons\.org\//.test(meta.LicenseUrl?.value||'')?meta.LicenseUrl.value:null};
+          licenseUrl:/^https?:\/\/creativecommons\.org\//.test(meta.LicenseUrl?.value||'')?meta.LicenseUrl.value.replace(/^http:/,'https:'):null};
       }catch{return null;}
     })();
     cache.set(filename,task);
