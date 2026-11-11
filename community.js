@@ -20,7 +20,7 @@
   const safeId = id => catalog.has(id) && /^[a-zA-Z0-9._-]{3,160}$/.test(id);
   const defaultName = 'Skier';
   const state = {ready:!configured, user:null, profile:null, visits:new Map(), myReviews:new Map(),
-    guest:new Map(), publicReviews:new Map(), loading:new Set(), note:'', noteType:'info', busy:false,
+    guest:new Map(), publicReviews:new Map(), loading:new Set(), pendingLoads:new Map(), note:'', noteType:'info', busy:false,
     backendError:'', client:null};
 
   function loadGuest() {
@@ -147,27 +147,38 @@
   }
 
   function mount(){refreshPanels();}
-  async function loadResort(id){
-    if(!state.client||state.loading.has(id)||!safeId(id))return;
+  function loadResort(id){
+    if(!state.client||!safeId(id))return Promise.resolve();
+    if(state.pendingLoads.has(id))return state.pendingLoads.get(id);
     state.loading.add(id);
-    try{
-      const [reviewsRes,summaryRes]=await Promise.all([
-        state.client.from('piste_reviews').select('id,user_id,rating,title,body,created_at')
-          .eq('resort_id',id).eq('status','published').order('created_at',{ascending:false}).limit(20),
-        state.client.from('piste_resort_rating_summaries')
-          .select('review_count,average_rating').eq('resort_id',id).maybeSingle()
-      ]);
-      if(reviewsRes.error)throw reviewsRes.error;
-      if(summaryRes.error)throw summaryRes.error;
-      const reviews=reviewsRes.data||[],ids=[...new Set(reviews.map(r=>r.user_id))];
-      let names={};
-      if(ids.length){
-        const lookup=await state.client.from('piste_profiles').select('user_id,display_name').in('user_id',ids);
-        if(!lookup.error)names=Object.fromEntries((lookup.data||[]).map(p=>[p.user_id,p.display_name]));
+    const work=(async()=>{
+      try{
+        const [reviewsRes,summaryRes]=await Promise.all([
+          state.client.from('piste_reviews').select('id,user_id,rating,title,body,created_at')
+            .eq('resort_id',id).eq('status','published').order('created_at',{ascending:false}).limit(20),
+          state.client.from('piste_resort_rating_summaries')
+            .select('review_count,average_rating').eq('resort_id',id).maybeSingle()
+        ]);
+        if(reviewsRes.error)throw reviewsRes.error;
+        if(summaryRes.error)throw summaryRes.error;
+        const reviews=reviewsRes.data||[],ids=[...new Set(reviews.map(r=>r.user_id))];
+        let names={};
+        if(ids.length){
+          const lookup=await state.client.from('piste_profiles').select('user_id,display_name').in('user_id',ids);
+          if(!lookup.error)names=Object.fromEntries((lookup.data||[]).map(p=>[p.user_id,p.display_name]));
+        }
+        state.publicReviews.set(id,{reviews,names,summary:summaryRes.data||null});
+      }catch(error){
+        state.publicReviews.set(id,{reviews:[],names:{},summary:null,error:true});
+        state.backendError=String(error?.message||'Cannot load reviews').slice(0,150);
+      }finally{
+        state.loading.delete(id);
+        state.pendingLoads.delete(id);
+        refreshPanels();
       }
-      state.publicReviews.set(id,{reviews,names,summary:summaryRes.data||null});
-    }catch(error){state.publicReviews.set(id,{reviews:[],names:{},summary:null,error:true});state.backendError=String(error?.message||'Cannot load reviews').slice(0,150);}
-    finally{state.loading.delete(id);refreshPanels();}
+    })();
+    state.pendingLoads.set(id,work);
+    return work;
   }
   function fetchResort(id){return loadResort(id);}
   async function loadMine(){
