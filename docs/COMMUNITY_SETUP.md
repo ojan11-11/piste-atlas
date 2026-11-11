@@ -46,3 +46,27 @@ Relevant official guides:
 - https://supabase.com/docs/guides/auth/redirect-urls
 - https://supabase.com/docs/guides/database/postgres/row-level-security
 - https://supabase.com/docs/guides/getting-started/api-keys
+
+
+## Supabase project connected — November 11, 2026
+
+- Project: **Piste Atlas**
+- Project ref: hxcipblszivhqudydgdh
+- Region: us-east-1
+- Project URL: https://hxcipblszivhqudydgdh.supabase.co
+- Organization: Piste Atlas (Free plan)
+- Cost quoted for the project: $0/month
+- Database schema: **installed** as migration piste_atlas_community_v1.
+- RLS verified on the four application tables; public review/ratings access and private visit permissions checked.
+- The public Supabase project URL and **publishable** API key are configured in community-config.js. No server secret key is in the static site.
+
+### Remaining dashboard configuration
+
+The available Supabase integration does not support changing hosted Auth redirect URL settings. A project administrator must visit the dashboard, choose **Authentication → URL Configuration**, and set:
+
+- **Site URL:** https://ojan11-11.github.io/piste-atlas/
+- **Redirect URLs:** add https://ojan11-11.github.io/piste-atlas/
+
+Those settings control where email sign-in links return users. Without them, the email link may redirect to a default localhost address instead of Piste Atlas. Verify that **Authentication → Providers → Email** is enabled.
+
+After changing the URLs, use the website's Account page to send a magic link to your own email and test sign-in, a saved visit, and a posted review. For public rollout, test a second account, email delivery limits, and moderation.

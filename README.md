@@ -160,7 +160,7 @@ Piste Atlas now includes a community interface integrated into its 748 mountain 
 - **1–5 star ratings, public written reviews, editing and deleting your review**, public resort averages and recent review feeds, plus a review-reporting feature.
 - An editable public display name. Account email addresses and visited lists are private.
 
-GitHub Pages continues to host the static site. Online accounts require a Supabase project and the SQL schema in **supabase/001_community.sql**. The empty **community-config.js** placeholder deliberately contains no project credentials. Until Supabase is connected, public ratings and sign-in stay disabled, while the guest logbook works immediately.
+GitHub Pages continues to host the static site. The Piste Atlas Supabase project is connected, its schema has been installed, and **community-config.js** contains only the public project URL and publishable browser key (not secret credentials). Visitors can use the guest logbook immediately. Before email sign-in works end-to-end, configure the Auth Site URL and Redirect URL in Supabase to match https://ojan11-11.github.io/piste-atlas/ (see docs/COMMUNITY_SETUP.md).
 
 Read **docs/COMMUNITY_SETUP.md** for deployment, privacy and moderation. The CI suite runs the guest interface and mocked signed-in interactions with **tools/test-community.mjs** and **tools/test-community-auth.mjs**.
 
