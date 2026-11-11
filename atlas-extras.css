@@ -97,3 +97,6 @@
  .pa-terrain-map{height:320px}
  .pa-feature-page{padding-top:28px}
 }
+
+.pa-contribution .pa-rights{grid-column:1/-1;display:flex;align-items:flex-start;gap:10px;font-size:12px;font-weight:500;line-height:1.55;color:#536f6c}
+.pa-contribution .pa-rights input[type="checkbox"]{flex:none;width:18px;min-width:18px;height:18px;margin:0}
