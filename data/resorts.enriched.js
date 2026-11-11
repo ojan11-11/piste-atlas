@@ -148,7 +148,7 @@ const reviews=[
     "ticketUrl": "https://www.revelstokemountainresort.com/tickets-passes/winter-tickets/",
     "website": "https://www.revelstokemountainresort.com/",
     "sourceUrl": "https://www.revelstokemountainresort.com/mountain/mountain-stats/",
-    "notes": "Official vertical 1,713m converted to ~5,620ft; 10.5m average annual snow converted to ~413in. Named lifts are one gondola, three chairs and two carpets (six total). Subpeak elevation is not equivalent to lift-served summit elevation.",
+    "notes": "Official vertical is approximately 5,620 ft; average annual snowfall is approximately 413 inches. Named lifts are one gondola, three chairs and two carpets (six total). Subpeak elevation is not equivalent to lift-served summit elevation.",
     "sourcePages": [
       "https://www.revelstokemountainresort.com/mountain/mountain-stats/",
       "https://www.revelstokemountainresort.com/discover/about/trail-maps/",
@@ -180,7 +180,7 @@ const reviews=[
     "ticketUrl": "https://www.sunpeaksresort.com/ski-ride/tickets-passes/day-tickets",
     "website": "https://www.sunpeaksresort.com/",
     "sourceUrl": "https://www.sunpeaksresort.com/ski-ride/the-mountain/trail-maps-stats",
-    "notes": "2026–27 operator figures. Sun Peaks lists 4,400 acres, 144 alpine trails, 13 lifts, 896m/2,940ft vertical and 6m/237in annual snow. Mt. Tod summit is outside the ski-area boundary and is not entered as lift-served summit.",
+    "notes": "2026–27 operator figures. Sun Peaks lists 4,400 acres, 144 alpine trails, 13 lifts, 2,940 ft vertical and 237 inches average annual snowfall. Mt. Tod summit is outside the ski-area boundary and is not entered as lift-served summit.",
     "sourcePages": [
       "https://www.sunpeaksresort.com/ski-ride/the-mountain/trail-maps-stats",
       "https://www.sunpeaksresort.com/ski-ride/tickets-passes/day-tickets"
@@ -337,7 +337,7 @@ const reviews=[
     "ticketUrl": "https://mont-sainte-anne.com/en/alpine-skiing-rates-and-schedules/",
     "website": "https://mont-sainte-anne.com/en/",
     "sourceUrl": "https://mont-sainte-anne.com/en/mont-sainte-anne-mountain-statistics/",
-    "notes": "Official reported 221.5ha/547 skiable acres; 868ha is total property acreage and is not used. One gondola + four quad chairs + four surface lifts = nine. Official ticket price page still displays 2025–26 prices; do not treat them as 2026–27 rates. Site's /en/trail-map/ is a summer mountain-bike map, so winter ski map remains unverified.",
+    "notes": "Officially reported 547 skiable acres; roughly 2,145 acres is the entire property and is not used as skiable area. One gondola + four quad chairs + four surface lifts = nine. Official ticket price page still displays 2025–26 prices; do not treat them as 2026–27 rates. Site's /en/trail-map/ is a summer mountain-bike map, so winter ski map remains unverified.",
     "sourcePages": [
       "https://mont-sainte-anne.com/en/mont-sainte-anne-mountain-statistics/",
       "https://mont-sainte-anne.com/en/alpine-skiing-rates-and-schedules/"
@@ -461,7 +461,7 @@ const reviews=[
     "ticketUrl": "https://www.skibanff.com/index.php/tickets-passes/lift-tickets/lift-tickets",
     "website": "https://www.skibanff.com/",
     "sourceUrl": "https://www.skibanff.com/the-mountain/mountain-report/historical-snowfall",
-    "notes": "The official historical snowfall average is 723cm since 2018, rounded to ~285in. Official live inventory lists 12 lifts and 139 trails. The resort's main homepage says 3,300 acres while its trail-map page says over 3,500 acres; acreage withheld until reconciled. This is not a live opening-status report.",
+    "notes": "The resort's historical snowfall average since 2018 is approximately 285 inches. Official live inventory lists 12 lifts and 139 trails. The resort's main homepage says 3,300 acres while its trail-map page says over 3,500 acres; acreage withheld until reconciled. This is not a live opening-status report.",
     "sourcePages": [
       "https://www.skibanff.com/the-mountain/mountain-report/historical-snowfall",
       "https://www.skibanff.com/the-mountain/lifts-terrain/trail-maps",
