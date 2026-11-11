@@ -92,7 +92,7 @@
   }
   function credit(photo){
     return '<span class="pa-photo-credit"><a href="'+esc(photo.source)+'" target="_blank" rel="noopener noreferrer">'
-      +esc(photo.author)+'</a> · '+(photo.licenseUrl?'<a target="_blank" rel="noopener noreferrer" href="'+esc(photo.licenseUrl)+'">'+esc(photo.license)+'</a>':esc(photo.license))+'</span>';
+      +esc(photo.author)+'</a> · '+(photo.licenseUrl?'<a target="_blank" rel="noopener noreferrer" href="'+esc(photo.licenseUrl)+'">'+esc(photo.license)+'</a>':esc(photo.license))+' · cropped to fit</span>';
   }
   function tile(photo,alt,loading){
     return '<figure class="pa-gallery-photo"><a href="'+esc(photo.source)+'" target="_blank" rel="noopener noreferrer" aria-label="See photo and licensing on Wikimedia Commons">'
@@ -115,7 +115,13 @@
       if(isHero)img.fetchPriority='high';
       img.sizes=isHero?'100vw':'(max-width: 640px) 100vw, (max-width: 960px) 50vw, 33vw';
       img.className='pa-resort-image';
-      img.addEventListener('load',()=>el.classList.add('pa-has-photo'),{once:true});
+      img.addEventListener('load',()=>{
+        el.classList.add('pa-has-photo');
+        if(!isHero){
+          const caption=el.closest('.resort-card')?.querySelector('[data-pa-card-credit="'+id+'"]');
+          if(caption){caption.innerHTML=credit(photos[0]);caption.hidden=false;}
+        }
+      },{once:true});
       img.addEventListener('error',()=>img.remove(),{once:true});
       el.append(img);
       if(isHero)el.insertAdjacentHTML('beforeend','<div class="pa-hero-credit">'+credit(photos[0])+'</div>');
