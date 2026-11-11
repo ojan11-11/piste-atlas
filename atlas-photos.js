@@ -440,6 +440,6 @@
   }
   window.PisteAtlasPhotos={
     media,heroPhoto,gallery,mount,featured,
-    _test:{license,normalizePhoto,winterScore,ranked,categoryFor,srcset,exactResortFilename,normalized}
+    _test:{license,licensed:info=>!!license(info),stripHTML:strip,normalizePhoto,winterScore,ranked,categoryFor,srcset,exactResortFilename,normalized}
   };
 })();
