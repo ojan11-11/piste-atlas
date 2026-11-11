@@ -168,7 +168,7 @@
   }
   function winterScore(photo,preferred=false){
     const name=photo.file.toLowerCase();
-    if(/\b(?:logo|icon|map|graphic|brochure|signage|advert|poster|bus|transport|hotel|portrait|flag|inside|indoor|contact sheet|certificate|website|screenshot)\b/.test(name))return -500;
+    if(/\b(?:logo|icon|map|graphic|brochure|signage|advert|poster|bus|transport|hotel|portrait|flag|inside|indoor|contact sheet|certificate|website|screenshot|parking|restaurant|menu|food|building|apartment|condo|truck|vehicle|shuttle|cafe|museum)\b/.test(name))return -500;
     let score=preferred?110:0;
     if(/(?:ski|snow|winter|powder|slop|tram|chair|gondola|piste|trail|lift|bowl|glade|peak|summit|alpine|mountain|panoram|view)/.test(name))score+=28;
     if(/(?:powder|winter|skiing|snowy|snow|mountain|summit|slopes|peak|panoram)/.test(name))score+=20;
@@ -189,7 +189,7 @@
       const prior=dedup.get(photo.file);
       if(!prior||winterScore(photo,!!photo.featured)>winterScore(prior,!!prior.featured))dedup.set(photo.file,photo);
     }
-    return [...dedup.values()].filter(p=>winterScore(p,p.featured)>-80)
+    return [...dedup.values()].filter(p=>winterScore(p,p.featured)>50)
       .sort((a,b)=>winterScore(b,!!b.featured)-winterScore(a,!!a.featured)
         ||a.file.localeCompare(b.file)).slice(0,limit);
   }
