@@ -1,0 +1,46 @@
+name: Refresh OpenSkiData mapped details
+on:
+  push:
+    branches: [feature/show-open-mapped-data-v07]
+    paths:
+      - 'tools/build-mapped-detail.mjs'
+      - 'tools/test-mapped-detail.mjs'
+      - '.github/workflows/refresh-mapped-detail.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: piste-mapped-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  mapped-details:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check parser and existing resort IDs
+        run: |
+          node --check tools/build-mapped-detail.mjs
+          node tools/test-mapped-detail.mjs
+      - name: Derive mapped downhill run lengths, lift networks and difficulties
+        run: node tools/build-mapped-detail.mjs
+      - name: Validate full enriched data
+        run: |
+          node tools/test-mapped-detail.mjs
+          node tools/test-reviewed-profiles.mjs
+          node tools/test-site-directory.mjs
+      - name: Commit map-derived snapshot
+        if: github.ref == 'refs/heads/feature/show-open-mapped-data-v07'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/resorts.mapped-detail.js data/resorts.mapped-meta.json
+          if ! git diff --cached --quiet; then
+            git commit -m "data: refresh mapped trail and lift detail snapshot"
+            git fetch origin "$GITHUB_REF_NAME"
+            git rebase "origin/$GITHUB_REF_NAME"
+            git push origin "HEAD:$GITHUB_REF_NAME"
+          fi
