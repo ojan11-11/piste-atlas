@@ -159,5 +159,5 @@
   document.addEventListener('click',event=>{
     if(event.target.closest('[data-pa-fit-directory-map]'))active?.fitAll?.();
   });
-  window.PisteAtlasMap={markup,mount,_test:{validCoordinate,clustered}};
+  window.PisteAtlasMap={markup,mount,get currentCount(){return current.length;},_test:{validCoordinate,clustered}};
 })();
