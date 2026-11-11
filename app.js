@@ -124,19 +124,9 @@
   function filtersBanner(list){return `<div class="results-head"><div><span class="mini-eyebrow">MOUNTAIN DIRECTORY</span><h2>${state.showFavorites?'Saved mountains':'Discover the mountains'}</h2><p>${list.length} of ${resorts.length} listings ${state.query?'matching your search':''} · ${resorts.filter(r=>r.dataQuality!=='open-data').length} source-checked · ${resorts.filter(r=>r.dataQuality==='open-data').length} mapped</p></div><div class="results-tools"><label class="sr-only" for="sort-resorts">Sort resorts</label><select id="sort-resorts" data-filter="sort"><option value="mapped" ${selectOption('mapped',state.sort)}>Most mapped segments</option><option value="lifts" ${selectOption('lifts',state.sort)}>Most lifts</option><option value="trails" ${selectOption('trails',state.sort)}>Most runs</option><option value="mappedLength" ${selectOption('mappedLength',state.sort)}>Longest mapped trail network</option><option value="vertical" ${selectOption('vertical',state.sort)}>Greatest elevation range</option><option value="acres" ${selectOption('acres',state.sort)}>Largest reported area</option><option value="name" ${selectOption('name',state.sort)}>A to Z</option></select><div class="view-switch" aria-label="View mode"><button data-action="set-view" data-view="grid" aria-pressed="${state.view==='grid'}" class="${state.view==='grid'?'active':''}" title="Grid view">${icon('grid',17)}</button><button data-action="set-view" data-view="map" aria-pressed="${state.view==='map'}" class="${state.view==='map'?'active':''}" title="Map view">${icon('map',17)}</button></div></div></div>`;}
   function emptyState(){return `<div class="empty-state">${icon('mountain',42)}<h3>No mountains match those filters.</h3><p>Try broadening your search or removing a lift, acreage or terrain filter.</p><button class="btn dark" data-action="reset">Reset filters</button></div>`;}
   // Schematic overview for the static prototype. Points use geographic lat/long; base silhouette is illustrative.
+  // Real geographic renderer. Filtering still controls every point shown.
   function mapView(list){
-    const x=lng=>Math.round((lng+174)/125*960+20);
-    const y=lat=>Math.round((76-lat)/55*560+15);
-    return `<div class="map-wrap"><div class="map-header"><div><strong>${icon('pin',17)} North American overview</strong><span>Showing all mapped ski areas with coordinates; clusters overlap at this scale</span></div><span class="prototype-label">Approximate coordinate plot · Not for navigation</span></div>
-    <div class="map-stage"><svg viewBox="0 0 1000 600" role="img" aria-label="Schematic North America map showing geographic resort locations" preserveAspectRatio="xMidYMid meet">
-     <defs><pattern id="mapgrid" width="65" height="65" patternUnits="userSpaceOnUse"><path d="M65 0H0V65" fill="none" stroke="#c4d9d8" stroke-width=".8" opacity=".4"/></pattern><linearGradient id="land" x1="0" x2="1"><stop stop-color="#d9e7da"/><stop offset="1" stop-color="#e8eee9"/></linearGradient></defs>
-     <rect width="1000" height="600" fill="#d5e8e9"/><rect width="1000" height="600" fill="url(#mapgrid)"/>
-     <path d="M55 4 550 4 615 30 670 33 719 90 822 92 865 161 934 195 905 245 833 252 790 304 825 350 801 385 824 439 770 473 734 417 700 389 666 399 621 429 608 478 551 483 500 469 459 475 421 452 365 452 322 414 254 414 225 389 170 400 135 357 119 306 85 285 60 201 65 145Z" fill="url(#land)" stroke="#94b3aa" stroke-width="2"/>
-     <path d="M134 357 218 365 251 398 325 413 366 451 426 452 459 472 499 467 556 481 608 477 624 426 670 398 705 388 732 421 770 474" fill="none" stroke="#c0ccc4" stroke-width="3" stroke-dasharray="5 7"/>
-     <path d="M701 336q52-27 80-3t10 41q-37 15-56 5t-34-43Z" fill="#d5e8e9" opacity=".8"/>
-     <text x="480" y="216" class="map-country">CANADA</text><text x="476" y="410" class="map-country">UNITED STATES</text><text x="58" y="495" class="map-water">PACIFIC OCEAN</text><text x="836" y="524" class="map-water">ATLANTIC OCEAN</text>
-     ${list.filter(r=>Number.isFinite(r.lat)&&Number.isFinite(r.lng)).map(r=>`<g class="map-marker ${r.dataQuality==='open-data'?'map-mapped':'map-reviewed'}" data-map-resort="${r.id}" tabindex="0" role="link" aria-label="Open ${escapeHTML(r.name)} profile" transform="translate(${x(r.lng)},${y(r.lat)})"><circle r="${r.dataQuality==='open-data'?5:8}" class="pin-core"/><title>${escapeHTML(r.name)} — ${escapeHTML(r.region)}</title></g>`).join('')}
-    </svg></div><p class="map-summary">Plotting ${list.length} mountain locations. Select a dot to open a profile; use filters to narrow the map. Alaska and Canada share the same approximate coordinate scale.</p><div class="map-list">${list.slice(0,90).map(r=>`<a href="#resort/${r.id}" class="map-list-item"><span class="map-dot"></span><strong>${escapeHTML(r.name)}</strong><small>${escapeHTML(r.regionCode)} · ${textNum(r.lifts??r.mappedLiftCount)} lifts</small>${icon('arrow',15)}</a>`).join('')}</div></div>`;
+    return window.PisteAtlasMap?.markup(list)||'<p class="map-summary">Map module is unavailable. Search the directory to open a resort profile.</p>';
   }
   function compareTray(){
     if(state.selected.size===0) return '';
@@ -212,6 +202,7 @@
     document.title= page==='profile'?`${resorts.find(r=>r.id===id)?.name||'Resort'} | Piste Atlas`:page==='rankings'?'Mountain rankings | Piste Atlas':page==='powder'?'Powder Finder | Piste Atlas':page==='compare'?'Compare mountains | Piste Atlas':page==='map'?'Resort map | Piste Atlas':page==='about'?'About | Piste Atlas':page==='account'?'My mountains | Piste Atlas':'Piste Atlas | Find your mountain';
     window.PisteCommunity?.mount();
     window.PisteAtlasExtras?.mount();
+    window.PisteAtlasMap?.mount();
     if(focusSearch){const el=document.querySelector('#hero-search');el?.focus();el?.setSelectionRange(el.value.length,el.value.length);}
     if(!preserveScroll) window.scrollTo({top:0,behavior:'instant'});
   }
