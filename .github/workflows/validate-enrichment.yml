@@ -6,6 +6,10 @@ on:
       - development
     paths:
       - 'app.js'
+      - 'community.js'
+      - 'community-config.js'
+      - 'supabase/001_community.sql'
+      - 'tools/test-community.mjs'
       - 'data/resorts.js'
       - 'data/resorts.openskidata.js'
       - 'data/resorts.enriched.js'
@@ -27,6 +31,7 @@ jobs:
       - name: Check JavaScript syntax
         run: |
           node --check app.js
+          node --check community.js
           node --check data/resorts.enriched.js
       - name: Verify official data and original site
         run: |
@@ -35,3 +40,4 @@ jobs:
           node tools/validate-openskidata.mjs
           node tools/test-reviewed-profiles.mjs
           node tools/test-site-directory.mjs
+          node tools/test-community.mjs
