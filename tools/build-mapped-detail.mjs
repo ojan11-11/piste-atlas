@@ -92,7 +92,8 @@ async function main(){
  const output='// ODbL map-derived measurements; not resort-reported named trail counts or official vertical drop.\n'
   +'// '+attribution+'\n'
   +'window.PISTE_ATLAS_MAPPED_DETAILS='+JSON.stringify(provenance)+';\n'
-  +'window.RESORTS=(window.RESORTS||[]).map(r=>{const d='+JSON.stringify(enriched)+'[r.id];return d?{...r,...d}:r});\n';
+  +'const PISTE_ATLAS_DETAIL_LOOKUP='+JSON.stringify(enriched)+';\n'
+  +'window.RESORTS=(window.RESORTS||[]).map(r=>{const d=PISTE_ATLAS_DETAIL_LOOKUP[r.id];return d?{...r,...d}:r});\n';
  fs.writeFileSync('data/resorts.mapped-detail.js',output);
  fs.writeFileSync('data/resorts.mapped-meta.json',JSON.stringify({...provenance,license:'ODbL',attribution},null,2)+'\n');
  console.log(JSON.stringify(provenance,null,2));
