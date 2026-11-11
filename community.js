@@ -205,7 +205,7 @@
     if(!configured){state.ready=true;return;}
     if(!window.supabase?.createClient){
       const script=document.createElement('script');
-      script.src='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2';
+      script.src='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.50.0';
       script.async=true;
       script.onload=()=>{
         if(!window.supabase?.createClient){
