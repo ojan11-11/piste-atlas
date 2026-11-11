@@ -82,7 +82,7 @@
   function resortCard(r){
     const isSelected=state.selected.has(r.id); const saved=state.favorites.has(r.id);
     return `<article class="resort-card" data-id="${r.id}">
-      <a href="#resort/${r.id}" class="card-art-link" aria-label="View ${escapeHTML(r.name)}">${window.PisteAtlasPhotos?.media(r,art(r.visual,true),'card')||art(r.visual,true)}<div class="card-top-badges">${badges(r)}</div></a>
+      <a href="#resort/${r.id}" class="card-art-link" aria-label="View ${escapeHTML(r.name)}">${window.PisteAtlasPhotos?.media(r,art(r.visual,true),'card')||art(r.visual,true)}<div class="card-top-badges">${badges(r)}</div></a><div class="pa-card-credit" data-pa-card-credit="${r.id}" hidden></div>
       <button class="heart-btn ${saved?'saved':''}" data-action="save" data-id="${r.id}" aria-label="${saved?'Remove':'Save'} ${escapeHTML(r.name)} ${saved?'from':'to'} favorites">${icon('heart',18)}</button>
       <div class="card-body"><div class="card-location">${icon('pin',13)} ${escapeHTML(r.city||r.region||'Location unverified')} · ${escapeHTML(r.region)}</div><h3><a href="#resort/${r.id}">${escapeHTML(r.name)}</a></h3><p class="card-tagline">${escapeHTML(r.tagline)}</p>
       <div class="metric-row"><div><strong>${r.acres!==null?textNum(r.acres):r.mappedDownhillKm?distanceMiles(r.mappedDownhillKm):textNum(r.mappedRunSegments)}</strong><span>${r.acres!==null?'Skiable acres':r.mappedDownhillKm?'Mapped run length':'Mapped segments'}</span></div><div><strong>${textNum(r.vertical??r.mappedVertical)}<small> ft</small></strong><span>${r.vertical!==null?'Vertical drop':'Mapped elev. span'}</span></div><div><strong>${textNum(r.lifts??r.mappedLiftCount)}</strong><span>${r.lifts!==null?'Official lifts':'Mapped lifts'}</span></div></div>
