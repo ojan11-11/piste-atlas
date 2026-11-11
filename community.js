@@ -191,7 +191,15 @@
   }
   function startup(){
     if(!configured){state.ready=true;return;}
-    if(!window.supabase?.createClient){state.backendError='Authentication library did not load. Please try again later.';state.ready=true;return;}
+    if(!window.supabase?.createClient){
+      const script=document.createElement('script');
+      script.src='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.50.0/dist/umd/supabase.min.js';
+      script.async=true;
+      script.onload=()=>startup();
+      script.onerror=()=>{state.backendError='Authentication library did not load. Please try again later.';state.ready=true;refreshPanels();};
+      document.head.appendChild(script);
+      return;
+    }
     try{
       state.client=window.supabase.createClient(config.url,config.publishableKey,{auth:{
         persistSession:true,autoRefreshToken:true,detectSessionInUrl:true
