@@ -30,7 +30,7 @@ assert.match(app.innerHTML,/Mountain comparison/);
 win.location.hash='#resort/big-sky';callbacks['window-hashchange']();
 assert.match(app.innerHTML,/Official trail maps/);
 assert.match(app.innerHTML,/Check official ticket prices/);
-assert.match(app.innerHTML,/Mountain photo gallery/);
+assert.match(app.innerHTML,/Photos of Big Sky Resort/);
 assert.match(app.innerHTML,/Interactive mountain terrain map/);
 assert.match(app.innerHTML,/Snowfall forecast/);
 win.location.hash='#map';callbacks['window-hashchange']();
