@@ -52,6 +52,39 @@
       category:'Mont Tremblant Resort',
       files:['Slopes and Village at Mont Tremblant (3242000931).jpg',
         'Ski Mont Tremblant.jpg','Mont Tremblant Resort Ski - panoramio.jpg']
+    },
+    'osd-openstreetmap-way-1023308077':{
+      category:'Alta Ski Area',
+      files:['Panoramic Alta.jpg','Altaskiarea.jpg','Alta Baldy Chutes.JPG']
+    },
+    'osd-wikidata-q12053500':{
+      category:'Breckenridge Ski Resort',
+      files:['Peaks 7 and 8.JPG','Breckenridge ski resort.jpg','Peak 8 from Peak 9.JPG']
+    },
+    'osd-wikidata-q2362338':{
+      category:'Copper Mountain (ski resort)',
+      files:['Copper Mountain in Summit County, CO.jpg','Copper Mountain Pow Day! (6752392159).jpg',
+        'Copper Mountain, Spaulding Bowl and trails.jpg']
+    },
+    'osd-wikidata-q3021172':{
+      category:'Deer Valley',
+      files:['Deer-valley-Utah Snow.jpg','Skiing at Deer Valley Utah photo Ramey Logan.jpg',
+        'Deervalleyutah 0209.jpg']
+    },
+    'osd-wikidata-q1547750':{
+      category:'Sugarloaf (ski resort)',
+      files:['Sugarloaf ski resort Maine.JPG','Sugarloaf Whiffletree.jpg',
+        'Sugarloaf Mountain seen from Maine State Route 27.JPG']
+    },
+    'osd-openstreetmap-way-682231907':{
+      category:'Mammoth Mountain Ski Area',
+      files:['Mammoth Mountain (December 2009) 01.JPG','Mammoth Mountain (December 2009) 02.JPG',
+        'Mammoth Lakes (January 2008) 15.JPG']
+    },
+    'osd-openstreetmap-way-460246666':{
+      category:'Winter Park Resort',
+      files:['Winter Park Resort View.jpg','Winter Park Ski Resort - Colorado (13843211033).jpg',
+        'Winter Park Trail.jpg']
     }
   };
 
@@ -61,7 +94,11 @@
     'Stowe Mountain Resort':'Stowe Mountain Resort',
     'Snowbird':'Snowbird, Utah',
     'Snowbird Ski and Summer Resort':'Snowbird, Utah',
-    'Deer Valley Resort':'Deer Valley'
+    'Deer Valley Resort':'Deer Valley',
+    'Copper Mountain':'Copper Mountain (ski resort)',
+    'Sugarloaf':'Sugarloaf (ski resort)',
+    'Mammoth Mountain':'Mammoth Mountain Ski Area',
+    'Winter Park Resort':'Winter Park Resort'
   };
   const byId=new Map((window.RESORTS||[]).map(r=>[r.id,r]));
   const photoCache=new Map();
