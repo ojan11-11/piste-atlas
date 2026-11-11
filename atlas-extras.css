@@ -1,0 +1,99 @@
+/* Piste Atlas 2026 community + discovery enhancements */
+.pa-media{position:relative;overflow:hidden;display:block;height:100%;min-height:170px}
+.pa-media .mountain-art{width:100%;height:100%}
+.pa-media-loading{display:none}
+.pa-media>.pa-resort-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .25s ease}
+.pa-media.pa-has-photo>.pa-resort-image{opacity:1}
+.pa-media-card .mountain-art{height:210px}
+.pa-media-card{height:210px}
+.pa-hero-photo{position:absolute;inset:0;z-index:-1;overflow:hidden}
+.pa-hero-photo .pa-resort-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .35s ease}
+.pa-hero-photo.pa-has-photo .pa-resort-image{opacity:1}
+.pa-hero-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,25,33,.91),rgba(2,28,35,.7) 50%,rgba(2,28,35,.25))}
+.pa-photo-credit,.pa-hero-credit{font-size:11px;color:#7c9290}
+.pa-photo-credit a,.pa-hero-credit a{text-decoration:underline}
+.pa-hero-credit{display:none;position:absolute;bottom:9px;right:20px;z-index:2;color:#fff9;text-align:right;max-width:50%}
+.pa-hero-photo.pa-has-photo .pa-hero-credit{display:block}
+.pa-gallery-section{overflow:hidden}
+.pa-gallery-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.pa-gallery-photo,.pa-upload-grid figure{margin:0;min-width:0}
+.pa-gallery-photo>a{display:block;border-radius:12px;overflow:hidden;aspect-ratio:4/3;background:#e4ece9}
+.pa-gallery-photo img,.pa-upload-grid img{display:block;width:100%;height:100%;object-fit:cover}
+.pa-gallery-photo figcaption,.pa-upload-grid figcaption{padding:6px 2px;font-size:11px;color:#586d70;line-height:1.5}
+.pa-community-photos{margin-top:22px}
+.pa-contribution{background:#f4f8f6;border:1px solid #dce7e4;border-radius:14px;padding:20px;margin-top:12px}
+.pa-contribution h3{font-size:20px;margin-bottom:8px}
+.pa-contribution form{display:grid;grid-template-columns:1fr 1fr auto;align-items:end;gap:12px}
+.pa-contribution label,.pa-ranking-control,.pa-forecast-controls label{display:grid;gap:8px;font-weight:650;font-size:13px}
+.pa-contribution input,.pa-ranking-control select,.pa-forecast-controls select{padding:11px;border:1px solid #ccdcd8;border-radius:9px;width:100%;min-width:0;background:#fff}
+.pa-contribution .btn{min-height:44px}
+.pa-muted{font-size:13px;color:#607579;line-height:1.65}
+.pa-muted a{color:#175b67;text-decoration:underline}
+.pa-upload-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:16px}
+.pa-upload-grid img{aspect-ratio:4/3;border-radius:9px}
+.pa-passport{border:1px solid #c9ded6;background:linear-gradient(145deg,#f7faf7,#ebf6f0);border-radius:18px;padding:24px;margin:24px 0}
+.pa-passport-title{display:flex;justify-content:space-between;align-items:center;gap:16px}
+.pa-passport-title h3{margin:4px 0 0;font-size:28px}
+.pa-passport-seal{font-size:10px;letter-spacing:.16em;color:#236b5c;border:2px solid #6bb9a5;border-radius:50%;display:grid;place-items:center;width:86px;height:86px;transform:rotate(-12deg);text-align:center;font-weight:900}
+.pa-passport-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:16px 0}
+.pa-passport-stats>div{background:#fff;border-radius:13px;padding:15px}
+.pa-passport-stats strong{display:block;font-size:33px;line-height:1.1}
+.pa-passport-stats small{display:block;color:#627a7b;margin-top:6px}
+.pa-milestone-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+.pa-milestone{border:1px dashed #c9d6d1;opacity:.55;border-radius:12px;padding:12px;background:#fff}
+.pa-milestone.is-earned{opacity:1;border:1px solid #84bfa4;background:#e1f3e9}
+.pa-milestone>span{display:block;font-size:23px;color:#2a7663}
+.pa-milestone strong,.pa-milestone small{display:block}
+.pa-milestone strong{font-size:13px;margin:5px 0}
+.pa-milestone small{color:#64827b}
+.pa-next-milestone{margin:14px 0 0;font-size:13px;color:#33685c;font-weight:650}
+.pa-feature-page{padding-top:45px;padding-bottom:75px;min-height:65vh}
+.pa-feature-page>h2{font-size:clamp(32px,4vw,50px);margin:8px 0 10px}
+.pa-feature-page>p{max-width:750px;line-height:1.65}
+.pa-ranking-control{max-width:350px;margin:25px 0}
+.pa-ranking-list,.pa-powder-list{display:grid;gap:9px;max-width:940px;margin:22px 0}
+.pa-ranking-item,.pa-powder-row{display:grid;grid-template-columns:44px minmax(0,1fr) 100px 105px;align-items:center;gap:10px;border:1px solid #deebea;border-radius:12px;background:#fff;padding:17px}
+.pa-ranking-item:hover,.pa-powder-row:hover{background:#f2faf6}
+.pa-ranking-item>b,.pa-powder-row>b{font-size:18px;color:#488977}
+.pa-ranking-item div strong,.pa-powder-row div strong{display:block;font-size:15px}
+.pa-ranking-item div small,.pa-powder-row div small{display:block;color:#70817f}
+.pa-ranking-item>span,.pa-snow-value{font-weight:850;text-align:right;color:#2c776d}
+.pa-ranking-item>small,.pa-powder-row>small{text-align:right;color:#687b7a}
+.pa-forecast-controls{display:flex;gap:16px;align-items:end;flex-wrap:wrap;margin:26px 0}
+.pa-powder-list{margin-top:20px}
+.pa-daily-forecast{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px;margin:15px 0}
+.pa-daily-forecast>div{background:#f2f7f5;border-radius:11px;padding:12px 8px;text-align:center}
+.pa-daily-forecast strong,.pa-daily-forecast span,.pa-daily-forecast small{display:block}
+.pa-daily-forecast span{font-size:18px;font-weight:850;margin:8px 0}
+.pa-daily-forecast small{color:#62777a}
+.pa-terrain-shell{border:1px solid #dce9e5;border-radius:13px;overflow:hidden;background:#f0f6f2;padding:14px;min-height:90px}
+.pa-terrain-map{height:440px;width:100%;border-radius:9px;z-index:0}
+.pa-map-toolbar{display:flex;align-items:center;gap:14px;padding:11px 0 0;flex-wrap:wrap}
+.pa-map-toolbar span{color:#667977;font-size:13px}
+.pa-terrain-shell>.btn{margin:6px}
+@media(max-width:900px){
+ .pa-gallery-grid,.pa-upload-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .pa-contribution form{grid-template-columns:1fr 1fr}
+ .pa-contribution form button{grid-column:1/-1;justify-self:start}
+ .pa-daily-forecast{grid-template-columns:repeat(4,minmax(0,1fr))}
+ .pa-terrain-map{height:360px}
+}
+@media(max-width:600px){
+ .pa-gallery-grid,.pa-upload-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+ .pa-gallery-photo figcaption{font-size:10px}
+ .pa-hero-credit{left:12px;right:12px;max-width:none;text-align:left;bottom:5px;font-size:9px}
+ .pa-contribution form{grid-template-columns:1fr}
+ .pa-contribution form button{grid-column:auto}
+ .pa-passport{padding:15px}
+ .pa-passport-seal{width:65px;height:65px;font-size:8px}
+ .pa-passport-stats{gap:6px}
+ .pa-passport-stats>div{padding:9px}
+ .pa-passport-stats strong{font-size:26px}
+ .pa-passport-stats small{font-size:10px}
+ .pa-milestone-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .pa-ranking-item,.pa-powder-row{grid-template-columns:32px minmax(0,1fr) 75px}
+ .pa-ranking-item>small,.pa-powder-row>small{display:none}
+ .pa-daily-forecast{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .pa-terrain-map{height:320px}
+ .pa-feature-page{padding-top:28px}
+}
